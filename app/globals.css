@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* FlowencyBuild Primary Colors */
+    --background: 225 71% 8%;
+    --foreground: 0 0% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Colors */
+    --secondary: 225 50% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 225 71% 8%;
+
+    /* Surface Colors */
+    --card: 225 50% 15%;
+    --card-foreground: 0 0% 98%;
+    --muted: 225 50% 20%;
+    --muted-foreground: 220 9% 66%;
+
+    /* Navy Scale */
+    --navy: 225 71% 8%;
+    --navy-light: 225 50% 15%;
+    --navy-lighter: 225 50% 20%;
+
+    /* Purple Scale - FlowencyBuild Brand */
+    --purple: 262 83% 58%;
+    --purple-light: 262 83% 68%;
+    --purple-dark: 262 83% 48%;
+
+    /* Utility */
+    --border: 225 50% 20%;
+    --input: 225 50% 20%;
+    --ring: 262 83% 58%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Border Radius */
+    --radius: 1rem;
+
+    /* Shadows */
+    --shadow-glow: 0 0 60px hsl(var(--purple) / 0.4);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+    --shadow-elevated: 0 8px 40px hsl(0 0% 0% / 0.5);
+    --shadow-purple: 0 0 40px hsl(var(--purple) / 0.3);
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg,
+      hsl(262 83% 58%) 0%,
+      hsl(262 83% 48%) 50%,
+      hsl(225 71% 20%) 100%
+    );
+    --gradient-subtle: linear-gradient(180deg,
+      hsl(225 71% 8%) 0%,
+      hsl(225 50% 12%) 100%
+    );
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(262 83% 68%));
+    --gradient-accent: linear-gradient(135deg, hsl(262 83% 58%), hsl(290 80% 60%));
+    --gradient-text: linear-gradient(135deg, hsl(262 83% 65%), hsl(262 83% 70%));
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Loveable Glass Effects with FlowencyBuild Colors */
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-xl border border-border/80 rounded-2xl;
+  }
+
+  /* Text Effects */
+  .glow-text {
+    text-shadow: 0 0 40px hsl(var(--purple) / 0.5);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-text);
+  }
+
+  .accent-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  /* Background Effects */
+  .hero-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--purple) / 0.6), transparent);
+    pointer-events: none;
+  }
+
+  .mesh-gradient {
+    background:
+      radial-gradient(at 40% 20%, hsl(262 83% 35% / 0.5) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsl(262 83% 40% / 0.3) 0px, transparent 40%),
+      radial-gradient(at 0% 50%, hsl(262 83% 40% / 0.25) 0px, transparent 50%),
+      radial-gradient(at 70% 60%, hsl(262 83% 35% / 0.2) 0px, transparent 40%),
+      radial-gradient(at 10% 90%, hsl(262 83% 30% / 0.15) 0px, transparent 40%);
+  }
+
+  .section-glow {
+    position: relative;
+  }
+
+  .section-glow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--purple) / 0.5), transparent);
+  }
+
+  /* Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated), var(--shadow-purple);
+    border-color: hsl(var(--purple) / 0.3);
+  }
+
+  /* Button Effects */
+  .btn-glow {
+    box-shadow: 0 0 20px hsl(var(--purple) / 0.4);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--purple) / 0.6);
+  }
+
+  /* Badges */
+  .number-badge {
+    @apply w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg;
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+  }
+
+  .feature-icon {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--purple) / 0.15), hsl(var(--purple) / 0.15));
+    border: 1px solid hsl(var(--purple) / 0.25);
+  }
+
+  /* Floating shapes for background interest */
+  .floating-shape {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: float-gentle 20s ease-in-out infinite;
+  }
+
+  /* Border glow effect */
+  .border-glow {
+    position: relative;
+  }
+
+  .border-glow::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--purple) / 0.3), transparent, hsl(var(--purple) / 0.3));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .border-glow:hover::after {
+    opacity: 1;
+  }
+
+  /* Stagger animation helper */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Calendly iframe fixes */
+.calendly-overlay {
+  z-index: 9999 !important;
+}
+
+.calendly-overlay iframe {
+  border: none !important;
+}
+
+body:not(.calendly-popup-active) {
+  overflow: visible !important;
+}
+
+.calendly-badge-widget,
+.calendly-cookie-banner,
+[class*="cookie-banner"],
+[class*="cookieBanner"] {
+  display: none !important;
+}
+
+/* Cal.com embed styling */
+[data-cal-link] {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+[data-cal-link] iframe {
+  border: none !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+[data-cal-link] a[href*="cal.com"],
+.cal-branding,
+[class*="cal-branding"],
+[id*="cal-branding"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+[data-cal-link] iframe {
+  color-scheme: dark;
+}
+
+:root {
+  --cal-bg: hsl(225 71% 8%) !important;
+  --cal-bg-emphasis: hsl(225 50% 15%) !important;
+  --cal-bg-subtle: hsl(225 50% 20%) !important;
+  --cal-border: hsl(225 50% 20%) !important;
+  --cal-border-emphasis: hsl(262 83% 58% / 0.3) !important;
+  --cal-text: hsl(0 0% 98%) !important;
+  --cal-text-emphasis: hsl(0 0% 100%) !important;
+  --cal-text-muted: hsl(220 9% 66%) !important;
+}

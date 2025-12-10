@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../SpecBuild"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../flowency-backlog"
+		}
+	],
+	"settings": {}
+}
