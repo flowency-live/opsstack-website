@@ -31,15 +31,14 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-1 group">
+          <Link href="/" className="flex items-center group">
             <Image
-              src="/kavo-logo.webp"
-              alt="KAVOStack"
-              width={80}
-              height={32}
-              className="h-7 w-auto group-hover:scale-105 transition-transform duration-300"
+              src="/opsstack-logo.png"
+              alt="OpsStack"
+              width={120}
+              height={40}
+              className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="font-display font-semibold text-lg group-hover:text-primary transition-colors duration-300">Stack</span>
           </Link>
 
           {/* Desktop Nav */}

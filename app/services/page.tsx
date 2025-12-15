@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Services - KAVOStack',
+  title: 'Services - OpsStack',
   description: 'Build, Automate, Amplify. Fast, practical digital capability for SMEs.',
 }
 

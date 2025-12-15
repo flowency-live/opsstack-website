@@ -8,7 +8,7 @@ export default function DigitalCard() {
 
   useEffect(() => {
     // Generate QR code URL using QR Server API
-    const cardUrl = encodeURIComponent('https://flowency.build/card')
+    const cardUrl = encodeURIComponent('https://www.opsstack.co.uk/card')
     setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${cardUrl}`)
   }, [])
 
@@ -16,10 +16,10 @@ export default function DigitalCard() {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Jason Jones
-ORG:KAVOStack
+ORG:OpsStack
 TITLE:Founder - CTO Services
-EMAIL:hello@flowency.co.uk
-URL:https://flowency.build
+EMAIL:hello@opsstack.co.uk
+URL:https://www.opsstack.co.uk
 TEL;TYPE=WORK,VOICE:+44 7758 240770
 NOTE:Fast, Practical Digital Capability for SMEs. We act as your internal CTO and delivery team.
 END:VCARD`
@@ -28,7 +28,7 @@ END:VCARD`
     const url = window.URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'Jason-Jones-KAVOStack.vcf'
+    link.download = 'Jason-Jones-OpsStack.vcf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -45,11 +45,11 @@ END:VCARD`
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-purple/20"></div>
             <div className="mb-4 relative">
               <Image
-                src="/kavo-logo.webp"
-                alt="KAVOStack"
-                width={80}
-                height={80}
-                className="h-20 w-auto mx-auto drop-shadow-lg"
+                src="/opsstack-logo.png"
+                alt="OpsStack"
+                width={160}
+                height={60}
+                className="h-16 w-auto mx-auto drop-shadow-lg"
               />
             </div>
             <h1 className="text-2xl font-bold text-white mb-1">Jason Jones</h1>
@@ -61,7 +61,7 @@ END:VCARD`
             {/* Company */}
             <div>
               <h2 className="text-xl font-bold text-foreground mb-2">
-                KAVOStack
+                OpsStack
               </h2>
               <p className="text-sm text-muted-foreground italic">
                 Fast, Practical Digital Capability for SMEs
@@ -71,7 +71,7 @@ END:VCARD`
             {/* Contact Info */}
             <div className="space-y-4">
               <a
-                href="mailto:hello@flowency.co.uk"
+                href="mailto:hello@opsstack.co.uk"
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors group"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
@@ -81,12 +81,12 @@ END:VCARD`
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="text-sm font-medium">hello@flowency.co.uk</p>
+                  <p className="text-sm font-medium">hello@opsstack.co.uk</p>
                 </div>
               </a>
 
               <a
-                href="https://flowency.build"
+                href="https://www.opsstack.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors group"
@@ -98,7 +98,7 @@ END:VCARD`
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Website</p>
-                  <p className="text-sm font-medium">flowency.build</p>
+                  <p className="text-sm font-medium">opsstack.co.uk</p>
                 </div>
               </a>
 
@@ -169,7 +169,7 @@ END:VCARD`
 
         {/* Footer */}
         <p className="text-center text-muted-foreground text-sm mt-6">
-          KAVOStack - CTO Services for SMEs
+          OpsStack - CTO Services for SMEs
         </p>
       </div>
     </div>

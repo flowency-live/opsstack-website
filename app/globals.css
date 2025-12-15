@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* FlowencyBuild Primary Colors */
+    /* OpsStack Primary Colors */
     --background: 225 71% 8%;
     --foreground: 0 0% 98%;
     --primary: 262 83% 58%;
@@ -27,7 +27,7 @@
     --navy-light: 225 50% 15%;
     --navy-lighter: 225 50% 20%;
 
-    /* Purple Scale - FlowencyBuild Brand */
+    /* Purple Scale - OpsStack Brand */
     --purple: 262 83% 58%;
     --purple-light: 262 83% 68%;
     --purple-dark: 262 83% 48%;
@@ -77,7 +77,7 @@
 }
 
 @layer components {
-  /* Loveable Glass Effects with FlowencyBuild Colors */
+  /* Glass Effects with OpsStack Colors */
   .glass-card {
     @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
     box-shadow: var(--shadow-card);

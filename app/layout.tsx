@@ -13,12 +13,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "KAVOStack - Fast, Practical Digital Capability for SMEs",
+  title: "OpsStack - Fast, Practical Digital Capability for SMEs",
   description: "We act as your internal CTO and delivery team. Building the digital operating system your business should have had years ago. Clarity + Speed + Capability.",
-  keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "KAVOStack"],
+  keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "OpsStack"],
   icons: {
-    icon: '/kavo-logo.webp',
-    apple: '/kavo-logo.webp',
+    icon: '/opsstack-logo.png',
+    apple: '/opsstack-logo.png',
   },
   manifest: '/manifest.json',
 }

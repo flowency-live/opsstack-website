@@ -26,15 +26,14 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8 md:gap-12">
             {/* Brand Column */}
             <div className="md:col-span-2">
-              <Link href="/" className="flex items-center gap-1 mb-4 group">
+              <Link href="/" className="flex items-center mb-4 group">
                 <Image
-                  src="/kavo-logo.webp"
-                  alt="KAVOStack"
-                  width={80}
-                  height={32}
-                  className="h-7 w-auto group-hover:scale-105 transition-transform duration-300"
+                  src="/opsstack-logo.png"
+                  alt="OpsStack"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
                 />
-                <span className="font-display font-semibold text-lg">Stack</span>
               </Link>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                 We build the digital operating system your business should have had years ago. Tailored to how you actually work. Delivered in days, not months.
@@ -46,7 +45,7 @@ const Footer = () => {
                 <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
                   <Twitter className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
-                <a href="mailto:hello@flowency.co.uk" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
+                <a href="mailto:hello@opsstack.co.uk" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
                   <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
               </div>
@@ -83,7 +82,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2024 KAVOStack. All rights reserved.
+              © 2025 OpsStack. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               Built with technology. <span className="gradient-text">Powered by humans.</span>
