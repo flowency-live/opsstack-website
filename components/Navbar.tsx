@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,14 +30,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <Image
-              src="/opsstack-logo.png"
-              alt="OpsStack"
-              width={120}
-              height={40}
-              className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
-            />
+          <Link href="/" className="flex items-center gap-2 group">
+            {/* Stacked bars icon */}
+            <div className="flex flex-col gap-[3px]">
+              <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#c4b5fd] to-[#a78bfa]" />
+              <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#a78bfa] to-[#818cf8]" />
+              <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#818cf8] to-[#6366f1]" />
+            </div>
+            <span className="text-xl font-bold text-white tracking-tight">
+              Ops<span className="font-extrabold">Stack</span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}

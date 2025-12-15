@@ -1,6 +1,5 @@
 import { Linkedin, Twitter, Mail } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Footer = () => {
   const links = {
@@ -26,14 +25,16 @@ const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8 md:gap-12">
             {/* Brand Column */}
             <div className="md:col-span-2">
-              <Link href="/" className="flex items-center mb-4 group">
-                <Image
-                  src="/opsstack-logo.png"
-                  alt="OpsStack"
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto group-hover:scale-105 transition-transform duration-300"
-                />
+              <Link href="/" className="flex items-center gap-2 mb-4 group">
+                {/* Stacked bars icon */}
+                <div className="flex flex-col gap-[3px]">
+                  <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#c4b5fd] to-[#a78bfa]" />
+                  <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#a78bfa] to-[#818cf8]" />
+                  <div className="w-5 h-[5px] rounded-full bg-gradient-to-r from-[#818cf8] to-[#6366f1]" />
+                </div>
+                <span className="text-xl font-bold text-white tracking-tight">
+                  Ops<span className="font-extrabold">Stack</span>
+                </span>
               </Link>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                 We build the digital operating system your business should have had years ago. Tailored to how you actually work. Delivered in days, not months.
