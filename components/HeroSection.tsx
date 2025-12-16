@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -27,36 +29,46 @@ const HeroSection = () => {
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
-      {/* Tilted Product Grid - Positioned absolutely, extending off-screen */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Tilted Product Grid - Behind text, fading from right to left */}
+      <div className="absolute inset-0 overflow-hidden">
         {/* Grid container - rotated 15deg, positioned off right edge */}
         <div
-          className="absolute z-10 grid grid-cols-4 gap-6 pointer-events-auto"
+          className="absolute grid grid-cols-4 gap-8"
           style={{
             transform: 'rotate(15deg)',
-            right: '-60px',
-            top: '-60px',
-            width: '850px',
+            right: '-100px',
+            top: '-100px',
+            width: '900px',
+            zIndex: 1,
           }}
         >
           {productTiles.map((tile) => (
             <div
               key={tile.id}
-              className={`aspect-square rounded-xl bg-gradient-to-br ${tile.color} border border-white/10 backdrop-blur-sm transition-transform duration-300 hover:scale-105 cursor-pointer`}
+              className={`aspect-square rounded-2xl bg-gradient-to-br ${tile.color} border border-white/10 cursor-pointer`}
+              style={{
+                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'scale(1.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
             >
               {/* Placeholder inner content - mockup of a dashboard/app */}
-              <div className="w-full h-full p-3 flex flex-col">
-                <div className="flex gap-1.5 mb-2">
-                  <div className="w-2 h-2 rounded-full bg-white/20" />
-                  <div className="w-2 h-2 rounded-full bg-white/20" />
-                  <div className="w-2 h-2 rounded-full bg-white/20" />
+              <div className="w-full h-full p-4 flex flex-col">
+                <div className="flex gap-1.5 mb-3">
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                 </div>
-                <div className="flex-1 rounded-lg bg-white/5 p-2">
-                  <div className="w-3/4 h-2 rounded bg-white/10 mb-2" />
-                  <div className="w-1/2 h-2 rounded bg-white/10 mb-3" />
-                  <div className="grid grid-cols-2 gap-1.5">
-                    <div className="h-8 rounded bg-white/5" />
-                    <div className="h-8 rounded bg-white/5" />
+                <div className="flex-1 rounded-lg bg-white/5 p-3">
+                  <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
+                  <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="h-10 rounded bg-white/5" />
+                    <div className="h-10 rounded bg-white/5" />
                   </div>
                 </div>
               </div>
@@ -64,11 +76,12 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Left fade gradient overlay */}
+        {/* Fade overlay - tiles fade as they approach the left/text area */}
         <div
-          className="absolute inset-0 z-20 pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 35%, transparent 60%)',
+            background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 40%, transparent 70%)',
+            zIndex: 2,
           }}
         />
       </div>
