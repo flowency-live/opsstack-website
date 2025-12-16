@@ -18,7 +18,7 @@ const HeroSection = () => {
             {/* Main Heading */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
               Your Business.{" "}
-              <span className="text-accent">Digitised Properly.</span>
+              <span className="text-primary">Digitised Properly.</span>
               {" "}Finally.
             </h1>
 
@@ -33,7 +33,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
-              <Button variant="accent" size="lg" className="group">
+              <Button variant="default" size="lg" className="group">
                 Book a Working Session
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -44,7 +44,7 @@ const HeroSection = () => {
 
             {/* Trust Line */}
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <CheckCircle2 className="w-4 h-4 text-accent" />
+              <CheckCircle2 className="w-4 h-4 text-primary" />
               <span>No commitment required • Discovery call</span>
             </div>
           </div>
@@ -68,7 +68,7 @@ const HeroSection = () => {
               </div>
 
               {/* Subtle gradient overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-primary/5 pointer-events-none" />
             </div>
 
             {/* Floating metrics - optional social proof */}
