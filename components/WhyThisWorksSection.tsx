@@ -70,6 +70,15 @@ const WhyThisWorksSection = () => {
               Most SMEs run on spreadsheets, inboxes and heroics.<br />
               You&apos;ve built something real - but your systems aren&apos;t empowering you.
             </p>
+
+            {/* Accent bar */}
+            <div
+              className={`w-32 h-1 mt-6 rounded-full transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
+              style={{
+                transformOrigin: 'left',
+                background: 'linear-gradient(90deg, hsl(262 83% 58%), hsl(262 83% 68%))'
+              }}
+            />
           </div>
 
           {/* Cards Grid - 2x3 */}

@@ -66,8 +66,11 @@ const ProblemSection = () => {
 
             {/* Accent bar */}
             <div
-              className={`w-16 h-1 bg-primary mt-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
-              style={{ transformOrigin: 'left' }}
+              className={`w-32 h-1 mt-6 rounded-full transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
+              style={{
+                transformOrigin: 'left',
+                background: 'linear-gradient(90deg, hsl(262 83% 58%), hsl(262 83% 68%))'
+              }}
             />
           </div>
 

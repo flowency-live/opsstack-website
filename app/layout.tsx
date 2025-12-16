@@ -5,6 +5,7 @@ import { CookieConsent } from "@/components/CookieConsent"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import FloatingCTA from "@/components/FloatingCTA"
+import ScrollProgress from "@/components/ScrollProgress"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased">
+        <ScrollProgress />
         <Navbar />
         {children}
         <Footer />
