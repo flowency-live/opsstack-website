@@ -102,7 +102,7 @@ const HeroSection = () => {
           </p>
 
           <p className="text-base text-muted-foreground/80 mb-8">
-            We act as your internal CTO and delivery team — designing and building the systems your business has always needed.
+            We act as your internal CTO and delivery team - designing and building the systems your business has always needed.
           </p>
 
           {/* CTA Buttons */}
