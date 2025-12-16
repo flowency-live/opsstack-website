@@ -39,9 +39,9 @@ const ProblemSection = () => {
 
             {/* Accent bar */}
             <div
-              className="w-72 h-1 mt-6 rounded-full"
+              className="w-full h-1 mt-6 rounded-full"
               style={{
-                background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 40%, hsl(262 30% 20%) 100%)'
+                background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
               }}
             />
           </div>

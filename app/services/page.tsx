@@ -46,7 +46,15 @@ export default function ServicesPage() {
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
                 Build
               </h2>
-              <p className="text-lg text-primary font-medium mb-6">Your tools, apps and systems</p>
+              <p className="text-lg text-primary font-medium mb-4">Your tools, apps and systems</p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mb-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                }}
+              />
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 We design and deliver the software your business actually needs. Not what a vendor wants to sell you. Not a template you have to work around.
@@ -97,7 +105,15 @@ export default function ServicesPage() {
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
                 Automate
               </h2>
-              <p className="text-lg text-primary font-medium mb-6">Remove manual work forever</p>
+              <p className="text-lg text-primary font-medium mb-4">Remove manual work forever</p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mb-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                }}
+              />
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 If your team is copy-pasting between systems, repeating the same steps daily, or chasing information that should just be there - we treat that as a design fault.
@@ -147,7 +163,15 @@ export default function ServicesPage() {
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
                 Amplify
               </h2>
-              <p className="text-lg text-primary font-medium mb-6">Visibility, intelligence and insight</p>
+              <p className="text-lg text-primary font-medium mb-4">Visibility, intelligence and insight</p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mb-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                }}
+              />
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 Once your operation flows through one place, you finally see it clearly.
