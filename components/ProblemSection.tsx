@@ -78,7 +78,7 @@ const ProblemSection = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-border ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${index * 75 + 200}ms` }}
               >
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
