@@ -64,6 +64,12 @@ const WhyThisWorksSection = () => {
             >
               Why this <span className="text-primary">works</span>
             </h2>
+            <p
+              className={`text-lg text-muted-foreground max-w-2xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Most SMEs run on spreadsheets, inboxes and heroics.<br />
+              You&apos;ve built something real - but your systems aren&apos;t empowering you.
+            </p>
           </div>
 
           {/* Cards Grid - 2x3 */}
