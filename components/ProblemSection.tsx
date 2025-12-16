@@ -1,7 +1,3 @@
-'use client'
-
-import { useEffect, useRef, useState } from "react";
-
 const features = [
   {
     title: "One Place for Everything",
@@ -22,28 +18,8 @@ const features = [
 ];
 
 const ProblemSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative py-24 lg:py-32">
+    <section className="relative py-24 lg:py-32">
       {/* Clean background */}
       <div className="absolute inset-0 bg-background" />
 
@@ -51,24 +27,19 @@ const ProblemSection = () => {
         <div className="max-w-5xl">
           {/* Header - Clean two-line style */}
           <div className="mb-16">
-            <h2
-              className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
               Your Business<br />
               <span className="text-primary">Operating System</span>
             </h2>
 
-            <p
-              className={`text-lg text-muted-foreground mt-6 max-w-xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
+            <p className="text-lg text-muted-foreground mt-6 max-w-xl">
               One simple system, built around how your business actually runs.
             </p>
 
             {/* Accent bar */}
             <div
-              className={`w-32 h-1 mt-6 rounded-full transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}
+              className="w-32 h-1 mt-6 rounded-full"
               style={{
-                transformOrigin: 'left',
                 background: 'linear-gradient(90deg, hsl(262 83% 58%), hsl(262 83% 68%))'
               }}
             />
@@ -79,8 +50,7 @@ const ProblemSection = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${index * 75 + 200}ms` }}
+                className="group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)]"
               >
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                   {feature.title}
@@ -93,9 +63,7 @@ const ProblemSection = () => {
           </div>
 
           {/* Closing Line */}
-          <p
-            className={`text-lg transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
+          <p className="text-lg">
             <span className="text-muted-foreground">Our superpower isn&apos;t AI.</span>{" "}
             <span className="text-primary font-medium">It&apos;s making digital transformation accessible.</span>
           </p>

@@ -1,55 +1,32 @@
-'use client'
-
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery Day",
+    subtitle: "Clarity first",
+    description: "We learn how your business really runs, identify the blockers and show you what can change. You leave with clarity, a value picture and a working starting point.",
+    highlight: "Walk away with insights"
+  },
+  {
+    number: "02",
+    title: "Build Week",
+    subtitle: "Working product in your hands",
+    description: "We build the first usable version of your business operating system. Not mockups. Not decks. Real software you can use immediately.",
+    highlight: "Real, working software"
+  },
+  {
+    number: "03",
+    title: "Evolve",
+    subtitle: "Add capability at your pace",
+    description: "You add capability at your own pace using Credits. No retainers. No long contracts. No surprises. Just practical improvements when you want them.",
+    highlight: "Scale on your terms"
+  },
+];
 
 const ProcessSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const steps = [
-    {
-      number: "01",
-      title: "Discovery Day",
-      subtitle: "Clarity first",
-      description: "We learn how your business really runs, identify the blockers and show you what can change. You leave with clarity, a value picture and a working starting point.",
-      highlight: "Walk away with insights"
-    },
-    {
-      number: "02",
-      title: "Build Week",
-      subtitle: "Working product in your hands",
-      description: "We build the first usable version of your business operating system. Not mockups. Not decks. Real software you can use immediately.",
-      highlight: "Real, working software"
-    },
-    {
-      number: "03",
-      title: "Evolve",
-      subtitle: "Add capability at your pace",
-      description: "You add capability at your own pace using Credits. No retainers. No long contracts. No surprises. Just practical improvements when you want them.",
-      highlight: "Scale on your terms"
-    },
-  ];
-
   return (
-    <section ref={sectionRef} id="process" className="relative py-24 lg:py-32">
+    <section id="process" className="relative py-24 lg:py-32">
       {/* Clean background */}
       <div className="absolute inset-0 bg-background" />
 
@@ -57,14 +34,10 @@ const ProcessSection = () => {
         <div className="max-w-5xl">
           {/* Header - Left aligned */}
           <div className="mb-16">
-            <h2
-              className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               How it <span className="text-primary">works</span>
             </h2>
-            <p
-              className={`text-xl text-muted-foreground max-w-2xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
+            <p className="text-xl text-muted-foreground max-w-2xl">
               From first conversation to working system. Here&apos;s how.
             </p>
           </div>
@@ -72,11 +45,7 @@ const ProcessSection = () => {
           {/* Process Steps - 3 column grid, no cards */}
           <div className="grid md:grid-cols-3 gap-10 lg:gap-12 mb-16">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${index * 100 + 200}ms` }}
-              >
+              <div key={index}>
                 {/* Number Badge */}
                 <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg mb-6">
                   {step.number}
@@ -107,7 +76,7 @@ const ProcessSection = () => {
           </div>
 
           {/* Closing Line */}
-          <div className={`transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div>
             <p className="text-lg mb-2">
               <span className="text-primary font-medium">AI plus humans</span>{" "}
               <span className="text-foreground">equals practical transformation.</span>
