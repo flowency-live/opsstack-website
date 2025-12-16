@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const CTASection = () => {
@@ -25,65 +25,59 @@ const CTASection = () => {
     return () => observer.disconnect();
   }, []);
 
-  return (
-    <section ref={sectionRef} id="contact" className="relative py-24 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 mesh-gradient opacity-60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
+  const steps = [
+    "Bring your biggest operational headache",
+    "We'll show you what it looks like as a simple, fast, tailored system",
+    "You leave with clarity and a working prototype before spending anything",
+  ];
 
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-[10%] w-64 h-64 bg-primary/15 rounded-full blur-3xl animate-float-gentle" />
-      <div className="absolute bottom-1/4 right-[15%] w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float-gentle" style={{ animationDelay: '2s' }} />
+  return (
+    <section ref={sectionRef} id="contact" className="relative py-24 lg:py-32">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center">
-          {/* Main CTA Card */}
-          <div className={`glass-card p-8 md:p-12 relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
-            {/* Glow Effects */}
-            <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-96 h-40 bg-primary/25 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-64 h-32 bg-accent/20 rounded-full blur-3xl" />
+        <div className="max-w-5xl">
+          {/* Header - Left aligned */}
+          <div className="mb-12">
+            <h2
+              className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Ready to build your{" "}
+              <span className="text-primary">business operating system?</span>
+            </h2>
+            <p
+              className={`text-xl text-muted-foreground max-w-2xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Start with a working session. No pressure. No sales pitch.
+            </p>
+          </div>
 
-            <div className="relative">
-              <h2 className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                Ready to build your{" "}
-                <span className="gradient-text glow-text">business operating system?</span>
-              </h2>
+          {/* Steps List */}
+          <ul className="space-y-4 mb-12">
+            {steps.map((step, index) => (
+              <li
+                key={index}
+                className={`flex items-center gap-4 text-lg text-foreground transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}
+                style={{ transitionDelay: `${index * 80 + 200}ms` }}
+              >
+                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                {step}
+              </li>
+            ))}
+          </ul>
 
-              <p className={`text-muted-foreground mb-4 max-w-xl mx-auto transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                Start with a working session. No pressure. No sales pitch.
-              </p>
-
-              <div className={`flex flex-col gap-4 my-8 text-left max-w-md mx-auto transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <div className="flex items-center gap-3 group">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Calendar className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm text-muted-foreground">Bring your biggest operational headache</span>
-                </div>
-                <div className="flex items-center gap-3 group">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <ArrowRight className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-sm text-muted-foreground">We will show you what it looks like as a simple, fast, tailored system</span>
-                </div>
-              </div>
-
-              <p className={`text-foreground font-medium mb-8 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                You leave with clarity and a working prototype before spending anything.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-700 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                <Button variant="hero" size="lg" className="group w-full sm:w-auto animate-glow">
-                  Book a Working Session
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <Button variant="hero-outline" size="lg" className="group w-full sm:w-auto">
-                  <Play className="w-4 h-4 transition-transform group-hover:scale-110" />
-                  See What We Build
-                </Button>
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div
+            className={`flex flex-col sm:flex-row items-start gap-4 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <Button variant="default" size="lg" className="group">
+              Book a Working Session
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button variant="outline" size="lg" className="group">
+              See What We Build
+            </Button>
           </div>
         </div>
       </div>
