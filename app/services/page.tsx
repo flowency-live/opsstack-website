@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Zap, LineChart, CheckCircle2 } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
@@ -11,61 +11,55 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-20">
+      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-28">
         <div className="absolute inset-0 bg-background" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+          <div className="max-w-5xl">
+            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
               What We Build
             </h1>
 
-            <h2 className="text-2xl md:text-4xl font-bold text-foreground/80">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-6">
               Build. Automate. Amplify.
-            </h2>
+            </p>
 
-            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
               The tools, systems and intelligence your business is missing - delivered in days, not months. Stop paying for ten subscriptions you only half-use.
             </p>
 
-            <p className="text-xl md:text-2xl font-semibold text-primary">
-              &ldquo;We focus on Outcomes, not billable hours. Capability, not consultancy.&rdquo;
+            <p className="text-lg md:text-xl text-primary font-medium">
+              We focus on Outcomes, not billable hours. Capability, not consultancy.
             </p>
           </div>
         </div>
       </section>
 
       {/* Build Section */}
-      <section className="relative py-20 md:py-32 border-t border-primary/20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
-                  <Building2 className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="font-display text-3xl md:text-5xl font-bold">Build</h2>
-                  <p className="text-xl text-foreground/60">Your tools, apps and systems</p>
-                </div>
-              </div>
+      <section className="relative py-24 lg:py-32">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-white/[0.02]" />
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+                Build
+              </h2>
+              <p className="text-lg text-primary font-medium mb-6">Your tools, apps and systems</p>
+
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 We design and deliver the software your business actually needs. Not what a vendor wants to sell you. Not a template you have to work around.
               </p>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
                 Websites. Portals. Apps. Dashboards. Workflow tools. Operational systems. All built around how you work - not how software companies think you should work.
-              </p>
-
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
-                Think of it as the system you always meant to build but never had the time, budget or capability for.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">What we build:</h3>
-              <div className="grid md:grid-cols-2 gap-3">
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold mb-6">What we build:</h3>
+              <div className="grid md:grid-cols-2 gap-4">
                 {[
                   'Custom CRM shaped to your sales process',
                   'Project, job and case management tools',
@@ -76,53 +70,47 @@ export default function ServicesPage() {
                   'Workflow automation tools',
                   'Mini ERP modules for your specific operation',
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/30 transition-all duration-300"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground/80">{item}</p>
+                  <div key={i} className="flex items-center gap-4 text-foreground">
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="text-center pt-8">
-              <p className="text-xl md:text-2xl font-bold gradient-text">
-                If your business runs on a spreadsheet today, this is where that changes.
-              </p>
-            </div>
+            <p className="text-lg">
+              <span className="text-muted-foreground">If your business runs on a spreadsheet today,</span>{" "}
+              <span className="text-primary font-medium">this is where that changes.</span>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Automate Section */}
-      <section className="relative py-20 md:py-32 bg-primary/5 border-t border-primary/20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="font-display text-3xl md:text-5xl font-bold">Automate</h2>
-                  <p className="text-xl text-foreground/60">Remove manual work forever</p>
-                </div>
-              </div>
+      <section className="relative py-24 lg:py-32">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-white/[0.04]" />
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+                Automate
+              </h2>
+              <p className="text-lg text-primary font-medium mb-6">Remove manual work forever</p>
+
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 If your team is copy-pasting between systems, repeating the same steps daily, or chasing information that should just be there - we treat that as a design fault.
               </p>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
                 We fix it by connecting your tools, streamlining your process, and adding smart automation where it actually matters.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">What we automate:</h3>
-              <div className="grid md:grid-cols-2 gap-3">
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold mb-6">What we automate:</h3>
+              <div className="grid md:grid-cols-2 gap-4">
                 {[
                   'Invoicing and billing',
                   'Reporting and dashboards',
@@ -132,57 +120,51 @@ export default function ServicesPage() {
                   'Customer communications',
                   'Compliance and audit trails',
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/30 transition-all duration-300"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground/80">{item}</p>
+                  <div key={i} className="flex items-center gap-4 text-foreground">
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="text-center pt-8">
-              <p className="text-xl md:text-2xl font-bold gradient-text">
-                Automation isn&apos;t about replacing people. It&apos;s about freeing them to do useful work.
-              </p>
-            </div>
+            <p className="text-lg">
+              <span className="text-muted-foreground">Automation isn&apos;t about replacing people.</span>{" "}
+              <span className="text-primary font-medium">It&apos;s about freeing them to do useful work.</span>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Amplify Section */}
-      <section className="relative py-20 md:py-32 border-t border-primary/20">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
-                  <LineChart className="w-8 h-8 text-white" />
-                </div>
-                <div>
-                  <h2 className="font-display text-3xl md:text-5xl font-bold">Amplify</h2>
-                  <p className="text-xl text-foreground/60">Visibility, intelligence and insight</p>
-                </div>
-              </div>
+      <section className="relative py-24 lg:py-32">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-white/[0.02]" />
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
+                Amplify
+              </h2>
+              <p className="text-lg text-primary font-medium mb-6">Visibility, intelligence and insight</p>
+
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 Once your operation flows through one place, you finally see it clearly.
               </p>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
                 Margins. Workload. Risk. Opportunity. Bottlenecks. All in plain English - not buried in spreadsheets or someone&apos;s head.
               </p>
 
-              <p className="text-lg md:text-xl text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
                 We add dashboards, AI-driven summaries and real-time insight that help you make better decisions faster, with less noise.
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl md:text-2xl font-bold">What we amplify:</h3>
-              <div className="grid md:grid-cols-2 gap-3">
+            <div className="mb-12">
+              <h3 className="text-xl font-semibold mb-6">What we amplify:</h3>
+              <div className="grid md:grid-cols-2 gap-4">
                 {[
                   'Profit and margin visibility',
                   'Bottleneck and blocker detection',
@@ -191,35 +173,35 @@ export default function ServicesPage() {
                   'Demand and pipeline forecasting',
                   'Customer behaviour and patterns',
                 ].map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-card/50 backdrop-blur border border-border hover:border-primary/30 transition-all duration-300"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-foreground/80">{item}</p>
+                  <div key={i} className="flex items-center gap-4 text-foreground">
+                    <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                    {item}
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="text-center pt-8">
-              <p className="text-xl md:text-2xl font-bold gradient-text">
-                Your business becomes calmer, more predictable and easier to run.
-              </p>
-            </div>
+            <p className="text-lg">
+              <span className="text-muted-foreground">Your business becomes calmer, more predictable</span>{" "}
+              <span className="text-primary font-medium">and easier to run.</span>
+            </p>
           </div>
         </div>
       </section>
 
       {/* What Makes Our Delivery Different */}
-      <section className="relative py-20 md:py-32 bg-primary/5">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-6xl mx-auto space-y-16">
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-center">
-              What makes our delivery different
-            </h2>
+      <section className="relative py-24 lg:py-32">
+        <div className="absolute inset-0 bg-background" />
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                What makes our delivery <span className="text-primary">different</span>
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5 mb-12">
               {[
                 {
                   title: 'Working prototype on day one',
@@ -235,7 +217,7 @@ export default function ServicesPage() {
                 },
                 {
                   title: 'Built around your way of working',
-                  description: 'We don\'t impose frameworks, methodologies or generic "best practice." We amplify what already works. We fix what doesn\'t.',
+                  description: "We don't impose frameworks, methodologies or generic best practice. We amplify what already works. We fix what doesn't.",
                 },
                 {
                   title: 'Confidential and secure',
@@ -243,63 +225,67 @@ export default function ServicesPage() {
                 },
                 {
                   title: 'Momentum as a Service',
-                  description: 'Every time you engage us, something real gets built or fixed. No theatre. No "alignment sessions." No drag. Just forward motion.',
-                  highlight: true,
+                  description: "Every time you engage us, something real gets built or fixed. No theatre. No alignment sessions. No drag. Just forward motion.",
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className={`glass-card p-8 card-hover space-y-4 ${item.highlight ? 'border-primary/50' : ''}`}
+                  className="group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)]"
                 >
-                  <h3 className={`text-xl font-bold ${item.highlight ? 'gradient-text' : ''}`}>{item.title}</h3>
-                  <p className="text-foreground/70 leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
 
-            <div className="glass-card p-8 space-y-4 border-primary/30">
-              <p className="text-xl md:text-2xl font-bold gradient-text text-center">
-                AI + Humans = Practical transformation.
-              </p>
-              <p className="text-lg text-foreground/70 text-center">
-                We use AI to move fast and keep costs down. But every system is shaped by experienced humans who understand your business - not just the technology.
-              </p>
-            </div>
+            <p className="text-lg">
+              <span className="text-primary font-medium">AI plus humans</span>{" "}
+              <span className="text-foreground">equals practical transformation.</span>{" "}
+              <span className="text-muted-foreground">We use AI to move fast and keep costs down. But every system is shaped by experienced humans who understand your business - not just the technology.</span>
+            </p>
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-20 md:py-32">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-display text-3xl md:text-5xl font-bold">
-              Ready to build?
-            </h2>
+      <section className="relative py-24 lg:py-32">
+        <div className="absolute inset-0 bg-background" />
+        <div className="absolute inset-0 bg-white/[0.02]" />
 
-            <div className="space-y-6 text-lg md:text-xl text-foreground/70 leading-relaxed">
-              <p>
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                Ready to <span className="text-primary">build?</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl">
                 A working session is the fastest way to see what&apos;s possible.
               </p>
-
-              <p>
-                Bring your biggest operational headache.
-                <br />
-                We&apos;ll show you what a simple, fast, tailored system could look like - built around how you actually work.
-              </p>
-
-              <div className="pt-4">
-                <p className="text-xl md:text-2xl font-bold gradient-text">
-                  You leave with clarity and a prototype.
-                </p>
-              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+            <ul className="space-y-4 mb-12">
+              {[
+                "Bring your biggest operational headache",
+                "We'll show you what it looks like as a simple, fast, tailored system",
+                "You leave with clarity and a working prototype before spending anything",
+              ].map((step, index) => (
+                <li
+                  key={index}
+                  className="flex items-center gap-4 text-lg text-foreground"
+                >
+                  <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                  {step}
+                </li>
+              ))}
+            </ul>
+
+            <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link href="/contact">
-                <Button size="lg" variant="hero" className="group">
+                <Button variant="default" size="lg" className="group">
                   Book a Working Session
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
             </div>
