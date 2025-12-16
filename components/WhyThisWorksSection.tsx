@@ -1,6 +1,5 @@
 'use client'
 
-import { Search, Zap, Trophy, UserCheck, DollarSign } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const WhyThisWorksSection = () => {
@@ -26,81 +25,61 @@ const WhyThisWorksSection = () => {
 
   const reasons = [
     {
-      icon: Search,
-      title: "Clarity before complexity",
-      description: "We cut through noise and find what is really blocking you.",
+      title: "Days, Not Months",
+      description: "We build in days, not months. No gold-plating. No six-month projects. No waiting.",
     },
     {
-      icon: Zap,
-      title: "Speed with discipline",
-      description: "We build in days, not months. No gold plating. No drag. No theatre.",
+      title: "Senior Delivery Only",
+      description: "You work directly with experienced product, tech and ops leaders. No juniors learning on your time.",
     },
     {
-      icon: Trophy,
-      title: "Capability that lasts",
-      description: "You get permanent improvement through real tools and real value, not documentation.",
+      title: "Value First, Always",
+      description: "See outcomes before you commit. If we can't prove value fast, you walk away.",
     },
     {
-      icon: UserCheck,
-      title: "Senior delivery only",
-      description: "You work directly with experienced product, technology and operations leaders.",
+      title: "One System, Not Ten Subscriptions",
+      description: "Replace the patchwork of tools you're paying for but barely using.",
     },
     {
-      icon: DollarSign,
-      title: "Value first, always",
-      description: "You see outcomes before you commit. If we cannot prove value fast, you walk away.",
-      highlight: true
+      title: "Clarity Before Complexity",
+      description: "We cut through noise and find what's really blocking you. Fast.",
+    },
+    {
+      title: "Capability That Lasts",
+      description: "You get permanent improvement. Real tools. Real value. Not documentation.",
     },
   ];
 
   return (
-    <section ref={sectionRef} id="about" className="relative py-24 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-
-      {/* Floating elements */}
-      <div className="absolute top-1/4 right-[15%] w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float-gentle" />
-      <div className="absolute bottom-1/3 left-[10%] w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float-gentle" style={{ animationDelay: '3s' }} />
+    <section ref={sectionRef} id="about" className="relative py-24 lg:py-32">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Why this <span className="gradient-text glow-text">works</span>
+        <div className="max-w-5xl">
+          {/* Header - Left aligned */}
+          <div className="mb-12">
+            <h2
+              className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
+              Why this <span className="text-primary">works</span>
             </h2>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reasons.slice(0, 3).map((reason, index) => (
+          {/* Cards Grid - 2x3 */}
+          <div className="grid md:grid-cols-2 gap-5">
+            {reasons.map((reason, index) => (
               <div
                 key={index}
-                className={`glass-card p-8 card-hover group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                style={{ transitionDelay: `${index * 100 + 200}ms` }}
+                className={`group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)] ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 75 + 200}ms` }}
               >
-                <div className="feature-icon mb-6 group-hover:scale-110 group-hover:border-primary/50 transition-all duration-300">
-                  <reason.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="font-display text-lg font-semibold mb-3 group-hover:text-primary transition-colors duration-300">{reason.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Two Cards */}
-          <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
-            {reasons.slice(3).map((reason, index) => (
-              <div
-                key={index}
-                className={`glass-card p-8 card-hover group transition-all duration-700 ${reason.highlight ? 'border-accent/30' : ''} ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-                style={{ transitionDelay: `${index * 100 + 500}ms` }}
-              >
-                <div className={`feature-icon mb-6 group-hover:scale-110 transition-all duration-300 ${reason.highlight ? 'bg-accent/15 border-accent/30 group-hover:border-accent/50' : 'group-hover:border-primary/50'}`}>
-                  <reason.icon className={`w-6 h-6 ${reason.highlight ? 'text-accent' : 'text-primary'}`} />
-                </div>
-                <h3 className={`font-display text-lg font-semibold mb-3 transition-colors duration-300 ${reason.highlight ? 'group-hover:text-accent' : 'group-hover:text-primary'}`}>{reason.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{reason.description}</p>
+                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+                  {reason.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {reason.description}
+                </p>
               </div>
             ))}
           </div>
