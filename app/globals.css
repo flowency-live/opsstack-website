@@ -74,6 +74,17 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+
+  /* Text selection highlight - brand lilac */
+  ::selection {
+    background-color: hsl(262 83% 68% / 0.4);
+    color: hsl(0 0% 100%);
+  }
+
+  ::-moz-selection {
+    background-color: hsl(262 83% 68% / 0.4);
+    color: hsl(0 0% 100%);
+  }
 }
 
 @layer components {

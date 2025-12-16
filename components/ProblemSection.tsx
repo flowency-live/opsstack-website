@@ -49,8 +49,8 @@ const ProblemSection = () => {
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl">
-          {/* Header - Left aligned like Anythink */}
-          <div className="mb-16">
+          {/* Header - Left aligned */}
+          <div className="mb-12">
             {/* Headline */}
             <h2
               className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
@@ -60,24 +60,31 @@ const ProblemSection = () => {
 
             {/* Subhead */}
             <p
-              className={`text-xl text-muted-foreground max-w-xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`text-xl text-muted-foreground max-w-2xl transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
             >
               One simple system, built around how your business actually runs.
             </p>
           </div>
 
-          {/* Feature Cards - 3x2 Grid like Anythink */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+          {/* Intro Line */}
+          <p
+            className={`text-muted-foreground max-w-2xl mb-12 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            Most SMEs run on spreadsheets, inboxes and heroic memory. You&apos;ve built something real - but your systems aren&apos;t empowering you.
+          </p>
+
+          {/* Feature Cards - 2x2 Grid */}
+          <div className="grid md:grid-cols-2 gap-5 mb-16">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`p-6 rounded-xl border border-border/50 bg-card/50 hover:bg-card hover:border-primary/50 transition-all duration-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group p-6 rounded-2xl border border-border/30 bg-card/30 transition-all duration-300 hover:border-border ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${index * 75 + 200}ms` }}
               >
-                <h3 className="font-display text-lg font-semibold text-primary mb-3">
+                <h3 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
               </div>
