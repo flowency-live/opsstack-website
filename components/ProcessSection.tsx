@@ -2,27 +2,47 @@ import { ArrowRight } from "lucide-react";
 
 const steps = [
   {
-    number: "01",
+    bars: 1,
     title: "Discovery Day",
     subtitle: "Clarity first",
     description: "We learn how your business really runs, identify the blockers and show you what can change. You leave with clarity, a value picture and a working starting point.",
     highlight: "Walk away with insights"
   },
   {
-    number: "02",
+    bars: 2,
     title: "Build Week",
     subtitle: "Working product in your hands",
     description: "We build the first usable version of your business operating system. Not mockups. Not decks. Real software you can use immediately.",
     highlight: "Real, working software"
   },
   {
-    number: "03",
+    bars: 3,
     title: "Evolve",
     subtitle: "Add capability at your pace",
     description: "You add capability at your own pace using Credits. No retainers. No long contracts. No surprises. Just practical improvements when you want them.",
     highlight: "Scale on your terms"
   },
 ];
+
+// Logo-style stacked bars component
+const StepBars = ({ count }: { count: number }) => {
+  const barColors = [
+    'bg-white/90',           // Top bar - lightest
+    'bg-[hsl(262,60%,75%)]', // Middle bar - medium purple
+    'bg-primary',            // Bottom bar - brand purple
+  ];
+
+  return (
+    <div className="flex flex-col gap-1.5 w-14 mb-6">
+      {Array.from({ length: count }).map((_, i) => (
+        <div
+          key={i}
+          className={`h-3 rounded-full ${barColors[i]}`}
+        />
+      ))}
+    </div>
+  );
+};
 
 const ProcessSection = () => {
   return (
@@ -47,10 +67,8 @@ const ProcessSection = () => {
           <div className="grid md:grid-cols-3 gap-10 lg:gap-12 mb-16">
             {steps.map((step, index) => (
               <div key={index}>
-                {/* Number Badge */}
-                <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg mb-6">
-                  {step.number}
-                </div>
+                {/* Logo Bars */}
+                <StepBars count={step.bars} />
 
                 {/* Title */}
                 <h3 className="text-xl font-semibold text-foreground mb-1">
