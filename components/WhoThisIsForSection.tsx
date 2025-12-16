@@ -10,7 +10,7 @@ const audiences = [
 const WhoThisIsForSection = () => {
   return (
     <section className="relative py-24 lg:py-32">
-      {/* Clean background */}
+      {/* Back to base dark */}
       <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">

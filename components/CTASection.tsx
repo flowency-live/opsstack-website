@@ -10,7 +10,7 @@ const steps = [
 const CTASection = () => {
   return (
     <section id="contact" className="relative py-24 lg:py-32">
-      {/* Clean background */}
+      {/* Base dark background */}
       <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">

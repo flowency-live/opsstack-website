@@ -20,8 +20,9 @@ const features = [
 const ProblemSection = () => {
   return (
     <section className="relative py-24 lg:py-32">
-      {/* Clean background */}
+      {/* Slightly lighter background */}
       <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-white/[0.02]" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl">
@@ -38,9 +39,9 @@ const ProblemSection = () => {
 
             {/* Accent bar */}
             <div
-              className="w-32 h-1 mt-6 rounded-full"
+              className="w-72 h-1 mt-6 rounded-full"
               style={{
-                background: 'linear-gradient(90deg, hsl(262 83% 58%), hsl(262 83% 68%))'
+                background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 40%, hsl(262 30% 20%) 100%)'
               }}
             />
           </div>

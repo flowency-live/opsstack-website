@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "OpsStack-Website",
+			"path": "../.."
+		},
+		{
+			"name": "OpsStack-Builder",
+			"path": "../../../OpsStack-Builder"
+		},
+		{
+			"name": "OpsStack-Backlog",
+			"path": "../../../OpsStack-Backlog"
+		}
+	]
+}

@@ -27,8 +27,9 @@ const steps = [
 const ProcessSection = () => {
   return (
     <section id="process" className="relative py-24 lg:py-32">
-      {/* Clean background */}
+      {/* Lightest background - middle of the wave */}
       <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-white/[0.04]" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl">
