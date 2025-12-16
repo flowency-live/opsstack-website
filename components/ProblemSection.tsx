@@ -70,7 +70,8 @@ const ProblemSection = () => {
           <p
             className={`text-muted-foreground max-w-2xl mb-12 transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
-            Most SMEs run on spreadsheets, inboxes and heroic memory. You&apos;ve built something real - but your systems aren&apos;t empowering you.
+            Most SMEs run on spreadsheets, inboxes and heroics.<br />
+            You&apos;ve built something real - but your systems aren&apos;t empowering you.
           </p>
 
           {/* Feature Cards - 2x2 Grid */}
