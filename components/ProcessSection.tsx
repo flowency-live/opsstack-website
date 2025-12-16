@@ -24,7 +24,7 @@ const steps = [
   },
 ];
 
-// Logo-style stacked bars component
+// Logo-style stacked bars component - bottom aligned
 const StepBars = ({ count }: { count: number }) => {
   const barColors = [
     'bg-white/90',           // Top bar - lightest
@@ -33,7 +33,7 @@ const StepBars = ({ count }: { count: number }) => {
   ];
 
   return (
-    <div className="flex flex-col gap-1.5 w-14 mb-6">
+    <div className="flex flex-col justify-end gap-1.5 w-14 h-[54px] mb-6">
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
