@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Services - OpStack',
-  description: 'Build, Automate, Amplify. Fast, practical digital capability for SMEs.',
+  title: 'What We Build - OpStack',
+  description: 'Build, Automate, Amplify. The tools, systems and intelligence your business is missing - delivered in days, not months.',
 }
 
 export default function ServicesPage() {
@@ -12,35 +12,25 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-20">
-        <div className="absolute top-10 right-10 w-[500px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 -left-20 w-[400px] h-[500px] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-background" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Services
+              What We Build
             </h1>
 
             <h2 className="text-2xl md:text-4xl font-bold text-foreground/80">
-              Fast, practical digital capability for SMEs
+              Build. Automate. Amplify.
             </h2>
 
             <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              We build the tools, systems and automations your business is missing.
+              The tools, systems and intelligence your business is missing - delivered in days, not months. Stop paying for ten subscriptions you only half-use.
             </p>
 
-            <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-              Everything tailored. Everything delivered fast. Everything improves your operation from day one.
+            <p className="text-xl md:text-2xl font-semibold text-primary">
+              &ldquo;We focus on Outcomes, not billable hours. Capability, not consultancy.&rdquo;
             </p>
-
-            <div className="pt-6 space-y-4">
-              <p className="text-2xl md:text-3xl font-bold gradient-text">
-                Outcomes, not hours. Capability, not consultancy.
-              </p>
-              <p className="text-2xl md:text-3xl font-bold gradient-text">
-                Clarity + Speed + Capability.
-              </p>
-            </div>
           </div>
         </div>
       </section>
