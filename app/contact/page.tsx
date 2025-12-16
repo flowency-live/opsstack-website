@@ -157,22 +157,28 @@ export default function ContactPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/10" />
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Purple gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+          }}
+        />
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-display text-3xl md:text-5xl font-bold">
-              Digital transformation without <span className="gradient-text">the theatre</span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-white">
+              Digital transformation without the theatre
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
               No expensive consultancies. No six-month discovery phases. No slide decks.
             </p>
             <div className="space-y-4 text-2xl md:text-3xl font-bold">
-              <div className="gradient-text">Get clarity.</div>
-              <div className="gradient-text">Get capability.</div>
-              <div className="gradient-text">Get results.</div>
+              <div className="text-white">Get clarity.</div>
+              <div className="text-white">Get capability.</div>
+              <div className="text-white">Get results.</div>
             </div>
-            <p className="text-foreground/50 text-sm pt-4">
+            <p className="text-white/60 text-sm pt-4">
               No commitment required. No sales pitch. Just value.
             </p>
           </div>

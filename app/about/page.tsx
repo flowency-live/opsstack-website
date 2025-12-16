@@ -278,28 +278,33 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Purple gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+          }}
+        />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                If your business is held together by good people compensating for bad systems,{" "}
-                <span className="text-primary">we fix that.</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
+                If your business is held together by good people compensating for bad systems, we fix that.
               </h2>
 
-              <p className="text-xl text-muted-foreground mb-2">
+              <p className="text-xl text-white/80 mb-2">
                 It&apos;s time SMEs had their own operating system.
               </p>
-              <p className="text-xl text-foreground font-medium">
+              <p className="text-xl text-white font-medium">
                 That&apos;s what we build.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link href="/contact">
-                <Button variant="default" size="lg" className="group">
+                <Button variant="secondary" size="lg" className="group bg-white text-primary hover:bg-white/90">
                   Book a Working Session
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>

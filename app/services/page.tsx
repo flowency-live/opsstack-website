@@ -274,17 +274,22 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Purple gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+          }}
+        />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Ready to <span className="text-primary">build?</span>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
+                Ready to build?
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl">
+              <p className="text-xl text-white/80 max-w-2xl">
                 A working session is the fastest way to see what&apos;s possible.
               </p>
             </div>
@@ -297,9 +302,9 @@ export default function ServicesPage() {
               ].map((step, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 text-lg text-foreground"
+                  className="flex items-center gap-4 text-lg text-white"
                 >
-                  <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-white flex-shrink-0" />
                   {step}
                 </li>
               ))}
@@ -307,7 +312,7 @@ export default function ServicesPage() {
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link href="/contact">
-                <Button variant="default" size="lg" className="group">
+                <Button variant="secondary" size="lg" className="group bg-white text-primary hover:bg-white/90">
                   Book a Working Session
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
