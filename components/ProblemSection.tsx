@@ -1,7 +1,30 @@
 'use client'
 
-import { AlertTriangle, FileSpreadsheet, Copy, Eye, Brain } from "lucide-react";
+import { Layers, BarChart3, Zap, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+
+const features = [
+  {
+    icon: Layers,
+    title: "One Place for Everything",
+    description: "Jobs, customers, data, workflow — no more tab-switching or copy-pasting between systems.",
+  },
+  {
+    icon: BarChart3,
+    title: "Real Margins, Not Guesses",
+    description: "Dashboards that show what's actually happening. Live numbers you can trust.",
+  },
+  {
+    icon: Zap,
+    title: "Automation That Actually Helps",
+    description: "Remove the repetitive admin. Keep the human judgment where it matters.",
+  },
+  {
+    icon: Users,
+    title: "Shaped to Your Team",
+    description: "Built around your people and your process. Not a template you bend yourself to fit.",
+  },
+];
 
 const ProblemSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +37,7 @@ const ProblemSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     if (sectionRef.current) {
@@ -24,86 +47,66 @@ const ProblemSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const problems = [
-    { icon: FileSpreadsheet, text: "Manual updates everywhere" },
-    { icon: Copy, text: "Copy-paste between systems" },
-    { icon: Eye, text: "No real visibility" },
-    { icon: Brain, text: "Decisions made on gut feel" },
-  ];
-
   return (
-    <section ref={sectionRef} className="relative py-24 overflow-hidden">
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background" />
-
-      {/* Floating accents */}
-      <div className="absolute top-20 right-[10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float-gentle" />
+    <section ref={sectionRef} className="relative py-24 lg:py-32">
+      {/* Clean background */}
+      <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-destructive/10 border border-destructive/20 mb-6">
-              <AlertTriangle className="w-4 h-4 text-destructive" />
-              <span className="text-sm font-medium text-destructive">The truth nobody tells SMEs</span>
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Spreadsheets feel comfortable{" "}
-              <span className="gradient-text">until they become a trap.</span>
-            </h2>
-          </div>
+        <div className="max-w-5xl mx-auto">
+          {/* Intro Line */}
+          <p
+            className={`text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            Most SMEs run on spreadsheets, inboxes and heroic memory. You&apos;ve built something real — but your systems aren&apos;t empowering you.
+          </p>
 
-          {/* Problem Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            {problems.map((problem, index) => (
+          {/* Headline */}
+          <h2
+            className={`font-display text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            Your Business <span className="text-primary">Operating System</span>
+          </h2>
+
+          {/* Subhead */}
+          <p
+            className={`text-xl text-muted-foreground text-center max-w-xl mx-auto mb-16 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            One simple system, built around how your business actually runs.
+          </p>
+
+          {/* Feature Cards - 2x2 Grid */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+            {features.map((feature, index) => (
               <div
                 key={index}
-                className={`glass-card p-4 text-center card-hover transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                style={{ transitionDelay: `${index * 100 + 200}ms` }}
+                className={`group p-6 lg:p-8 rounded-xl border border-border/50 bg-card/30 hover:border-primary/30 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100 + 300}ms` }}
               >
-                <div className="feature-icon mx-auto mb-3">
-                  <problem.icon className="w-5 h-5 text-primary" />
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
+                    <feature.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-lg font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm text-muted-foreground">{problem.text}</p>
               </div>
             ))}
           </div>
 
-          {/* Main Content */}
-          <div className={`glass-card p-8 md:p-12 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="space-y-6 text-center">
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Most SMEs run on spreadsheets, inboxes and heroic memory. You&apos;ve built something real - but your systems haven&apos;t kept up.
-              </p>
-
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Your team is firefighting because the systems you need don&apos;t exist.
-                You&apos;re compensating with spreadsheets, memory and heroic effort.
-              </p>
-
-              <div className="w-16 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mx-auto" />
-
-              <p className="text-xl font-medium text-foreground">
-                And here&apos;s the truth: none of this is your fault.
-              </p>
-
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                SMEs were never given access to the tools, capability or expertise that bigger firms take for granted. Digital transformation was sold as something slow, expensive and out of reach.
-              </p>
-
-              <p className="text-lg font-display font-semibold gradient-text pt-4">
-                We&apos;re here to change that.
-              </p>
-            </div>
-          </div>
-
-          {/* Bottom Tagline */}
-          <div className={`mt-12 text-center transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl border border-primary/20 bg-primary/5">
-              <span className="text-muted-foreground">Our superpower isn&apos;t AI.</span>
-              <span className="font-medium gradient-text">It&apos;s making digital transformation accessible.</span>
-            </div>
-          </div>
+          {/* Closing Line */}
+          <p
+            className={`text-center text-lg transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
+            <span className="text-muted-foreground">Our superpower isn&apos;t AI.</span>{" "}
+            <span className="text-primary font-medium">It&apos;s making digital transformation accessible.</span>
+          </p>
         </div>
       </div>
     </section>
