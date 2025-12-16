@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Pricing - OpsStack',
+  title: 'Pricing - OpStack',
   description: 'Fast, transparent, SME-friendly pricing. You only pay for value.',
 }
 
@@ -379,7 +379,7 @@ export default function PricingPage() {
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="font-display text-3xl md:text-5xl font-bold">
-              OpsStack is <span className="gradient-text">simple</span>
+              OpStack is <span className="gradient-text">simple</span>
             </h2>
             <div className="space-y-4 text-xl text-foreground/80">
               <div className="flex items-center justify-center gap-3 flex-wrap">

@@ -23,8 +23,8 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <img
-              src="/opsstack-logo.png"
-              alt="OpsStack"
+              src="/opstack-logo.png"
+              alt="OpStack"
               className="h-10 w-auto group-hover:scale-105 transition-transform"
             />
           </Link>

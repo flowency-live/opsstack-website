@@ -8,7 +8,7 @@ export default function DigitalCard() {
 
   useEffect(() => {
     // Generate QR code URL using QR Server API
-    const cardUrl = encodeURIComponent('https://www.opsstack.co.uk/card')
+    const cardUrl = encodeURIComponent('https://www.opstack.uk/card')
     setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${cardUrl}`)
   }, [])
 
@@ -16,10 +16,10 @@ export default function DigitalCard() {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Jason Jones
-ORG:OpsStack
+ORG:OpStack
 TITLE:Founder - CTO Services
-EMAIL:hello@opsstack.co.uk
-URL:https://www.opsstack.co.uk
+EMAIL:hello@opstack.uk
+URL:https://www.opstack.uk
 TEL;TYPE=WORK,VOICE:+44 7758 240770
 NOTE:Fast, Practical Digital Capability for SMEs. We act as your internal CTO and delivery team.
 END:VCARD`
@@ -28,7 +28,7 @@ END:VCARD`
     const url = window.URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = 'Jason-Jones-OpsStack.vcf'
+    link.download = 'Jason-Jones-OpStack.vcf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -45,8 +45,8 @@ END:VCARD`
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-transparent to-purple/20"></div>
             <div className="mb-4 relative">
               <Image
-                src="/opsstack-logo.png"
-                alt="OpsStack"
+                src="/opstack-logo.png"
+                alt="OpStack"
                 width={160}
                 height={60}
                 className="h-16 w-auto mx-auto drop-shadow-lg"
@@ -61,7 +61,7 @@ END:VCARD`
             {/* Company */}
             <div>
               <h2 className="text-xl font-bold text-foreground mb-2">
-                OpsStack
+                OpStack
               </h2>
               <p className="text-sm text-muted-foreground italic">
                 Fast, Practical Digital Capability for SMEs
@@ -71,7 +71,7 @@ END:VCARD`
             {/* Contact Info */}
             <div className="space-y-4">
               <a
-                href="mailto:hello@opsstack.co.uk"
+                href="mailto:hello@opstack.uk"
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors group"
               >
                 <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
@@ -81,12 +81,12 @@ END:VCARD`
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Email</p>
-                  <p className="text-sm font-medium">hello@opsstack.co.uk</p>
+                  <p className="text-sm font-medium">hello@opstack.uk</p>
                 </div>
               </a>
 
               <a
-                href="https://www.opsstack.co.uk"
+                href="https://www.opstack.uk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors group"
@@ -98,7 +98,7 @@ END:VCARD`
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground">Website</p>
-                  <p className="text-sm font-medium">opsstack.co.uk</p>
+                  <p className="text-sm font-medium">opstack.uk</p>
                 </div>
               </a>
 
@@ -169,7 +169,7 @@ END:VCARD`
 
         {/* Footer */}
         <p className="text-center text-muted-foreground text-sm mt-6">
-          OpsStack - CTO Services for SMEs
+          OpStack - CTO Services for SMEs
         </p>
       </div>
     </div>

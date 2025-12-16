@@ -13,9 +13,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "OpsStack - Fast, Practical Digital Capability for SMEs",
+  title: "OpStack - Fast, Practical Digital Capability for SMEs",
   description: "We act as your internal CTO and delivery team. Building the digital operating system your business should have had years ago. Clarity + Speed + Capability.",
-  keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "OpsStack"],
+  keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "OpStack"],
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },

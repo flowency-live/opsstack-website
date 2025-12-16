@@ -36,7 +36,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       // In production, this would be replaced with an API endpoint
       const subject = `Contact Form: ${formData.name} from ${formData.company || 'N/A'}`
       const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone || 'N/A'}%0D%0ACompany: ${formData.company || 'N/A'}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
-      const mailtoLink = `mailto:hello@opsstack.co.uk?subject=${encodeURIComponent(subject)}&body=${body}`
+      const mailtoLink = `mailto:hello@opstack.uk?subject=${encodeURIComponent(subject)}&body=${body}`
 
       window.location.href = mailtoLink
 
@@ -166,7 +166,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       )}
       {submitStatus === 'error' && (
         <p className="text-center text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-xl py-3">
-          Something went wrong. Please try again or email us directly at hello@opsstack.co.uk
+          Something went wrong. Please try again or email us directly at hello@opstack.uk
         </p>
       )}
     </form>

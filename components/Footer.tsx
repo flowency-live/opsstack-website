@@ -28,8 +28,8 @@ const Footer = () => {
             <div className="md:col-span-2">
               <Link href="/" className="flex items-center mb-4 group">
                 <Image
-                  src="/opsstack-logo-full.png"
-                  alt="OpsStack"
+                  src="/opstack-logo.png"
+                  alt="OpStack"
                   width={140}
                   height={32}
                   className="h-8 w-auto"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
                   <Twitter className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
-                <a href="mailto:hello@opsstack.co.uk" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
+                <a href="mailto:hello@opstack.uk" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
                   <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
                 </a>
               </div>
@@ -82,7 +82,7 @@ const Footer = () => {
           {/* Bottom Bar */}
           <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2025 OpsStack. All rights reserved.
+              © 2025 OpStack. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               Built with technology. <span className="gradient-text">Powered by humans.</span>
