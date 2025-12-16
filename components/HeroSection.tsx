@@ -31,14 +31,14 @@ const HeroSection = () => {
 
       {/* Tilted Product Grid - Behind text, fading from right to left */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Grid container - rotated 15deg, positioned off right edge */}
+        {/* Grid container - rotated 15deg, positioned to sit behind text on wide screens */}
         <div
           className="absolute grid grid-cols-4 gap-8"
           style={{
             transform: 'rotate(15deg)',
-            right: '-100px',
-            top: '-100px',
-            width: '900px',
+            right: '5%',
+            top: '-80px',
+            width: '950px',
             zIndex: 1,
           }}
         >
