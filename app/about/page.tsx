@@ -8,12 +8,18 @@ export const metadata = {
   description: 'Built for SMEs who deserve better. 30 years of building systems. One mission: Give SMEs the digital capability bigger firms take for granted.',
 }
 
-const expertise = [
-  'Product strategy and rapid build',
-  'Cloud architecture and modern engineering',
-  'AI-assisted development and automation',
-  'Operations and workflow optimisation',
-  'Data modelling and intelligent dashboards',
+const industries = [
+  'Financial Services & FinTech',
+  'Insurance',
+  'Healthcare',
+  'Aviation',
+  'Automotive',
+  'Construction',
+  'Manufacturing',
+  'Energy & Utilities',
+  'Media & Broadcasting',
+  'Public Sector',
+  'Charity Sector',
 ]
 
 const howWeWork = [
@@ -112,7 +118,7 @@ export default function AboutPage() {
                   alt="Jason Jones - OpStack Founder"
                   width={340}
                   height={425}
-                  className="rounded-2xl border border-border/40 w-full max-w-[300px] mx-auto lg:max-w-none lg:w-full object-cover"
+                  className="rounded-2xl border border-border dark:border-border/40 w-full max-w-[300px] mx-auto lg:max-w-none lg:w-full object-cover"
                 />
               </div>
             </div>
@@ -135,7 +141,23 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mb-10">
               <p>
-                Senior product, technology and operations leaders who&apos;ve spent decades building real systems across complex industries.
+                An experienced and battle-scarred collective, with some of today&apos;s brightest young minds. Combined 100 years building real systems and operational improvements across:
+              </p>
+
+              {/* Industry tags */}
+              <div className="flex flex-wrap gap-3">
+                {industries.map((item, i) => (
+                  <span
+                    key={i}
+                    className="px-4 py-2 rounded-full border border-border dark:border-border/40 bg-card text-foreground hover:border-primary/60 transition-colors"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              <p>
+                And dozens of SMEs you&apos;ve never heard of - where we&apos;ve done our best work.
               </p>
 
               <p className="text-foreground font-medium text-xl">
@@ -145,18 +167,6 @@ export default function AboutPage() {
               <p>
                 Fast. Tailored. Practical. Focused on real outcomes.
               </p>
-            </div>
-
-            {/* Expertise tags */}
-            <div className="flex flex-wrap gap-3">
-              {expertise.map((item, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 rounded-full border border-border/40 bg-card text-foreground hover:border-primary/60 transition-colors"
-                >
-                  {item}
-                </span>
-              ))}
             </div>
           </div>
         </div>
@@ -178,7 +188,7 @@ export default function AboutPage() {
               {howWeWork.map((item, i) => (
                 <div
                   key={i}
-                  className="group p-7 rounded-2xl border border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)]"
+                  className="group p-7 rounded-2xl border border-border dark:border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)]"
                 >
                   <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                     {item.title}

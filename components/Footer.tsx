@@ -1,8 +1,19 @@
+'use client'
+
 import { Linkedin, Twitter, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 const Footer = () => {
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const links = {
     company: [
       { label: "About", href: "/about" },
@@ -22,19 +33,21 @@ const Footer = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-primary/5 rounded-full blur-3xl" />
 
       <div className="container px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl">
           <div className="grid md:grid-cols-4 gap-8 md:gap-12">
             {/* Brand Column */}
             <div className="md:col-span-2">
-              <Link href="/" className="flex items-center mb-4 group">
-                <Image
-                  src="/opstack-logo.png"
-                  alt="OpStack"
-                  width={140}
-                  height={32}
-                  className="h-8 w-auto"
-                />
-              </Link>
+              <div className="mb-4">
+                {mounted && (
+                  <Image
+                    src={theme === 'dark' ? '/PoweredBy_Dark.png' : '/PoweredBy_Light.png'}
+                    alt="Powered by OpStack"
+                    width={200}
+                    height={60}
+                    className="h-14 w-auto"
+                  />
+                )}
+              </div>
               <p className="text-sm text-muted-foreground mb-6 max-w-sm">
                 We build the digital operating system your business should have had years ago. Tailored to how you actually work. Delivered in days, not months.
               </p>
@@ -80,7 +93,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="mt-12 pt-8 border-t border-border/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground">
               © 2025 OpStack. All rights reserved.
             </p>

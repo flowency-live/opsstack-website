@@ -26,10 +26,10 @@ const steps = [
 
 // Logo-style stacked bars component - bottom aligned
 const StepBars = ({ count }: { count: number }) => {
-  const barColors = [
-    'bg-white/90',           // Top bar - lightest
-    'bg-[hsl(262,60%,75%)]', // Middle bar - medium purple
-    'bg-primary',            // Bottom bar - brand purple
+  const barStyles = [
+    'bg-white/90 dark:border-0 border border-border',  // Top bar - lightest (border in light mode)
+    'bg-[hsl(262,60%,75%)]',                           // Middle bar - medium purple
+    'bg-primary',                                       // Bottom bar - brand purple
   ];
 
   return (
@@ -37,7 +37,7 @@ const StepBars = ({ count }: { count: number }) => {
       {Array.from({ length: count }).map((_, i) => (
         <div
           key={i}
-          className={`h-3 rounded-full ${barColors[i]}`}
+          className={`h-3 rounded-full ${barStyles[i]}`}
         />
       ))}
     </div>

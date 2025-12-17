@@ -34,8 +34,8 @@
     --purple-dark: 262 83% 48%;
 
     /* Utility */
-    --border: 225 20% 88%;
-    --input: 225 20% 92%;
+    --border: 225 20% 82%;
+    --input: 225 20% 88%;
     --ring: 262 83% 58%;
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
@@ -142,12 +142,20 @@
 @layer components {
   /* Glass Effects with OpsStack Colors */
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
+    @apply bg-card/60 backdrop-blur-xl border border-border rounded-2xl;
     box-shadow: var(--shadow-card);
   }
 
+  .dark .glass-card {
+    @apply border-border/50;
+  }
+
   .glass-strong {
-    @apply bg-card/80 backdrop-blur-xl border border-border/80 rounded-2xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl;
+  }
+
+  .dark .glass-strong {
+    @apply border-border/80;
   }
 
   /* Text Effects */
