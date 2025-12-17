@@ -141,7 +141,7 @@ export default function AboutPage() {
 
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl mb-10">
               <p>
-                An experienced and battle-scarred collective, with some of today&apos;s brightest young minds. Combined 100 years building real systems and operational improvements across:
+                An experienced and battle-scarred collective, working with some of today&apos;s brightest young minds. Combined 100 years building real systems and operational improvements across:
               </p>
 
               {/* Industry tags */}
