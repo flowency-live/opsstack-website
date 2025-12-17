@@ -46,90 +46,32 @@ const howWeWork = [
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-28">
-        <div className="absolute inset-0 bg-background" />
-
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-              Built for SMEs who <span className="text-primary">deserve better</span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed">
-              30 years of building systems. One mission: Give SMEs the digital capability bigger firms take for granted.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why This Exists */}
-      <section className="relative py-24 lg:py-32">
+      {/* Why This Exists - Founder Story */}
+      <section className="relative py-24 lg:py-32 pt-32 md:pt-40">
         <div className="absolute inset-0 bg-background" />
         <div className="absolute inset-0 bg-white/[0.02]" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
+            {/* Header */}
             <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 Why this <span className="text-primary">exists</span>
-              </h2>
+              </h1>
 
               {/* Accent bar */}
               <div
-                className="w-full h-1 mt-6 mb-8 rounded-full"
+                className="w-full h-1 mt-6 rounded-full"
                 style={{
                   background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              <p className="text-foreground font-medium text-xl">
-                The way SMEs build digital capability is broken.
-              </p>
-
-              <p>
-                Consultancies sell frameworks that gather dust. Agencies deliver websites that don&apos;t help anyone do their job. Development teams over-engineer systems nobody asked for. Meanwhile, SMEs run multi-million pound operations on spreadsheets, inboxes and heroic memory.
-              </p>
-
-              <p>
-                Not because they lack ambition. Because they lack access. No CTO. No delivery team. No one to diagnose the real problem and build a fix.
-              </p>
-
-              <p className="text-foreground font-medium">
-                That gap is why OpStack exists.
-              </p>
-
-              <p className="text-lg">
-                <span className="text-primary font-medium">If you can describe the problem, we can build the system.</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Founder */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.04]" />
-
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="grid md:grid-cols-[200px_1fr] gap-10 items-start">
-              {/* Photo */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/jason-jones.jpg"
-                  alt="Jason Jones - Founder"
-                  width={200}
-                  height={200}
-                  className="rounded-2xl border border-border/40"
-                />
-              </div>
-
-              {/* Story */}
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+            {/* Two column layout - text left, photo right on desktop */}
+            <div className="grid lg:grid-cols-[1fr_340px] gap-12 lg:gap-16 items-start">
+              {/* Main Story */}
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed order-2 lg:order-1">
                 <p>
                   I&apos;ve spent 30 years building software, helping other teams build software, fixing operations and delivering real value. I&apos;ve watched countless large organisations throw millions at &ldquo;Digital Transformation&rdquo; - polished slide decks that only work in the boardroom, frameworks that only ever worked in one context at a certain time, four-figure day rates paid to people with certificates not experience, agencies delivering bells and whistles on beautiful products that don&apos;t address the fundamental issues.
                 </p>
@@ -146,7 +88,7 @@ export default function AboutPage() {
                   No CTO. No delivery team. No one who can diagnose the real problem and actually deliver a fix. No partner who tells them the truth. No access to the kind of capability that bigger firms take for granted. Google results showing enterprise solutions at enterprise prices - not affordable, not practical.
                 </p>
 
-                <p className="text-foreground font-medium">
+                <p className="text-foreground font-medium text-xl">
                   That gap is why this company exists.
                 </p>
 
@@ -161,6 +103,17 @@ export default function AboutPage() {
                 <p className="text-foreground font-medium pt-4">
                   OpStack Founder - Jason Jones
                 </p>
+              </div>
+
+              {/* Photo - larger, on right */}
+              <div className="order-1 lg:order-2 lg:sticky lg:top-32">
+                <Image
+                  src="/jason-jones.jpg"
+                  alt="Jason Jones - OpStack Founder"
+                  width={340}
+                  height={425}
+                  className="rounded-2xl border border-border/40 w-full max-w-[300px] mx-auto lg:max-w-none lg:w-full object-cover"
+                />
               </div>
             </div>
           </div>
