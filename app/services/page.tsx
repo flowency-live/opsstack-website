@@ -24,8 +24,12 @@ export default function ServicesPage() {
               Build. Automate. Amplify.
             </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
               The tools, systems and intelligence your business is missing - delivered in days, not months. Stop paying for ten subscriptions you only half-use.
+            </p>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
+              We handle the technical heavy lifting so you can focus on what truly matters.
             </p>
 
             <p className="text-lg md:text-xl text-primary font-medium">
@@ -249,7 +253,7 @@ export default function ServicesPage() {
                 },
                 {
                   title: 'Momentum as a Service',
-                  description: "Every time you engage us, something real gets built or fixed. No theatre. No alignment sessions. No drag. Just forward motion.",
+                  description: "Every time you engage us, something real gets built or fixed. No theatre. No alignment sessions. No drag. Just forward motion. We don't hand over a system and disappear - we stay with you as it grows.",
                 },
               ].map((item, i) => (
                 <div

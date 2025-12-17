@@ -19,7 +19,7 @@ const steps = [
     bars: 3,
     title: "Evolve",
     subtitle: "Add capability at your pace",
-    description: "You add capability at your own pace using Credits. No retainers. No long contracts. No surprises. Just practical improvements when you want them.",
+    description: "Your system evolves with your business. Add capability when you need it - not before. No retainers. No long contracts. No surprises.",
     highlight: "Scale on your terms"
   },
 ];

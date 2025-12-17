@@ -39,9 +39,8 @@ const WhyThisWorksSection = () => {
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Why this <span className="text-primary">works</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              Most SMEs run on spreadsheets, inboxes and heroics.<br />
-              You&apos;ve built something real - but your systems aren&apos;t empowering you.
+            <p className="text-lg text-foreground font-medium max-w-2xl">
+              Real tools that deliver ROI. Not demos. Not decks. Not theatre.
             </p>
 
             {/* Accent bar */}

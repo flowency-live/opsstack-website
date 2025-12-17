@@ -65,8 +65,9 @@ const ProblemSection = () => {
 
           {/* Closing Line */}
           <p className="text-lg">
-            <span className="text-muted-foreground">Our superpower isn&apos;t AI.</span>{" "}
-            <span className="text-primary font-medium">It&apos;s making digital transformation accessible.</span>
+            <span className="text-muted-foreground">This is digital transformation</span>{" "}
+            <span className="text-primary font-medium">democratised</span>{" "}
+            <span className="text-muted-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
           </p>
         </div>
       </div>
