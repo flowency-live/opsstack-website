@@ -25,7 +25,7 @@ const ScrollProgress = () => {
         className="h-full transition-all duration-75 ease-out"
         style={{
           width: `${progress}%`,
-          background: 'linear-gradient(90deg, hsl(262 83% 58%), hsl(262 83% 68%))',
+          background: 'linear-gradient(90deg, hsl(250 75% 58%), hsl(250 75% 68%))',
         }}
       />
     </div>

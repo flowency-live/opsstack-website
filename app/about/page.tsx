@@ -62,14 +62,14 @@ export default function AboutPage() {
             {/* Header */}
             <div className="mb-12">
               <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Why this <span className="text-primary">exists</span>
+                Why this <span className="text-primary">exists</span> - founder story
               </h1>
 
               {/* Accent bar */}
               <div
                 className="w-full h-1 mt-6 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>
@@ -188,7 +188,7 @@ export default function AboutPage() {
               {howWeWork.map((item, i) => (
                 <div
                   key={i}
-                  className="group p-7 rounded-2xl border border-border dark:border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)]"
+                  className="group p-7 rounded-2xl border border-border dark:border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)]"
                 >
                   <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                     {item.title}
@@ -242,7 +242,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+            background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
           }}
         />
 

@@ -79,7 +79,7 @@ export default function PricingPage() {
             <div
               className="w-full h-1 rounded-full"
               style={{
-                background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
               }}
             />
           </div>
@@ -105,7 +105,7 @@ export default function PricingPage() {
               <div
                 className="w-full h-1 mt-6 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>
@@ -166,7 +166,7 @@ export default function PricingPage() {
               <div
                 className="w-full h-1 mt-6 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>
@@ -175,7 +175,7 @@ export default function PricingPage() {
               {mvpTiers.map((tier, i) => (
                 <div
                   key={i}
-                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)] ${
+                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)] ${
                     tier.featured
                       ? 'border-primary/50'
                       : 'border-border dark:border-border/40'
@@ -239,7 +239,7 @@ export default function PricingPage() {
               <div
                 className="w-full h-1 mt-6 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>
@@ -248,7 +248,7 @@ export default function PricingPage() {
               {creditPacks.map((pack, i) => (
                 <div
                   key={i}
-                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(262,83%,58%,0.4)] ${
+                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)] ${
                     pack.featured
                       ? 'border-primary/50'
                       : 'border-border dark:border-border/40'
@@ -336,7 +336,7 @@ export default function PricingPage() {
               <div
                 className="w-full h-1 mt-6 rounded-full"
                 style={{
-                  background: 'linear-gradient(90deg, hsl(262 83% 58%) 0%, hsl(262 83% 68%) 30%, transparent 100%)'
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
                 }}
               />
             </div>

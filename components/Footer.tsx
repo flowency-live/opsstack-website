@@ -42,9 +42,9 @@ const Footer = () => {
                   <Image
                     src={theme === 'dark' ? '/PoweredBy_Dark.png' : '/PoweredBy_Light.png'}
                     alt="Powered by OpStack"
-                    width={200}
-                    height={60}
-                    className="h-14 w-auto"
+                    width={400}
+                    height={120}
+                    className="h-28 w-auto"
                   />
                 )}
               </div>

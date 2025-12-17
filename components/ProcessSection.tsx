@@ -28,7 +28,7 @@ const steps = [
 const StepBars = ({ count }: { count: number }) => {
   const barStyles = [
     'bg-white/90 dark:border-0 border border-border',  // Top bar - lightest (border in light mode)
-    'bg-[hsl(262,60%,75%)]',                           // Middle bar - medium purple
+    'bg-[hsl(250,60%,75%)]',                           // Middle bar - medium purple
     'bg-primary',                                       // Bottom bar - brand purple
   ];
 

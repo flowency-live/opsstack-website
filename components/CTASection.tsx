@@ -14,7 +14,7 @@ const CTASection = () => {
       <div
         className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+          background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(250 70% 35%) 50%, hsl(250 60% 20%) 100%)'
         }}
       />
 
