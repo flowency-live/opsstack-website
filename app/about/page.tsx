@@ -116,12 +116,6 @@ export default function AboutPage() {
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Built by someone who&apos;s <span className="text-primary">done this before</span>
-              </h2>
-            </div>
-
             <div className="grid md:grid-cols-[200px_1fr] gap-10 items-start">
               {/* Photo */}
               <div className="flex-shrink-0">
@@ -134,38 +128,40 @@ export default function AboutPage() {
                 />
               </div>
 
-              {/* Bio */}
-              <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Jason Jones spent 30 years building and fixing delivery functions across aviation, finance, healthcare and digital operations - including British Airways, Shell, HSBC, Manchester Airports Group and The Co-operative Bank.
+              {/* Story */}
+              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  I&apos;ve spent 30 years building software, helping other teams build software, fixing operations and delivering real value. I&apos;ve watched countless large organisations throw millions at &ldquo;Digital Transformation&rdquo; - polished slide decks that only work in the boardroom, frameworks that only ever worked in one context at a certain time, four-figure day rates paid to people with certificates not experience, agencies delivering bells and whistles on beautiful products that don&apos;t address the fundamental issues.
                 </p>
 
-                <blockquote className="border-l-4 border-primary pl-6 py-2">
-                  <p className="text-lg text-foreground italic leading-relaxed">
-                    &ldquo;Most transformation failures aren&apos;t technical. They&apos;re human. SMEs don&apos;t need more software - they need someone who can get in the room, understand the real problem, and build a working solution before anyone has time to write a specification document.&rdquo;
-                  </p>
-                </blockquote>
+                <p>
+                  Meanwhile, SMEs turn over the amount big orgs waste on transformation - and do it on spreadsheets, inboxes and heroics.
+                </p>
 
-                {/* Logo strip */}
-                <div className="pt-4">
-                  <p className="text-sm text-muted-foreground mb-4">Experience across:</p>
-                  <div className="flex flex-wrap gap-3 text-sm text-muted-foreground/70">
-                    <span className="px-3 py-1.5 rounded-full border border-border/40 bg-card">British Airways</span>
-                    <span className="px-3 py-1.5 rounded-full border border-border/40 bg-card">Shell</span>
-                    <span className="px-3 py-1.5 rounded-full border border-border/40 bg-card">HSBC</span>
-                    <span className="px-3 py-1.5 rounded-full border border-border/40 bg-card">Manchester Airports Group</span>
-                    <span className="px-3 py-1.5 rounded-full border border-border/40 bg-card">Co-operative Bank</span>
-                  </div>
-                </div>
+                <p>
+                  I&apos;m constantly amazed when I talk to SME friends and colleagues about how operations run on shared spreadsheets, WhatsApp messages, bloating sharepoint sites where you can&apos;t find what you need, great memory. Not because they lack ambition for digital tooling. Because they lack access.
+                </p>
+
+                <p>
+                  No CTO. No delivery team. No one who can diagnose the real problem and actually deliver a fix. No partner who tells them the truth. No access to the kind of capability that bigger firms take for granted. Google results showing enterprise solutions at enterprise prices - not affordable, not practical.
+                </p>
+
+                <p className="text-foreground font-medium">
+                  That gap is why this company exists.
+                </p>
+
+                <p className="text-foreground font-medium">
+                  No bullshit. No disappointment. No fees for something you&apos;ll never use.
+                </p>
+
+                <p className="text-lg">
+                  <span className="text-primary font-medium">If you can describe your business, we can build something that improves your operational efficiency and your bottom line.</span>
+                </p>
+
+                <p className="text-foreground font-medium pt-4">
+                  OpStack Founder - Jason Jones
+                </p>
               </div>
-            </div>
-
-            {/* Testimonial */}
-            <div className="mt-12 p-8 rounded-2xl border border-border/40 bg-card">
-              <p className="text-lg text-foreground italic leading-relaxed mb-4">
-                &ldquo;Jason&apos;s expertise transformed our delivery function. His personable nature and hands-on approach make him invaluable for growth and transformation.&rdquo;
-              </p>
-              <p className="text-primary font-medium">— Rob Trueman, CTO</p>
             </div>
           </div>
         </div>
