@@ -81,7 +81,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  I&apos;m constantly amazed when I talk to SME friends and colleagues about how operations run on shared spreadsheets, WhatsApp messages, bloating sharepoint sites where you can&apos;t find what you need, great memory. Not because they lack ambition for digital tooling. Because they lack access.
+                  I&apos;m constantly amazed when I talk to SME friends and colleagues about how operations run on shared spreadsheets, WhatsApp messages, bloated sharepoint sites where you can&apos;t find what you need, great memory. Not because they lack ambition for digital tooling. Because they lack access.
                 </p>
 
                 <p>
