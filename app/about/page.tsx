@@ -43,10 +43,6 @@ const howWeWork = [
     title: 'Leave clients with capability that lasts',
     description: 'Every engagement leaves you with permanent improvement. Real tools. Real assets. Not documentation. Not theory.',
   },
-  {
-    title: 'Make transformation accessible',
-    description: "Our superpower isn't AI. It's making digital transformation accessible to businesses like yours.",
-  },
 ]
 
 export default function AboutPage() {
@@ -201,37 +197,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Believe */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
+      {/* The Future We're Building */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Layered gradient background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'radial-gradient(ellipse at 30% 20%, hsl(250 60% 25% / 0.4) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, hsl(250 70% 30% / 0.3) 0%, transparent 50%), hsl(var(--background))'
+          }}
+        />
         <div className="absolute inset-0 bg-white/[0.02]" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                What we <span className="text-primary">believe</span>
-              </h2>
-            </div>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+              The Future We&apos;re <span className="text-primary">Building</span>
+            </h2>
 
-            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              <p className="text-foreground font-medium text-xl">
-                SMEs don&apos;t lack ambition. They lack access.
-              </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
+              We&apos;re not just building software. We&apos;re building a future where every SME has the operational clarity and digital capability that used to be reserved for enterprises with six-figure IT budgets. A future where your systems work for you - surfacing insights, eliminating busywork, and giving you back time to focus on growth.
+            </p>
 
-              <p>
-                No CTO. No delivery team. No one to translate their business into the systems they actually need.
-              </p>
-
-              <p className="text-foreground font-medium">
-                That&apos;s the gap we fill.
-              </p>
-
-              <p className="text-lg pt-4">
-                <span className="text-primary font-medium">AI + Humans</span>{" "}
-                <span className="text-foreground">= Practical transformation.</span>
-              </p>
-            </div>
+            <p className="text-lg md:text-xl">
+              <span className="text-muted-foreground">This is digital transformation</span>{" "}
+              <span className="text-primary font-semibold">democratised</span>{" "}
+              <span className="text-muted-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
+            </p>
           </div>
         </div>
       </section>
