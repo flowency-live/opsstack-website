@@ -3,7 +3,6 @@ import ProblemSection from "@/components/ProblemSection";
 import ProcessSection from "@/components/ProcessSection";
 import WhyThisWorksSection from "@/components/WhyThisWorksSection";
 import WhoThisIsForSection from "@/components/WhoThisIsForSection";
-import VisionSection from "@/components/VisionSection";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -14,7 +13,6 @@ const Index = () => {
       <ProcessSection />
       <WhyThisWorksSection />
       <WhoThisIsForSection />
-      <VisionSection />
       <CTASection />
     </main>
   );
