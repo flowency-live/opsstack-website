@@ -1,10 +1,26 @@
-const audiences = [
-  "SMEs turning over £1m to £20m",
-  "Owners drowning in admin they shouldn't be doing",
-  "Teams running the business from Excel and memory",
-  "Fast-growing companies with no internal tech capability",
-  "Stuck between spreadsheets and software you can't afford",
-  "Leaders who want visibility, control and simplicity",
+// Situations grouped by friction point
+const situations = [
+  {
+    heading: "The daily reality",
+    items: [
+      "Drowning in admin you shouldn't be doing",
+      "Running on Excel, memory, and good intentions",
+    ]
+  },
+  {
+    heading: "The stuck feeling",
+    items: [
+      "Too big for spreadsheets, too small for enterprise",
+      "Growing fast with no internal tech capability",
+    ]
+  },
+  {
+    heading: "What you actually want",
+    items: [
+      "Visibility into what's really happening",
+      "Time back for the work that matters",
+    ]
+  },
 ];
 
 const WhoThisIsForSection = () => {
@@ -30,41 +46,48 @@ const WhoThisIsForSection = () => {
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Who This Is For */}
         <div className="max-w-5xl mb-24 lg:mb-32">
-          {/* Header - Left aligned */}
-          <div className="mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Who this is <span className="text-primary">for</span>
+          {/* Header with thesis line as opener */}
+          <div className="mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              You&apos;ll recognise <span className="text-primary">this</span>
             </h2>
+
+            {/* The thesis - prominent, not buried */}
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-3xl">
+              If your business is held together by <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">good people compensating for bad systems</mark>, we fix that.
+            </p>
 
             {/* Accent bar */}
             <div
-              className="w-full h-1 mt-6 rounded-full"
+              className="w-full h-1 mt-8 rounded-full"
               style={{
                 background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
               }}
             />
           </div>
 
-          {/* Audience List - Simple bullet style */}
-          <ul className="space-y-4 mb-12">
-            {audiences.map((audience, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-4 text-lg text-foreground"
-              >
-                <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                {audience}
-              </li>
+          {/* Situations - 3 column, clean typography, no card borders */}
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mb-16">
+            {situations.map((situation, index) => (
+              <div key={index}>
+                <h3 className="text-sm font-semibold text-primary/80 uppercase tracking-wider mb-4">
+                  {situation.heading}
+                </h3>
+                <ul className="space-y-3">
+                  {situation.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className="text-lg text-foreground/90 leading-relaxed"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
 
-          {/* Closing Line */}
-          <p className="text-lg mb-16">
-            <span className="text-muted-foreground">If your business is held together by good people compensating for bad systems,</span>{" "}
-            <span className="text-primary font-medium">we fix that.</span>
-          </p>
-
-          {/* Outgrown No-Code Callout */}
+          {/* Outgrown No-Code Callout - the one featured card */}
           <div className="relative p-8 border-2 border-border dark:border-primary/30 bg-card dark:bg-zinc-800/80">
             {/* Left accent bar */}
             <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
