@@ -51,10 +51,23 @@ const WhoThisIsForSection = () => {
           </ul>
 
           {/* Closing Line */}
-          <p className="text-lg">
+          <p className="text-lg mb-16">
             <span className="text-muted-foreground">If your business is held together by good people compensating for bad systems,</span>{" "}
             <span className="text-primary font-medium">we fix that.</span>
           </p>
+
+          {/* Outgrown No-Code Callout */}
+          <div className="p-8 rounded-2xl border border-primary/30 bg-primary/5">
+            <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              Outgrown your <span className="text-primary">no-code tools</span>?
+            </h3>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-4">
+              You used Replit, Lovable, or Cursor to build something real. Smart move - speed matters. But now you&apos;re stuck: your data lives somewhere you can&apos;t see, token costs are climbing, and every change costs more than the last.
+            </p>
+            <p className="text-lg text-foreground leading-relaxed">
+              We port your tools to a proper AWS stack <span className="text-primary font-medium">you actually own</span>. Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
+            </p>
+          </div>
         </div>
 
         {/* The Future We're Building */}
