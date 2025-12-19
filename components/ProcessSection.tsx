@@ -54,11 +54,12 @@ const ProcessSection = () => {
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl">
           {/* Header - Left aligned */}
-          <div className="mb-16">
+          <div className="mb-20">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               How it <span className="text-primary">works</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+            {/* Subtitle - calm setup, not competing with headline */}
+            <p className="text-lg text-muted-foreground/70 tracking-wide max-w-2xl">
               From first conversation to working system. Here&apos;s how.
             </p>
 
@@ -71,25 +72,25 @@ const ProcessSection = () => {
             />
           </div>
 
-          {/* Process Steps - 3 column grid, no cards */}
-          <div className="grid md:grid-cols-3 gap-10 lg:gap-12 mb-16">
+          {/* Process Steps - 3 column grid with improved rhythm */}
+          <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mb-20">
             {steps.map((step, index) => (
               <div key={index}>
                 {/* Logo Bars */}
                 <StepBars count={step.bars} />
 
-                {/* Title */}
-                <h3 className="text-xl font-semibold text-foreground mb-1">
+                {/* Title - larger, brighter for clear hierarchy */}
+                <h3 className="text-2xl font-bold text-foreground dark:text-white mb-2">
                   {step.title}
                 </h3>
 
-                {/* Subtitle */}
-                <p className="text-primary text-sm font-medium mb-4">
+                {/* Subtitle - the promise, given more prominence */}
+                <p className="text-base font-semibold text-primary/90 mb-6 tracking-wide">
                   {step.subtitle}
                 </p>
 
-                {/* Description */}
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                {/* Description - constrained width, softer color */}
+                <p className="text-muted-foreground/80 leading-relaxed mb-6 max-w-[28ch]">
                   {step.description}
                 </p>
 
@@ -102,13 +103,13 @@ const ProcessSection = () => {
             ))}
           </div>
 
-          {/* Closing Line */}
-          <div>
-            <p className="text-lg mb-2">
-              <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">AI plus humans</mark>{" "}
+          {/* Closing Line - separated, given prominence as closing thought */}
+          <div className="pt-8 border-t border-border/50">
+            <p className="text-xl md:text-2xl font-medium mb-3">
+              <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1.5 rounded-sm">AI plus humans</mark>{" "}
               <span className="text-foreground">equals practical transformation.</span>
             </p>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground/70">
               Digital capability used to be slow and expensive - it&apos;s not anymore.
             </p>
           </div>
