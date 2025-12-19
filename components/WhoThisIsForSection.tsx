@@ -77,12 +77,12 @@ const WhoThisIsForSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-            We&apos;re not just building software. We&apos;re building a future where every SME has the operational clarity and digital capability that used to be reserved for enterprises with six-figure IT budgets. A future where your systems work for you - surfacing insights, eliminating busywork, and giving you back time to focus on growth.
+            We&apos;re not just building software. We&apos;re building a future where every SME has the operational clarity and digital capability that used to be reserved for enterprises with <a href="https://www.youtube.com/watch?v=XEFZ30Cvdnc" target="_blank" rel="noopener noreferrer" className="text-foreground no-underline hover:text-foreground">six-seven</a> figure IT budgets. A future where your systems work for you - surfacing insights, eliminating busywork, and giving you back time to focus on growth.
           </p>
 
           <p className="text-lg md:text-xl">
             <span className="text-foreground">This is digital transformation</span>{" "}
-            <span className="text-primary font-semibold">democratised</span>{" "}
+            <span className="text-primary font-bold text-2xl md:text-3xl">democratised</span>{" "}
             <span className="text-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
           </p>
         </div>
