@@ -30,7 +30,7 @@ const VisionSection = () => {
 
           <p className="text-lg md:text-xl">
             <span className="text-foreground">This is digital transformation</span>{" "}
-            <span className="text-primary font-bold text-2xl md:text-3xl">democratised</span>{" "}
+            <mark className="bg-primary/30 dark:bg-primary/40 text-primary font-bold text-2xl md:text-3xl px-2 rounded-sm">democratised</mark>{" "}
             <span className="text-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
           </p>
         </div>

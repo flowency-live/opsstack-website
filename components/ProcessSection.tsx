@@ -61,6 +61,14 @@ const ProcessSection = () => {
             <p className="text-xl text-muted-foreground max-w-2xl">
               From first conversation to working system. Here&apos;s how.
             </p>
+
+            {/* Accent bar */}
+            <div
+              className="w-full h-1 mt-6 rounded-full"
+              style={{
+                background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+              }}
+            />
           </div>
 
           {/* Process Steps - 3 column grid, no cards */}
@@ -97,7 +105,7 @@ const ProcessSection = () => {
           {/* Closing Line */}
           <div>
             <p className="text-lg mb-2">
-              <span className="text-primary font-medium">AI plus humans</span>{" "}
+              <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">AI plus humans</mark>{" "}
               <span className="text-foreground">equals practical transformation.</span>
             </p>
             <p className="text-muted-foreground">

@@ -35,6 +35,14 @@ const WhoThisIsForSection = () => {
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Who this is <span className="text-primary">for</span>
             </h2>
+
+            {/* Accent bar */}
+            <div
+              className="w-full h-1 mt-6 rounded-full"
+              style={{
+                background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+              }}
+            />
           </div>
 
           {/* Audience List - Simple bullet style */}
@@ -57,15 +65,18 @@ const WhoThisIsForSection = () => {
           </p>
 
           {/* Outgrown No-Code Callout */}
-          <div className="p-8 rounded-2xl border border-primary/30 bg-primary/5">
+          <div className="relative p-8 border-2 border-border dark:border-primary/30 bg-card dark:bg-zinc-800/80">
+            {/* Left accent bar */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
+
             <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-              Outgrown your <span className="text-primary">no-code tools</span>?
+              Outgrown your <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">no-code tools</mark>?
             </h3>
-            <p className="text-lg text-foreground/80 leading-relaxed mb-4">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               You used Replit, Lovable, or Cursor to build something real. Smart move - speed matters. But now you&apos;re stuck: your data lives somewhere you can&apos;t see, token costs are climbing, and every change costs more than the last.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              We port your tools to a proper AWS stack <span className="text-primary font-medium">you actually own</span>. Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
+              We port your tools to a proper AWS stack <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">you actually own</mark>. Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
             </p>
           </div>
         </div>
@@ -82,7 +93,7 @@ const WhoThisIsForSection = () => {
 
           <p className="text-lg md:text-xl">
             <span className="text-foreground">This is digital transformation</span>{" "}
-            <span className="text-primary font-bold text-2xl md:text-3xl">democratised</span>{" "}
+            <mark className="bg-primary/30 dark:bg-primary/40 text-primary font-bold text-2xl md:text-3xl px-2 rounded-sm">democratised</mark>{" "}
             <span className="text-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
           </p>
         </div>
