@@ -13,8 +13,8 @@ const Index = () => {
       <ProblemSection />
       <ProcessSection />
       <WhyThisWorksSection />
-      <InsightsSection />
       <WhoThisIsForSection />
+      <InsightsSection />
       <CTASection />
     </main>
   );
