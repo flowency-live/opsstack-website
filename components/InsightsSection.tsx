@@ -99,16 +99,24 @@ const InsightsSection = () => {
       <div className="absolute inset-0 bg-background" />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
-            <div>
+            <div className="flex-1">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 Articles & <span className="text-primary">Insights</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-xl">
                 Practical thinking on operations, technology, and building businesses that work.
               </p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mt-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                }}
+              />
             </div>
 
             <Link

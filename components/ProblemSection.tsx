@@ -51,8 +51,11 @@ const ProblemSection = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group p-7 rounded-2xl border border-border dark:border-border/40 bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)]"
+                className="group relative p-7 border-2 border-border dark:border-primary/30 bg-card dark:bg-zinc-800/80 transition-all duration-300 hover:border-primary/60 hover:shadow-lg dark:shadow-primary/5 dark:hover:shadow-primary/10"
               >
+                {/* Left accent bar */}
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/60 group-hover:bg-primary transition-colors" />
+
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
                   {feature.title}
                 </h3>
