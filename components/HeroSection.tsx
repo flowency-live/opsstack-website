@@ -56,8 +56,8 @@ const HeroSection = () => {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              {/* Placeholder inner content - mockup of a dashboard/app */}
-              <div className="w-full h-full p-4 flex flex-col">
+              {/* Placeholder inner content - mockup of a dashboard/app (hidden in dark mode for cleaner solid tiles) */}
+              <div className="w-full h-full p-4 flex flex-col dark:hidden">
                 <div className="flex gap-1.5 mb-3">
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
                   <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
