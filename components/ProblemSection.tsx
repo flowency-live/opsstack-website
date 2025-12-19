@@ -69,7 +69,7 @@ const ProblemSection = () => {
           {/* Closing Line */}
           <p className="text-lg">
             <span className="text-muted-foreground">This is digital transformation</span>{" "}
-            <mark className="bg-primary/30 dark:bg-primary/40 text-primary font-medium px-1 rounded-sm">democratised</mark>{" "}
+            <mark className="bg-primary/30 dark:bg-primary/40 text-foreground font-medium px-1 rounded-sm">democratised</mark>{" "}
             <span className="text-muted-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
           </p>
         </div>
