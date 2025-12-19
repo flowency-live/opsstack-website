@@ -32,7 +32,7 @@ const QuoteDecoration = () => (
 
 const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
   return (
-    <article className="group flex flex-col overflow-hidden border border-border dark:border-border/40 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <article className="group flex flex-col overflow-hidden border-2 border-border dark:border-primary/30 bg-card shadow-sm hover:shadow-lg dark:shadow-primary/5 dark:hover:shadow-primary/10 transition-all duration-300">
       {/* Header with background image */}
       <div className="relative h-56 flex flex-col justify-end">
         {/* Background image */}
@@ -62,19 +62,19 @@ const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
         </div>
       </div>
 
-      {/* White body */}
-      <div className="flex flex-col flex-1 p-6 bg-white dark:bg-zinc-900">
+      {/* Card body */}
+      <div className="flex flex-col flex-1 p-6 bg-white dark:bg-zinc-800/80">
         <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-3 leading-snug">
           {insight.title}
         </h4>
 
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-6 flex-1">
+        <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed mb-6 flex-1">
           {insight.excerpt}
         </p>
 
         <Link
           href={`/insights/${insight.slug}`}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-colors w-fit"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-100 transition-colors w-fit"
         >
           Read article
         </Link>
