@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 
 export const metadata = {
-  title: 'The Six Barriers That Stop SMEs Improving Their Systems - OpStack',
+  title: 'The Six Barriers That Block Digital Disruption for SMEs - OpStack',
   description: 'Most SMEs know their systems are holding them back. What we see repeatedly isn\'t a lack of ambition. It\'s a set of very real barriers that make progress feel risky, expensive, or unclear.',
 }
 
@@ -31,7 +31,7 @@ export default function SixBarriersArticle() {
 
             {/* Title */}
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-              The Six Barriers That Stop SMEs Improving Their Systems
+              The Six Barriers That Block Digital Disruption for SMEs
             </h1>
 
             {/* Subtitle */}

@@ -5,8 +5,8 @@ import Image from 'next/image'
 const insights = [
   {
     slug: "six-barriers-sme-systems",
-    headerTitle: "The Six Barriers That Stop SMEs",
-    title: "The Six Barriers That Stop SMEs Improving Their Systems",
+    headerTitle: "Tech barriers for SMEs",
+    title: "The Six Barriers That Block Digital Disruption for SMEs",
     excerpt: "Most SMEs know their systems are holding them back. What we see repeatedly isn't a lack of ambition. It's a set of very real barriers that make progress feel risky, expensive, or unclear.",
     category: "Insight",
     image: "/insights/banner-1.png",
