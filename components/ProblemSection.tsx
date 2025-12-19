@@ -12,8 +12,8 @@ const features = [
     description: "Remove the repetitive admin. Keep the human judgment where it matters.",
   },
   {
-    title: "Shaped to Your Team",
-    description: "Built around your people and your process. Not a template you bend yourself to fit.",
+    title: "Shaped to Your Business",
+    description: "Built around your people and your process. We won't try to install somebody else's recipe.",
   },
 ];
 

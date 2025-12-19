@@ -4,8 +4,8 @@ const reasons = [
     description: "We build in days, not months. No gold-plating. No six-month projects. No waiting.",
   },
   {
-    title: "Senior Delivery Only",
-    description: "You work directly with experienced product, tech and ops leaders. No juniors learning on your time.",
+    title: "We've Been Where You Are",
+    description: "You work with people who've lived these problems - experienced operators who've felt the same pain, paired with sharp minds who move fast.",
   },
   {
     title: "Value First, Always",
@@ -21,7 +21,7 @@ const reasons = [
   },
   {
     title: "Capability That Lasts",
-    description: "You get permanent improvement. Real tools. Real value. Not documentation.",
+    description: "You get permanent improvement. Real tools. Real value. Not snake-oil.",
   },
 ];
 
