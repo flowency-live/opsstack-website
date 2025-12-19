@@ -49,7 +49,7 @@ const WhoThisIsForSection = () => {
           {/* Header with thesis line as opener */}
           <div className="mb-16">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              You&apos;ll recognise <span className="text-primary">this</span>
+              Who this is <span className="text-primary">for</span>
             </h2>
 
             {/* The thesis - prominent, not buried */}
