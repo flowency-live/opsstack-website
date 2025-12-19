@@ -141,7 +141,7 @@
 **Body Copy:**
 I've spent 30 years building software, helping other teams build software, fixing operations and delivering real value. I've watched countless large organisations throw millions at "Digital Transformation" - polished slide decks that only work in the boardroom, frameworks that only ever worked in one context at a certain time, four-figure day rates paid to people with certificates not experience, agencies delivering bells and whistles on beautiful products that don't address the fundamental issues.
 
-Meanwhile, SMEs turn over the amount big orgs waste on transformation - and do it on spreadsheets, inboxes and heroics.
+Meanwhile, SMEs turn over the same amount big orgs waste on transformation - and do it on spreadsheets, inboxes and heroics.
 
 I'm constantly amazed when I talk to SME friends and colleagues about how operations run on shared spreadsheets, WhatsApp messages, bloated sharepoint sites where you can't find what you need, great memory. Not because they lack ambition for digital tooling. Because they lack access.
 

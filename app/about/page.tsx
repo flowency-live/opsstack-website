@@ -80,7 +80,7 @@ export default function AboutPage() {
                 </p>
 
                 <p>
-                  Meanwhile, SMEs turn over the amount big orgs waste on transformation - and do it on spreadsheets, inboxes and heroics.
+                  Meanwhile, SMEs turn over the same amount big orgs waste on transformation - and do it on spreadsheets, inboxes and heroics.
                 </p>
 
                 <p>
