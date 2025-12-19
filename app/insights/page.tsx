@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Insights - OpStack',
@@ -13,14 +14,15 @@ const insights = [
     title: "The Six Barriers That Stop SMEs Improving Their Systems",
     excerpt: "Most SMEs know their systems are holding them back. What we see repeatedly isn't a lack of ambition. It's a set of very real barriers that make progress feel risky, expensive, or unclear.",
     category: "Insight",
+    image: "/insights/banner-1.png",
   },
   // Add more articles here as they're created
 ]
 
-// Decorative quote marks for the header
+// Large decorative quote marks
 const QuoteDecoration = () => (
   <svg
-    className="absolute top-4 left-4 w-16 h-16 text-white/20"
+    className="absolute top-5 left-5 w-12 h-12 text-white/30"
     viewBox="0 0 24 24"
     fill="currentColor"
   >
@@ -30,41 +32,49 @@ const QuoteDecoration = () => (
 
 const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
   return (
-    <article className="group flex flex-col overflow-hidden border border-border dark:border-border/40 bg-card">
-      {/* Purple header with decorative elements */}
-      <div
-        className="relative h-48 p-6 flex flex-col justify-end"
-        style={{
-          background: 'linear-gradient(135deg, hsl(250 60% 55%) 0%, hsl(250 50% 40%) 100%)'
-        }}
-      >
+    <article className="group flex flex-col overflow-hidden border border-border dark:border-border/40 bg-card shadow-sm hover:shadow-lg transition-shadow duration-300">
+      {/* Header with background image */}
+      <div className="relative h-56 flex flex-col justify-end">
+        {/* Background image */}
+        <Image
+          src={insight.image}
+          alt=""
+          fill
+          className="object-cover"
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
         {/* Decorative quote marks */}
         <QuoteDecoration />
 
         {/* Category badge */}
-        <span className="absolute top-4 right-4 text-xs font-medium text-white/70 uppercase tracking-wider">
+        <span className="absolute top-5 right-5 text-[10px] font-semibold text-white/80 uppercase tracking-widest">
           {insight.category}
         </span>
 
         {/* Header title */}
-        <h3 className="relative z-10 text-lg font-semibold text-white leading-snug">
-          {insight.headerTitle}
-        </h3>
+        <div className="relative z-10 p-5 pt-12">
+          <h3 className="text-xl font-bold text-white leading-tight">
+            {insight.headerTitle}
+          </h3>
+        </div>
       </div>
 
       {/* White body */}
       <div className="flex flex-col flex-1 p-6 bg-white dark:bg-zinc-900">
-        <h4 className="text-xl font-bold text-zinc-900 dark:text-white mb-3 leading-tight">
+        <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-3 leading-snug">
           {insight.title}
         </h4>
 
-        <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 flex-1">
+        <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-6 flex-1">
           {insight.excerpt}
         </p>
 
         <Link
           href={`/insights/${insight.slug}`}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-100 transition-colors w-fit"
+          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 dark:bg-zinc-100 text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:bg-zinc-700 dark:hover:bg-white transition-colors w-fit"
         >
           Read article
         </Link>
@@ -96,7 +106,7 @@ export default function InsightsPage() {
       <section className="relative pb-24 lg:pb-32">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((insight) => (
                 <InsightCard key={insight.slug} insight={insight} />
               ))}
