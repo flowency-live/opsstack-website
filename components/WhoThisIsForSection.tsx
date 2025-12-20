@@ -30,7 +30,7 @@ const WhoThisIsForSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/future-bg.jpg)',
+          backgroundImage: 'url(/who-bg.png)',
         }}
       />
       {/* Dark overlay for readability */}
