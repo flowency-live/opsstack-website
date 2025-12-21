@@ -189,19 +189,20 @@
   }
 
   .dark .card-elevated {
-    @apply border-border/60 bg-card/80;
-    box-shadow: 0 2px 12px hsl(0 0% 0% / 0.2);
+    @apply bg-card/90;
+    border-color: hsl(var(--purple) / 0.35);
+    box-shadow: 0 2px 12px hsl(0 0% 0% / 0.25);
   }
 
   .card-elevated:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px hsl(0 0% 0% / 0.1);
-    border-color: hsl(var(--purple) / 0.4);
+    border-color: hsl(var(--purple) / 0.5);
   }
 
   .dark .card-elevated:hover {
-    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.3), 0 0 20px hsl(var(--purple) / 0.15);
-    border-color: hsl(var(--purple) / 0.5);
+    box-shadow: 0 8px 32px hsl(0 0% 0% / 0.4), 0 0 24px hsl(var(--purple) / 0.2);
+    border-color: hsl(var(--purple) / 0.6);
   }
 
   /* Glass Effects with OpsStack Colors */
