@@ -26,20 +26,20 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid container - rotated 15deg, 2 columns */}
         <div
-          className="absolute grid grid-cols-2 gap-6"
+          className="absolute grid grid-cols-2 gap-5"
           style={{
             transform: 'rotate(15deg)',
-            right: '0%',
-            top: '-40px',
-            width: '600px',
+            right: '-2%',
+            top: '60px',
+            width: '520px',
             zIndex: 1,
           }}
         >
           {productTiles.map((tile) => (
             <div
               key={tile.id}
-              className={`relative aspect-square rounded-2xl overflow-hidden border border-white/10 cursor-pointer ${
-                tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color}` : ''
+              className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer ${
+                tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color} border border-white/10` : ''
               }`}
               style={{
                 transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -56,7 +56,7 @@ const HeroSection = () => {
                   src={tile.src}
                   alt="Product screenshot"
                   fill
-                  className="object-cover"
+                  className="object-cover opacity-60"
                 />
               ) : (
                 /* Placeholder inner content */
