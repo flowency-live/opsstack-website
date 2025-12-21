@@ -2,25 +2,18 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
-// Placeholder product tiles - replace with actual screenshots later
+// Product tiles - mix of real screenshots and placeholders
 const productTiles = [
-  { id: 1, color: "from-primary/20 to-primary/10" },
-  { id: 2, color: "from-purple-500/20 to-purple-600/10" },
-  { id: 3, color: "from-blue-500/20 to-blue-600/10" },
-  { id: 4, color: "from-primary/15 to-primary/5" },
-  { id: 5, color: "from-indigo-500/20 to-indigo-600/10" },
-  { id: 6, color: "from-violet-500/20 to-violet-600/10" },
-  { id: 7, color: "from-primary/25 to-primary/15" },
-  { id: 8, color: "from-purple-400/20 to-purple-500/10" },
-  { id: 9, color: "from-blue-400/20 to-blue-500/10" },
-  { id: 10, color: "from-primary/20 to-primary/10" },
-  { id: 11, color: "from-indigo-400/20 to-indigo-500/10" },
-  { id: 12, color: "from-violet-400/20 to-violet-500/10" },
-  { id: 13, color: "from-primary/15 to-primary/5" },
-  { id: 14, color: "from-purple-500/15 to-purple-600/5" },
-  { id: 15, color: "from-blue-500/15 to-blue-600/5" },
-  { id: 16, color: "from-primary/20 to-primary/10" },
+  { id: 1, type: "image", src: "/product-tile-relay.png" },
+  { id: 2, type: "placeholder", color: "from-purple-500/20 to-purple-600/10" },
+  { id: 3, type: "placeholder", color: "from-primary/20 to-primary/10" },
+  { id: 4, type: "placeholder", color: "from-indigo-500/20 to-indigo-600/10" },
+  { id: 5, type: "placeholder", color: "from-violet-500/20 to-violet-600/10" },
+  { id: 6, type: "placeholder", color: "from-primary/15 to-primary/5" },
+  { id: 7, type: "placeholder", color: "from-purple-400/20 to-purple-500/10" },
+  { id: 8, type: "placeholder", color: "from-blue-400/20 to-blue-500/10" },
 ];
 
 const HeroSection = () => {
@@ -31,47 +24,58 @@ const HeroSection = () => {
 
       {/* Tilted Product Grid - Behind text, fading from right to left */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Grid container - rotated 15deg, positioned to sit behind text on wide screens */}
+        {/* Grid container - rotated 15deg, 2 columns */}
         <div
-          className="absolute grid grid-cols-4 gap-8"
+          className="absolute grid grid-cols-2 gap-6"
           style={{
             transform: 'rotate(15deg)',
-            right: '5%',
-            top: '-80px',
-            width: '950px',
+            right: '0%',
+            top: '-40px',
+            width: '600px',
             zIndex: 1,
           }}
         >
           {productTiles.map((tile) => (
             <div
               key={tile.id}
-              className={`aspect-square rounded-2xl bg-gradient-to-br ${tile.color} border border-white/10 cursor-pointer`}
+              className={`relative aspect-square rounded-2xl overflow-hidden border border-white/10 cursor-pointer ${
+                tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color}` : ''
+              }`}
               style={{
                 transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.12)';
+                e.currentTarget.style.transform = 'scale(1.08)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'scale(1)';
               }}
             >
-              {/* Placeholder inner content - mockup of a dashboard/app (hidden in dark mode for cleaner solid tiles) */}
-              <div className="w-full h-full p-4 flex flex-col dark:hidden">
-                <div className="flex gap-1.5 mb-3">
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                </div>
-                <div className="flex-1 rounded-lg bg-white/5 p-3">
-                  <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
-                  <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="h-10 rounded bg-white/5" />
-                    <div className="h-10 rounded bg-white/5" />
+              {tile.type === 'image' && tile.src ? (
+                <Image
+                  src={tile.src}
+                  alt="Product screenshot"
+                  fill
+                  className="object-cover"
+                />
+              ) : (
+                /* Placeholder inner content */
+                <div className="w-full h-full p-4 flex flex-col dark:hidden">
+                  <div className="flex gap-1.5 mb-3">
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                  </div>
+                  <div className="flex-1 rounded-lg bg-white/5 p-3">
+                    <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
+                    <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="h-10 rounded bg-white/5" />
+                      <div className="h-10 rounded bg-white/5" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
