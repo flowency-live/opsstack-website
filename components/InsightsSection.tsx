@@ -43,54 +43,53 @@ const QuoteDecoration = () => (
 
 const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
   return (
-    <article className="group flex flex-col overflow-hidden card-elevated">
-      {/* Header with background image */}
-      <div className="relative h-56 flex flex-col justify-end">
-        {/* Background image */}
-        <Image
-          src={insight.image}
-          alt=""
-          fill
-          className="object-cover"
-        />
+    <Link href={`/insights/${insight.slug}`} className="block h-full">
+      <article className="group flex flex-col overflow-hidden card-elevated h-full">
+        {/* Header with background image */}
+        <div className="relative h-56 flex flex-col justify-end">
+          {/* Background image */}
+          <Image
+            src={insight.image}
+            alt=""
+            fill
+            className="object-cover"
+          />
 
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-        {/* Decorative quote marks */}
-        <QuoteDecoration />
+          {/* Decorative quote marks */}
+          <QuoteDecoration />
 
-        {/* Category badge */}
-        <span className="absolute top-5 right-5 text-[10px] font-semibold text-white/80 uppercase tracking-widest">
-          {insight.category}
-        </span>
+          {/* Category badge */}
+          <span className="absolute top-5 right-5 text-[10px] font-semibold text-white/80 uppercase tracking-widest">
+            {insight.category}
+          </span>
 
-        {/* Header title */}
-        <div className="relative z-10 p-5 pt-12">
-          <h3 className="text-xl font-bold text-white leading-tight">
-            {insight.headerTitle}
-          </h3>
+          {/* Header title */}
+          <div className="relative z-10 p-5 pt-12">
+            <h3 className="text-xl font-bold text-white leading-tight">
+              {insight.headerTitle}
+            </h3>
+          </div>
         </div>
-      </div>
 
-      {/* Card body */}
-      <div className="flex flex-col flex-1 p-6 bg-white dark:bg-zinc-800/80">
-        <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-3 leading-snug">
-          {insight.title}
-        </h4>
+        {/* Card body */}
+        <div className="flex flex-col flex-1 p-6 bg-white dark:bg-zinc-800/80">
+          <h4 className="text-lg font-bold text-zinc-900 dark:text-white mb-3 leading-snug">
+            {insight.title}
+          </h4>
 
-        <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed mb-6 flex-1">
-          {insight.excerpt}
-        </p>
+          <p className="text-sm text-zinc-500 dark:text-zinc-300 leading-relaxed mb-6 flex-1">
+            {insight.excerpt}
+          </p>
 
-        <Link
-          href={`/insights/${insight.slug}`}
-          className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-100 transition-colors w-fit"
-        >
-          Learn more
-        </Link>
-      </div>
-    </article>
+          <span className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-zinc-800 dark:bg-white text-white dark:text-zinc-900 text-sm font-medium rounded-full group-hover:bg-zinc-700 dark:group-hover:bg-zinc-100 transition-colors w-fit">
+            Learn more
+          </span>
+        </div>
+      </article>
+    </Link>
   )
 }
 
@@ -131,7 +130,7 @@ const InsightsSection = () => {
             {/* Cards grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {insights.map((insight) => (
-                <div key={insight.slug} className="reveal-child">
+                <div key={insight.slug} className="reveal-child h-full">
                   <InsightCard insight={insight} />
                 </div>
               ))}
