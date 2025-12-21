@@ -90,10 +90,10 @@ const HeroSection = () => {
       <div className="container relative z-30 px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl">
           {/* Main Heading */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6">
-            Your Business.{" "}
-            <span className="text-primary">Digitised Properly.</span>
-            {" "}Finally.
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
+            <span className="font-semibold">Your Business.</span>{" "}
+            <span className="text-primary font-bold">Digitised Properly.</span>
+            <span className="font-semibold">{" "}Finally.</span>
           </h1>
 
           {/* Subheading */}

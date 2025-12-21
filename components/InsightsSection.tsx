@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import SectionReveal from './SectionReveal'
 
 const insights = [
   {
@@ -42,7 +43,7 @@ const QuoteDecoration = () => (
 
 const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
   return (
-    <article className="group flex flex-col overflow-hidden border-2 border-border dark:border-primary/30 bg-card shadow-sm hover:shadow-lg dark:shadow-primary/5 dark:hover:shadow-primary/10 transition-all duration-300">
+    <article className="group flex flex-col overflow-hidden card-elevated">
       {/* Header with background image */}
       <div className="relative h-56 flex flex-col justify-end">
         {/* Background image */}
@@ -95,46 +96,48 @@ const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
 
 const InsightsSection = () => {
   return (
-    <section className="relative py-24 lg:py-32">
-      <div className="absolute inset-0 bg-background" />
-
+    <section className="relative py-20 lg:py-28 section-dark">
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl">
-          {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
-            <div className="flex-1">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Articles & <span className="text-primary">Insights</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-xl">
-                Practical thinking on operations, technology, and building businesses that work.
-              </p>
+        <SectionReveal>
+          <div className="max-w-5xl">
+            {/* Header */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
+              <div className="flex-1">
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                  Articles & <span className="text-primary">Insights</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-xl">
+                  Practical thinking on operations, technology, and building businesses that work.
+                </p>
 
-              {/* Accent bar */}
-              <div
-                className="w-full h-1 mt-6 rounded-full"
-                style={{
-                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
-                }}
-              />
+                {/* Accent bar */}
+                <div
+                  className="w-full h-1 mt-6 rounded-full"
+                  style={{
+                    background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                  }}
+                />
+              </div>
+
+              <Link
+                href="/insights"
+                className="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4 shrink-0 transition-colors"
+              >
+                View all articles
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
 
-            <Link
-              href="/insights"
-              className="inline-flex items-center gap-2 text-primary font-medium hover:underline underline-offset-4 shrink-0"
-            >
-              View all articles
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            {/* Cards grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {insights.map((insight) => (
+                <div key={insight.slug} className="reveal-child">
+                  <InsightCard insight={insight} />
+                </div>
+              ))}
+            </div>
           </div>
-
-          {/* Cards grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {insights.map((insight) => (
-              <InsightCard key={insight.slug} insight={insight} />
-            ))}
-          </div>
-        </div>
+        </SectionReveal>
       </div>
     </section>
   )

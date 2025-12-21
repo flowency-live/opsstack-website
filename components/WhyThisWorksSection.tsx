@@ -1,3 +1,5 @@
+import SectionReveal from "./SectionReveal";
+
 const reasons = [
   {
     title: "Days, Not Months",
@@ -27,51 +29,57 @@ const reasons = [
 
 const WhyThisWorksSection = () => {
   return (
-    <section id="about" className="relative py-24 lg:py-32">
-      {/* Slightly lighter background - wave coming back down */}
-      <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 bg-white/[0.02]" />
+    <section id="about" className="relative py-20 lg:py-28 section-light">
+      {/* Top gradient divider */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background: 'linear-gradient(90deg, transparent 0%, hsl(250 75% 58% / 0.4) 20%, hsl(250 75% 58% / 0.4) 50%, transparent 100%)'
+        }}
+      />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl">
-          {/* Header - Left aligned */}
-          <div className="mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Why this <span className="text-primary">works</span>
-            </h2>
-            <p className="text-lg text-foreground font-medium max-w-2xl">
-              Real tools that deliver ROI. Not demos. Not decks. Not theatre.
-            </p>
+        <SectionReveal>
+          <div className="max-w-5xl">
+            {/* Header - Left aligned */}
+            <div className="mb-14">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                Why this <span className="text-primary">works</span>
+              </h2>
+              <p className="text-lg text-foreground font-medium max-w-2xl">
+                Real tools that deliver ROI. Not demos. Not decks. Not theatre.
+              </p>
 
-            {/* Accent bar */}
-            <div
-              className="w-full h-1 mt-6 rounded-full"
-              style={{
-                background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
-              }}
-            />
-          </div>
-
-          {/* Cards Grid - 2x3 */}
-          <div className="grid md:grid-cols-2 gap-5">
-            {reasons.map((reason, index) => (
+              {/* Accent bar */}
               <div
-                key={index}
-                className="group relative p-7 border-2 border-border dark:border-primary/30 bg-card dark:bg-zinc-800/80 transition-all duration-300 hover:border-primary/60 hover:shadow-lg dark:shadow-primary/5 dark:hover:shadow-primary/10"
-              >
-                {/* Left accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/60 group-hover:bg-primary transition-colors" />
+                className="w-full h-1 mt-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                }}
+              />
+            </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
-                  {reason.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
-            ))}
+            {/* Cards Grid - 2x3 */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {reasons.map((reason, index) => (
+                <div
+                  key={index}
+                  className="reveal-child group card-elevated p-8"
+                >
+                  {/* Left accent bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/40 group-hover:bg-primary transition-colors" />
+
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+                    {reason.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {reason.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </SectionReveal>
       </div>
     </section>
   );

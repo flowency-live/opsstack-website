@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import SectionReveal from "./SectionReveal";
 
 const steps = [
   "Bring your biggest operational headache",
@@ -9,7 +10,7 @@ const steps = [
 
 const CTASection = () => {
   return (
-    <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
+    <section id="contact" className="relative py-32 lg:py-40 overflow-hidden">
       {/* Purple gradient background */}
       <div
         className="absolute inset-0"
@@ -19,41 +20,43 @@ const CTASection = () => {
       />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl">
-          {/* Header - Left aligned */}
-          <div className="mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
-              Ready to build your business operating system?
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl">
-              Start with a working session. No pressure. No sales pitch.
-            </p>
-          </div>
+        <SectionReveal>
+          <div className="max-w-5xl">
+            {/* Header - Left aligned */}
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                Ready to build your business operating system?
+              </h2>
+              <p className="text-xl text-white/80 max-w-2xl">
+                Start with a working session. No pressure. No sales pitch.
+              </p>
+            </div>
 
-          {/* Steps List */}
-          <ul className="space-y-4 mb-12">
-            {steps.map((step, index) => (
-              <li
-                key={index}
-                className="flex items-center gap-4 text-lg text-white"
-              >
-                <span className="w-2 h-2 rounded-full bg-white flex-shrink-0" />
-                {step}
-              </li>
-            ))}
-          </ul>
+            {/* Steps List */}
+            <ul className="space-y-4 mb-12">
+              {steps.map((step, index) => (
+                <li
+                  key={index}
+                  className="reveal-child flex items-center gap-4 text-lg text-white"
+                >
+                  <span className="w-2 h-2 rounded-full bg-white flex-shrink-0" />
+                  {step}
+                </li>
+              ))}
+            </ul>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-start gap-4">
-            <Button variant="secondary" size="lg" className="group bg-white text-primary hover:bg-white/90">
-              Book a Working Session
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" size="lg" className="group border-white/40 text-white hover:bg-white/10 hover:border-white/60">
-              See What We Build
-            </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <Button variant="secondary" size="lg" className="group bg-white text-primary hover:bg-white/90 text-base px-8 py-6 h-auto shadow-lg hover:shadow-xl transition-all">
+                Book a Working Session
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="outline" size="lg" className="group border-white/30 text-white/80 hover:bg-white/10 hover:border-white/50 hover:text-white text-base px-8 py-6 h-auto transition-all">
+                See What We Build
+              </Button>
+            </div>
           </div>
-        </div>
+        </SectionReveal>
       </div>
     </section>
   );
