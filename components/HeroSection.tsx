@@ -30,10 +30,10 @@ const HeroSection = () => {
           className="absolute grid grid-cols-2 gap-5"
           style={{
             transform: 'rotate(15deg)',
-            right: 'max(-2%, calc(50% - 700px))',
+            right: 'clamp(5%, calc(50% - 500px), 25%)',
             top: '60px',
             width: '520px',
-            zIndex: 1,
+            zIndex: 3,
           }}
         >
           {productTiles.map((tile) => {
