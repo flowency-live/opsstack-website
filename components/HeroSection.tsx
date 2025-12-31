@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-// Product tiles - mix of real screenshots and placeholders
+// Product tiles - Stack badges and placeholders
 const productTiles = [
-  { id: 1, type: "image", src: "/product-tile-relay.png" },
-  { id: 2, type: "placeholder", color: "from-purple-500/20 to-purple-600/10" },
-  { id: 3, type: "placeholder", color: "from-primary/20 to-primary/10" },
+  { id: 1, type: "image", src: "/stacks/stack_relay.png", href: "https://relay.opstack.uk", name: "Relay" },
+  { id: 2, type: "image", src: "/stacks/stack_level.png", href: "https://level.opstack.uk", name: "Level" },
+  { id: 3, type: "image", src: "/stacks/stack_niner.png", href: "https://niner.opstack.uk", name: "Niner" },
   { id: 4, type: "placeholder", color: "from-indigo-500/20 to-indigo-600/10" },
   { id: 5, type: "placeholder", color: "from-violet-500/20 to-violet-600/10" },
   { id: 6, type: "placeholder", color: "from-primary/15 to-primary/5" },
@@ -35,49 +36,58 @@ const HeroSection = () => {
             zIndex: 1,
           }}
         >
-          {productTiles.map((tile) => (
-            <div
-              key={tile.id}
-              className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer ${
-                tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color} border border-white/10` : ''
-              }`}
-              style={{
-                transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.08)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            >
-              {tile.type === 'image' && tile.src ? (
-                <Image
-                  src={tile.src}
-                  alt="Product screenshot"
-                  fill
-                  className="object-cover opacity-60"
-                />
-              ) : (
-                /* Placeholder inner content */
-                <div className="w-full h-full p-4 flex flex-col dark:hidden">
-                  <div className="flex gap-1.5 mb-3">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  </div>
-                  <div className="flex-1 rounded-lg bg-white/5 p-3">
-                    <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
-                    <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="h-10 rounded bg-white/5" />
-                      <div className="h-10 rounded bg-white/5" />
+          {productTiles.map((tile) => {
+            const tileContent = (
+              <div
+                className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer ${
+                  tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color} border border-white/10` : 'bg-card/80 dark:bg-card/60 border border-border/50'
+                }`}
+                style={{
+                  transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.08)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
+              >
+                {tile.type === 'image' && tile.src ? (
+                  <Image
+                    src={tile.src}
+                    alt={`${tile.name} Stack`}
+                    fill
+                    className="object-contain p-4"
+                  />
+                ) : (
+                  /* Placeholder inner content */
+                  <div className="w-full h-full p-4 flex flex-col dark:hidden">
+                    <div className="flex gap-1.5 mb-3">
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                    </div>
+                    <div className="flex-1 rounded-lg bg-white/5 p-3">
+                      <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
+                      <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="h-10 rounded bg-white/5" />
+                        <div className="h-10 rounded bg-white/5" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
+                )}
+              </div>
+            );
+
+            return tile.type === 'image' && tile.href ? (
+              <Link key={tile.id} href={tile.href} target="_blank" rel="noopener noreferrer">
+                {tileContent}
+              </Link>
+            ) : (
+              <div key={tile.id}>{tileContent}</div>
+            );
+          })}
         </div>
 
         {/* Fade overlay - tiles fade as they approach the left/text area */}
