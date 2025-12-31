@@ -25,10 +25,10 @@ const CTASection = () => {
             {/* Header - Left aligned */}
             <div className="mb-12">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-                Ready to build your business operating system?
+                Ready to see your business clearly?
               </h2>
               <p className="text-xl text-white/80 max-w-2xl">
-                Start with a working session. No pressure. No sales pitch.
+                See what it feels like when the noise disappears and your operation becomes visible.
               </p>
             </div>
 
