@@ -24,13 +24,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
       {/* Tilted Product Grid - Behind text, fading from right to left */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Grid container - rotated 15deg, 2 columns */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
+        {/* Grid container - rotated 15deg, 2 columns, responsive positioning */}
         <div
           className="absolute grid grid-cols-2 gap-5"
           style={{
             transform: 'rotate(15deg)',
-            right: '-2%',
+            right: 'max(-2%, calc(50% - 700px))',
             top: '60px',
             width: '520px',
             zIndex: 1,
@@ -39,8 +39,8 @@ const HeroSection = () => {
           {productTiles.map((tile) => {
             const tileContent = (
               <div
-                className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer ${
-                  tile.type === 'placeholder' ? `bg-gradient-to-br ${tile.color} border border-white/10` : 'bg-card/80 dark:bg-card/60 border border-border/50'
+                className={`relative aspect-square overflow-hidden cursor-pointer ${
+                  tile.type === 'placeholder' ? `rounded-2xl bg-gradient-to-br ${tile.color} border border-white/10` : ''
                 }`}
                 style={{
                   transition: 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -57,7 +57,7 @@ const HeroSection = () => {
                     src={tile.src}
                     alt={`${tile.name} Stack`}
                     fill
-                    className="object-contain p-4"
+                    className="object-cover"
                   />
                 ) : (
                   /* Placeholder inner content */
