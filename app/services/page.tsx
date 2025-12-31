@@ -21,15 +21,19 @@ export default function ServicesPage() {
             </h1>
 
             <p className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-6">
-              Build. Automate. Amplify.
+              Your Operating Stack.
             </p>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
-              The tools, systems and intelligence your business is missing - delivered in days, not months. Stop paying for ten subscriptions you only half-use.
+              Purpose-built systems that run your business. Tools, automation, and visibility. Designed around how you actually operate.
+            </p>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
+              Delivered in days, not months. No more paying for ten subscriptions you only half-use. We handle the technical heavy lifting so you can focus on what truly matters.
             </p>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
-              We handle the technical heavy lifting so you can focus on what truly matters.
+              Build. Automate. Amplify. The three layers of every Operating Stack we deliver.
             </p>
 
             <p className="text-lg md:text-xl text-primary font-medium">
