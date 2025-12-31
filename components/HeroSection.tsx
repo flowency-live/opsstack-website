@@ -26,7 +26,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden hidden md:block">
         {/* Grid container - rotated 15deg, 2 columns */}
         <div
-          className="absolute grid grid-cols-2 gap-1"
+          className="absolute grid grid-cols-2 gap-3"
           style={{
             transform: 'rotate(15deg)',
             right: 'clamp(5%, calc(50% - 500px), 25%)',
