@@ -64,12 +64,12 @@ const WhyThisWorksSection = () => {
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="reveal-child group card-elevated p-8"
+                  className="reveal-child group card-elevated card-noise p-8"
                 >
                   {/* Left accent bar */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/40 group-hover:bg-primary transition-colors" />
 
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-foreground dark:text-white mb-3 group-hover:text-primary transition-colors duration-200">
                     {reason.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
