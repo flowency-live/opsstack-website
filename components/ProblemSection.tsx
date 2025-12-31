@@ -37,11 +37,11 @@ const ProblemSection = () => {
             <div className="mb-16">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
                 Your Business<br />
-                <span className="text-primary">Operating System</span>
+                <span className="text-primary">Operating Stack</span>
               </h2>
 
               <p className="text-lg text-muted-foreground mt-6 max-w-xl">
-                One simple system, built around how your business actually runs.
+                Purpose-built systems that run your business. Workflows, data, automation, and visibility. Designed around how you actually operate.
               </p>
 
               {/* Accent bar */}
