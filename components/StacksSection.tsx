@@ -16,6 +16,14 @@ const stacks = [
     href: "https://relay.opstack.uk",
   },
   {
+    id: "track",
+    name: "Track",
+    tagline: "Your Asset & Fleet Control Layer.",
+    description: "Operational visibility for high-value assets that move. Track inventory, handovers, maintenance, and uptime in one place.",
+    badge: "/stacks/stack_track.png",
+    href: "https://track.opstack.uk",
+  },
+  {
     id: "level",
     name: "Level",
     tagline: "Your Team's Scorecard. Track what matters.",
@@ -123,7 +131,7 @@ const StacksSection = () => {
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <SectionReveal>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
@@ -135,7 +143,7 @@ const StacksSection = () => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {stacks.map((stack) => (
                 <TiltCard key={stack.id} stack={stack} />
               ))}

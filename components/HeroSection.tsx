@@ -9,7 +9,7 @@ const productTiles = [
   { id: 1, type: "image", src: "/stacks/stack_relay.png", name: "Relay" },
   { id: 2, type: "image", src: "/stacks/stack_level.png", name: "Level" },
   { id: 3, type: "image", src: "/stacks/stack_niner.png", name: "Niner" },
-  { id: 4, type: "placeholder", color: "from-indigo-500/20 to-indigo-600/10" },
+  { id: 4, type: "image", src: "/stacks/stack_track.png", name: "Track" },
   { id: 5, type: "placeholder", color: "from-violet-500/20 to-violet-600/10" },
   { id: 6, type: "placeholder", color: "from-primary/15 to-primary/5" },
   { id: 7, type: "placeholder", color: "from-purple-400/20 to-purple-500/10" },
