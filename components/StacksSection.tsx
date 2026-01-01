@@ -74,42 +74,46 @@ const TiltCard = ({ stack }: TiltCardProps) => {
   }, []);
 
   return (
-    <Link href={stack.href} target="_blank" rel="noopener noreferrer" className="block">
+    <Link href={stack.href} target="_blank" rel="noopener noreferrer" className="block h-full">
       <div
         ref={cardRef}
-        className="stack-tilt-card group"
+        className="stack-tilt-card group h-full"
         data-hovered="false"
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="stack-tilt-inner">
-          <div className="stack-card-face">
-            {/* Badge */}
-            <div className="relative w-20 h-20 mb-6">
-              <Image
-                src={stack.badge}
-                alt={`${stack.name} Stack`}
-                fill
-                className="object-contain"
-              />
+        <div className="stack-tilt-inner h-full">
+          <div className="stack-card-face h-full flex flex-col">
+            {/* Badge - Centered and prominent */}
+            <div className="flex justify-center mb-6">
+              <div className="relative w-28 h-28">
+                <Image
+                  src={stack.badge}
+                  alt={`${stack.name} Stack`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
 
             {/* Content */}
-            <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-              {stack.name}
-            </h3>
-            <p className="text-sm font-medium text-primary mb-3">
-              {stack.tagline}
-            </p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
-              {stack.description}
-            </p>
+            <div className="text-center flex-1 flex flex-col">
+              <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                {stack.name}
+              </h3>
+              <p className="text-sm font-medium text-primary mb-3">
+                {stack.tagline}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                {stack.description}
+              </p>
 
-            {/* Link indicator */}
-            <div className="flex items-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-              <span>Explore</span>
-              <ArrowUpRight className="w-4 h-4" />
+              {/* Link indicator */}
+              <div className="flex items-center justify-center gap-1 text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity mt-4">
+                <span>Explore</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </div>
             </div>
           </div>
         </div>
@@ -143,7 +147,7 @@ const StacksSection = () => {
             </div>
 
             {/* Cards Grid */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
               {stacks.map((stack) => (
                 <TiltCard key={stack.id} stack={stack} />
               ))}
