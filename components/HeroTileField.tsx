@@ -141,10 +141,9 @@ function HeroTile({
   hovered: string | null;
   setHovered: (v: string | null) => void;
 }) {
-  // Depth tier controls parallax + shadow intensity
   const tier = tile.z;
   const parallax = tier === 1 ? 16 : tier === 2 ? 10 : 6;
-  const hoverLift = tier === 1 ? -8 : tier === 2 ? -6 : -4;
+  const isHovered = hovered === tile.id;
 
   // Neighbour push: if a tile is hovered, others move slightly away
   const push = React.useMemo(() => {
@@ -171,15 +170,21 @@ function HeroTile({
   const driftY = (idx % 3 === 0 ? -1 : 1) * (2 + (idx % 3));
   const driftR = (idx % 2 === 0 ? 1 : -1) * 0.6;
 
-  // Shadow profile per tier
-  const shadow =
+  // Shadow profiles - enhanced on hover
+  const baseShadow =
     tier === 1
       ? "0 32px 70px rgba(0,0,0,0.5)"
       : tier === 2
       ? "0 26px 55px rgba(0,0,0,0.42)"
       : "0 20px 45px rgba(0,0,0,0.35)";
 
-  // Soft highlight
+  const hoverShadow =
+    tier === 1
+      ? "0 40px 90px rgba(0,0,0,0.6)"
+      : tier === 2
+      ? "0 34px 75px rgba(0,0,0,0.52)"
+      : "0 28px 60px rgba(0,0,0,0.45)";
+
   const highlight =
     "inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.35)";
 
@@ -193,29 +198,46 @@ function HeroTile({
         height: tile.size,
         marginLeft: -(tile.size / 2),
         marginTop: -(tile.size / 2),
-        zIndex: tier === 1 ? 30 : tier === 2 ? 20 : 10,
+        zIndex: isHovered ? 50 : tier === 1 ? 30 : tier === 2 ? 20 : 10,
       }}
       onPointerEnter={() => setHovered(tile.id)}
       onPointerLeave={() => setHovered(null)}
+      animate={{
+        y: isHovered ? -12 : 0,
+      }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Shadow layer */}
+      {/* Shadow layer - deepens on hover */}
       <motion.div
         className="absolute inset-0 rounded-[28px]"
         style={{
-          boxShadow: shadow,
           transform: `rotate(${tile.r}deg)`,
           opacity: tile.crop ? 0.85 : 1,
         }}
         animate={{
           x: [0, driftX, 0],
           y: [0, driftY, 0],
+          boxShadow: isHovered ? hoverShadow : baseShadow,
         }}
         transition={{
-          duration: 8 + (idx % 5),
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: (idx % 7) * 0.3,
+          x: { duration: 8 + (idx % 5), repeat: Infinity, ease: "easeInOut", delay: (idx % 7) * 0.3 },
+          y: { duration: 8 + (idx % 5), repeat: Infinity, ease: "easeInOut", delay: (idx % 7) * 0.3 },
+          boxShadow: { duration: 0.3, ease: "easeOut" },
         }}
+      />
+
+      {/* Glow layer - appears on hover */}
+      <motion.div
+        className="absolute rounded-[28px] pointer-events-none"
+        style={{
+          inset: -8,
+          background: "radial-gradient(circle, hsl(250 75% 58% / 0.25) 0%, transparent 70%)",
+          transform: `rotate(${tile.r}deg)`,
+        }}
+        animate={{
+          opacity: isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
       />
 
       {/* Surface layer */}
@@ -234,11 +256,6 @@ function HeroTile({
           repeat: Infinity,
           ease: "easeInOut",
           delay: (idx % 9) * 0.25,
-        }}
-        whileHover={{
-          y: hoverLift,
-          scale: 1.02,
-          transition: { duration: 0.25 },
         }}
       >
         {/* Cursor parallax + neighbour push */}

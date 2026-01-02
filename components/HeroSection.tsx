@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { HeroTileField } from "./HeroTileField";
-import Image from "next/image";
 
 // Staggered column layout - tiles only align vertically within columns
 // Phase-shifted vertically so no horizontal row alignment
@@ -54,14 +53,6 @@ const heroTiles = [
   },
 ];
 
-// Mobile tiles - centered layout for below-hero display
-const mobileTiles = [
-  { id: "relay", src: "/stacks/stack_relay.png", label: "Relay" },
-  { id: "level", src: "/stacks/stack_level.png", label: "Level" },
-  { id: "niner", src: "/stacks/stack_niner.png", label: "Niner" },
-  { id: "track", src: "/stacks/stack_track.png", label: "Track" },
-];
-
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
@@ -82,16 +73,16 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Tablet: tiles as faded background behind text */}
-      <div className="absolute inset-0 overflow-hidden hidden md:block lg:hidden">
-        <div className="absolute inset-0 opacity-25">
+      {/* Tablet & Mobile: tiles as faded background behind text */}
+      <div className="absolute inset-0 overflow-hidden block lg:hidden">
+        <div className="absolute inset-0 opacity-20 md:opacity-25">
           <HeroTileField tiles={heroTiles} />
         </div>
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 35%, transparent 85%)",
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 45%, transparent 90%)",
             zIndex: 40,
           }}
         />
@@ -135,30 +126,6 @@ const HeroSection = () => {
               <CheckCircle2 className="w-4 h-4 text-primary" />
               <span>No commitment required - Discovery call</span>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile: Tiles displayed BELOW hero text */}
-      <div className="relative z-10 md:hidden pb-12">
-        <div className="container px-4">
-          <div className="grid grid-cols-2 gap-4 max-w-sm mx-auto">
-            {mobileTiles.map((tile, idx) => (
-              <div
-                key={tile.id}
-                className="relative aspect-square"
-                style={{
-                  transform: `rotate(${idx % 2 === 0 ? -6 : 6}deg)`,
-                }}
-              >
-                <Image
-                  src={tile.src}
-                  alt={tile.label}
-                  fill
-                  className="object-contain drop-shadow-xl"
-                />
-              </div>
-            ))}
           </div>
         </div>
       </div>
