@@ -24,14 +24,15 @@ const HeroSection = () => {
 
       {/* Tilted Product Grid - Behind text, fading from right to left */}
       <div className="absolute inset-0 overflow-hidden hidden md:block">
-        {/* Grid container - rotated 15deg, 2 columns */}
+        {/* Grid container - smaller, ghosted, pushed right for whitespace */}
         <div
-          className="absolute grid grid-cols-2 gap-3"
+          className="absolute grid grid-cols-2 gap-4"
           style={{
             transform: 'rotate(15deg)',
-            right: 'clamp(5%, calc(50% - 500px), 25%)',
-            top: '60px',
-            width: '520px',
+            right: 'clamp(-5%, calc(50% - 580px), 15%)',
+            top: '80px',
+            width: '420px',
+            opacity: 0.65,
           }}
         >
           {productTiles.map((tile) => (
@@ -73,7 +74,7 @@ const HeroSection = () => {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 40%, transparent 70%)',
+            background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 50%, transparent 80%)',
             zIndex: 2,
           }}
         />
