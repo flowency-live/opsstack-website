@@ -2,18 +2,56 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+import { HeroTileField } from "./HeroTileField";
 
-// Product tiles - Stack badges and placeholders (decorative background)
-const productTiles = [
-  { id: 1, type: "image", src: "/stacks/stack_relay.png", name: "Relay" },
-  { id: 2, type: "image", src: "/stacks/stack_level.png", name: "Level" },
-  { id: 3, type: "image", src: "/stacks/stack_niner.png", name: "Niner" },
-  { id: 4, type: "image", src: "/stacks/stack_track.png", name: "Track" },
-  { id: 5, type: "placeholder", color: "from-violet-500/20 to-violet-600/10" },
-  { id: 6, type: "placeholder", color: "from-primary/15 to-primary/5" },
-  { id: 7, type: "placeholder", color: "from-purple-400/20 to-purple-500/10" },
-  { id: 8, type: "placeholder", color: "from-blue-400/20 to-blue-500/10" },
+// Staggered column layout - tiles only align vertically within columns
+// Column 1: x ~72%, Column 2: x ~88% (cropped off edge)
+// Phase-shifted vertically so no horizontal row alignment
+const heroTiles = [
+  // Column 1 - main visible column
+  {
+    id: "relay",
+    label: "Relay",
+    src: "/stacks/stack_relay.png",
+    x: 72,
+    y: 18,
+    size: 160,
+    r: -8,
+    z: 1 as const,
+  },
+  {
+    id: "niner",
+    label: "Niner",
+    src: "/stacks/stack_niner.png",
+    x: 70,
+    y: 52,
+    size: 150,
+    r: -5,
+    z: 2 as const,
+  },
+  // Column 2 - offset vertically (phase shifted), partially cropped
+  {
+    id: "level",
+    label: "Level",
+    src: "/stacks/stack_level.png",
+    x: 90,
+    y: 32,
+    size: 155,
+    r: 7,
+    z: 1 as const,
+    crop: true,
+  },
+  {
+    id: "track",
+    label: "Track",
+    src: "/stacks/stack_track.png",
+    x: 88,
+    y: 68,
+    size: 145,
+    r: 10,
+    z: 2 as const,
+    crop: true,
+  },
 ];
 
 const HeroSection = () => {
@@ -22,66 +60,38 @@ const HeroSection = () => {
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
-      {/* Tilted Product Grid - Behind text, fading from right to left */}
-      <div className="absolute inset-0 overflow-hidden hidden md:block">
-        {/* Grid container - smaller, ghosted, pushed right for whitespace */}
-        <div
-          className="absolute grid grid-cols-2 gap-4"
-          style={{
-            transform: 'rotate(15deg)',
-            right: 'clamp(-5%, calc(50% - 580px), 15%)',
-            top: '80px',
-            width: '420px',
-            opacity: 0.65,
-          }}
-        >
-          {productTiles.map((tile) => (
-            <div
-              key={tile.id}
-              className={`relative aspect-square overflow-hidden ${
-                tile.type === 'placeholder' ? `rounded-2xl bg-gradient-to-br ${tile.color} border border-white/10` : ''
-              }`}
-            >
-              {tile.type === 'image' && tile.src ? (
-                <Image
-                  src={tile.src}
-                  alt={`${tile.name} Stack`}
-                  fill
-                  className="object-contain"
-                />
-              ) : (
-                <div className="w-full h-full p-4 flex flex-col dark:hidden">
-                  <div className="flex gap-1.5 mb-3">
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                  </div>
-                  <div className="flex-1 rounded-lg bg-white/5 p-3">
-                    <div className="w-3/4 h-2.5 rounded bg-white/10 mb-2" />
-                    <div className="w-1/2 h-2.5 rounded bg-white/10 mb-4" />
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="h-10 rounded bg-white/5" />
-                      <div className="h-10 rounded bg-white/5" />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+      {/* Tile Field - Rareloop style with ghost background + foreground tiles */}
+      <div className="absolute inset-0 overflow-hidden hidden lg:block">
+        <HeroTileField tiles={heroTiles} />
 
         {/* Fade overlay - tiles fade as they approach the left/text area */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 50%, transparent 80%)',
-            zIndex: 2,
+            background:
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 45%, transparent 75%)",
+            zIndex: 40,
+          }}
+        />
+      </div>
+
+      {/* Tablet: simplified background crop */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block lg:hidden">
+        <div className="absolute inset-0 opacity-30">
+          <HeroTileField tiles={heroTiles} />
+        </div>
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 40%, transparent 90%)",
+            zIndex: 40,
           }}
         />
       </div>
 
       {/* Main Content */}
-      <div className="container relative z-30 px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-50 px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl">
           {/* Main Heading */}
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
@@ -92,11 +102,13 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-muted-foreground mb-4">
-            You&apos;ve built a great business. Now it deserves its own operating system.
+            You&apos;ve built a great business. Now it deserves its own
+            operating system.
           </p>
 
           <p className="text-base text-muted-foreground/80 mb-8">
-            We act as your internal CTO and delivery team - designing and building the systems your business has always needed.
+            We act as your internal CTO and delivery team - designing and
+            building the systems your business has always needed.
           </p>
 
           {/* CTA Buttons */}
@@ -113,7 +125,7 @@ const HeroSection = () => {
           {/* Trust Line */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <CheckCircle2 className="w-4 h-4 text-primary" />
-            <span>No commitment required • Discovery call</span>
+            <span>No commitment required - Discovery call</span>
           </div>
         </div>
       </div>
