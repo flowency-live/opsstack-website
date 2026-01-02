@@ -78,12 +78,12 @@ export function HeroTileField({ tiles, className }: Props) {
       onPointerLeave={onLeave}
       className={`relative h-full w-full overflow-hidden ${className ?? ""}`}
     >
-      {/* Ghost background field */}
+      {/* Ghost background field - larger, more visible like Rareloop */}
       <div className="pointer-events-none absolute inset-0">
         {ghosts.map((g) => (
           <motion.div
             key={g.id}
-            className="absolute rounded-[24px] border border-white/[0.06] bg-white/[0.02]"
+            className="absolute rounded-[28px] border border-foreground/[0.04] bg-foreground/[0.02] dark:border-white/[0.06] dark:bg-white/[0.025]"
             style={{
               left: `${g.x}%`,
               top: `${g.y}%`,
@@ -270,7 +270,7 @@ function HeroTile({
   );
 }
 
-/** Deterministic ghost tile field */
+/** Deterministic ghost tile field - larger, more visible like Rareloop */
 function makeGhostTiles(count: number, seed: number) {
   let s = seed;
   const rand = () => {
@@ -281,14 +281,16 @@ function makeGhostTiles(count: number, seed: number) {
   };
 
   return Array.from({ length: count }).map((_, i) => {
-    const x = 8 + rand() * 84;
-    const y = 5 + rand() * 90;
-    const size = 50 + Math.round(rand() * 70);
-    const r = -12 + rand() * 24;
-    const driftX = -5 + rand() * 10;
-    const driftY = -5 + rand() * 10;
-    const dur = 12 + rand() * 8;
-    const delay = rand() * 3;
+    // Spread across entire area, including left side for full coverage
+    const x = 5 + rand() * 90;
+    const y = -5 + rand() * 110; // Extend beyond bounds
+    // Larger sizes like Rareloop
+    const size = 80 + Math.round(rand() * 100);
+    const r = -15 + rand() * 30;
+    const driftX = -4 + rand() * 8;
+    const driftY = -4 + rand() * 8;
+    const dur = 14 + rand() * 10;
+    const delay = rand() * 4;
 
     return { id: `g${i}`, x, y, size, r, driftX, driftY, dur, delay };
   });
