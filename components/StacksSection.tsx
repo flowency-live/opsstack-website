@@ -11,7 +11,7 @@ const stacks = [
     id: "relay",
     name: "Relay",
     tagline: "Your Transfer Business. Affordable Intelligence.",
-    description: "Professional transfer management software that gets you live in a day, not months. Built for operators who want to stop juggling spreadsheets.",
+    description: "Professional transfer management software that gets you live in a day, not months. Built for VIP transfer operators who want to stop juggling spreadsheets and WhatsApp threads.",
     badge: "/stacks/stack_relay.png",
     href: "https://relay.opstack.uk",
   },
@@ -19,7 +19,7 @@ const stacks = [
     id: "track",
     name: "Track",
     tagline: "Your Asset & Fleet Control Layer.",
-    description: "Operational visibility for high-value assets that move. Track inventory, handovers, maintenance, and uptime in one place.",
+    description: "Operational visibility for high-value assets that move. Track inventory, handovers, maintenance, uptime, efficiency and utilisation (and more!) in one place.",
     badge: "/stacks/stack_track.png",
     href: "https://track.opstack.uk",
   },
@@ -34,8 +34,8 @@ const stacks = [
   {
     id: "niner",
     name: "Niner",
-    tagline: "Your Operations Dashboard. Real-time clarity.",
-    description: "See your business at a glance. The metrics that matter, surfaced automatically.",
+    tagline: "Your Live Operations Dashboard. Real-time clarity.",
+    description: "See your business at a glance. Your contacts, clients, suppliers, pipeline, live jobs. The metrics that matter, surfaced automatically.",
     badge: "/stacks/stack_niner.png",
     href: "https://niner.opstack.uk",
   },
@@ -142,7 +142,7 @@ const StacksSection = () => {
                 Our <span className="text-primary">Stacks</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Purpose-built Operating Stacks. Each one solves a real problem for a specific type of business.
+                Purpose-built Operating Stacks. Each one solves a real problem for a specific type of business and are already in use by our clients.
               </p>
             </div>
 
