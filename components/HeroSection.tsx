@@ -13,7 +13,7 @@ const heroTiles = [
     label: "Relay",
     src: "/stacks/stack_relay.png",
     x: 68,
-    y: 15,
+    y: 22,
     size: 170,
     r: -10,
     z: 1 as const,
@@ -89,9 +89,9 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="relative z-50 min-h-screen flex items-center pt-24 pb-16 md:pb-16">
+      <div className="relative z-50 min-h-screen flex items-center pt-24 pb-16 md:pb-16 pointer-events-none">
         <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl">
+          <div className="max-w-xl pointer-events-auto">
             {/* Main Heading */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
               <span className="font-semibold">Your Business.</span>{" "}

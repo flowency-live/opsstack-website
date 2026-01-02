@@ -78,18 +78,19 @@ export function HeroTileField({ tiles, className }: Props) {
       onPointerLeave={onLeave}
       className={`relative h-full w-full overflow-hidden ${className ?? ""}`}
     >
-      {/* Ghost background field - larger, more visible like Rareloop */}
+      {/* Ghost background field */}
       <div className="pointer-events-none absolute inset-0">
         {ghosts.map((g) => (
           <motion.div
             key={g.id}
-            className="absolute rounded-[28px] border border-foreground/[0.04] bg-foreground/[0.02] dark:border-white/[0.06] dark:bg-white/[0.025]"
+            className="absolute border border-foreground/[0.04] bg-foreground/[0.02] dark:border-white/[0.06] dark:bg-white/[0.025]"
             style={{
               left: `${g.x}%`,
               top: `${g.y}%`,
               width: g.size,
               height: g.size,
               transform: `rotate(${g.r}deg)`,
+              borderRadius: g.borderRadius,
             }}
             animate={{
               y: [0, g.driftY, 0],
@@ -107,11 +108,10 @@ export function HeroTileField({ tiles, className }: Props) {
 
       {/* Foreground tiles */}
       <div className="absolute inset-0">
-        {tiles.map((t, idx) => (
+        {tiles.map((t) => (
           <HeroTile
             key={t.id}
             tile={t}
-            idx={idx}
             sx={sx}
             sy={sy}
             tiles={tiles}
@@ -126,7 +126,6 @@ export function HeroTileField({ tiles, className }: Props) {
 
 function HeroTile({
   tile,
-  idx,
   sx,
   sy,
   tiles,
@@ -134,7 +133,6 @@ function HeroTile({
   setHovered,
 }: {
   tile: Tile;
-  idx: number;
   sx: ReturnType<typeof useSpring>;
   sy: ReturnType<typeof useSpring>;
   tiles: Tile[];
@@ -145,7 +143,26 @@ function HeroTile({
   const parallax = tier === 1 ? 16 : tier === 2 ? 10 : 6;
   const isHovered = hovered === tile.id;
 
-  // Neighbour push: if a tile is hovered, others move slightly away
+  // Seed from tile.id for stable, unique personality
+  const seed = tile.id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+
+  // Influence: how much this tile is affected by hovered tile (0..1)
+  const influence = React.useMemo(() => {
+    if (!hovered || hovered === tile.id) return 0;
+    const h = tiles.find((x) => x.id === hovered);
+    if (!h) return 0;
+
+    const dx = tile.x - h.x;
+    const dy = tile.y - h.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    const radius = 42;
+    if (dist >= radius) return 0;
+
+    return 1 - dist / radius;
+  }, [hovered, tile.id, tile.x, tile.y, tiles]);
+
+  // Neighbour push direction
   const push = React.useMemo(() => {
     if (!hovered || hovered === tile.id) return { px: 0, py: 0 };
     const h = tiles.find((x) => x.id === hovered);
@@ -154,21 +171,26 @@ function HeroTile({
     const dx = tile.x - h.x;
     const dy = tile.y - h.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist === 0) return { px: 0, py: 0 };
 
-    const radius = 25;
-    if (dist > radius) return { px: 0, py: 0 };
-
-    const strength = (1 - dist / radius) * 8;
-    const ux = dx / (dist || 1);
-    const uy = dy / (dist || 1);
+    const strength = influence * 14;
+    const ux = dx / dist;
+    const uy = dy / dist;
 
     return { px: ux * strength, py: uy * strength };
-  }, [hovered, tile.id, tile.x, tile.y, tiles]);
+  }, [hovered, tile.id, tile.x, tile.y, tiles, influence]);
 
-  // Tile drift loop (deterministic from idx)
-  const driftX = (idx % 2 === 0 ? 1 : -1) * (3 + (idx % 4));
-  const driftY = (idx % 3 === 0 ? -1 : 1) * (2 + (idx % 3));
-  const driftR = (idx % 2 === 0 ? 1 : -1) * 0.6;
+  // Neighbour reactions when another tile is hovered
+  const neighbourScale = hovered && hovered !== tile.id ? 1 - influence * 0.035 : 1;
+  const neighbourOpacity = hovered && hovered !== tile.id ? 1 - influence * 0.10 : 1;
+  const neighbourY = hovered && hovered !== tile.id ? influence * 6 : 0;
+
+  // Tile drift loop (deterministic from tile.id)
+  const driftX = (seed % 2 === 0 ? 1 : -1) * (3 + (seed % 5));
+  const driftY = (seed % 3 === 0 ? -1 : 1) * (2 + (seed % 4));
+  const driftR = (seed % 2 === 0 ? 1 : -1) * 0.6;
+  const driftDur = 10 + (seed % 7);
+  const driftDelay = (seed % 11) * 0.15;
 
   // Shadow profiles - enhanced on hover
   const baseShadow =
@@ -203,9 +225,13 @@ function HeroTile({
       onPointerEnter={() => setHovered(tile.id)}
       onPointerLeave={() => setHovered(null)}
       animate={{
-        y: isHovered ? -12 : 0,
+        scale: neighbourScale,
+        opacity: neighbourOpacity,
+        y: neighbourY,
+        x: push.px,
       }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      whileHover={{ y: -16, scale: 1.03, opacity: 1 }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
     >
       {/* Shadow layer - deepens on hover */}
       <motion.div
@@ -220,8 +246,8 @@ function HeroTile({
           boxShadow: isHovered ? hoverShadow : baseShadow,
         }}
         transition={{
-          x: { duration: 8 + (idx % 5), repeat: Infinity, ease: "easeInOut", delay: (idx % 7) * 0.3 },
-          y: { duration: 8 + (idx % 5), repeat: Infinity, ease: "easeInOut", delay: (idx % 7) * 0.3 },
+          x: { duration: driftDur, repeat: Infinity, ease: "easeInOut", delay: driftDelay },
+          y: { duration: driftDur, repeat: Infinity, ease: "easeInOut", delay: driftDelay },
           boxShadow: { duration: 0.3, ease: "easeOut" },
         }}
       />
@@ -252,13 +278,13 @@ function HeroTile({
           rotate: [tile.r, tile.r + driftR, tile.r],
         }}
         transition={{
-          duration: 8 + (idx % 6),
+          duration: driftDur,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: (idx % 9) * 0.25,
+          delay: driftDelay,
         }}
       >
-        {/* Cursor parallax + neighbour push */}
+        {/* Cursor parallax */}
         <motion.div
           className="absolute inset-0"
           style={{
@@ -266,9 +292,7 @@ function HeroTile({
             y: sy,
           }}
           transformTemplate={({ x, y }) =>
-            `translate3d(${Number(x) * parallax + push.px}px, ${
-              Number(y) * parallax + push.py
-            }px, 0)`
+            `translate3d(${Number(x) * parallax}px, ${Number(y) * parallax}px, 0)`
           }
         >
           <Image
@@ -287,7 +311,7 @@ function HeroTile({
   );
 }
 
-/** Deterministic ghost tile field - larger, more visible like Rareloop */
+/** Deterministic ghost tile field - varied sizes for natural feel */
 function makeGhostTiles(count: number, seed: number) {
   let s = seed;
   const rand = () => {
@@ -298,17 +322,19 @@ function makeGhostTiles(count: number, seed: number) {
   };
 
   return Array.from({ length: count }).map((_, i) => {
-    // Spread across entire area, including left side for full coverage
+    // Spread across entire area
     const x = 5 + rand() * 90;
-    const y = -5 + rand() * 110; // Extend beyond bounds
-    // Larger sizes like Rareloop
-    const size = 80 + Math.round(rand() * 100);
+    const y = -5 + rand() * 110;
+    // Wider size distribution for natural feel
+    const size = 60 + Math.round(rand() * 140);
     const r = -15 + rand() * 30;
     const driftX = -4 + rand() * 8;
     const driftY = -4 + rand() * 8;
     const dur = 14 + rand() * 10;
     const delay = rand() * 4;
+    // Vary border radius slightly
+    const borderRadius = 22 + (size % 10);
 
-    return { id: `g${i}`, x, y, size, r, driftX, driftY, dur, delay };
+    return { id: `g${i}`, x, y, size, r, driftX, driftY, dur, delay, borderRadius };
   });
 }
