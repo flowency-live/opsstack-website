@@ -34,8 +34,8 @@ const stacks = [
   {
     id: "niner",
     name: "Niner",
-    tagline: "Your Live Operations Dashboard. Real-time clarity.",
-    description: "See your business at a glance. Your contacts, clients, suppliers, pipeline, live jobs. The metrics that matter, surfaced automatically.",
+    tagline: "CRM + Live Operations. Lead to outcome, tracked.",
+    description: "A lightweight CRM that punches above its weight. Pipeline, clients, jobs, financials. From first contact to completed work, with live dashboards that surface what matters.",
     badge: "/stacks/stack_niner.png",
     href: "https://niner.opstack.uk",
   },
