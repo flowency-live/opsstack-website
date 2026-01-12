@@ -116,9 +116,11 @@ const HeroSection = () => {
                 Book a Working Session
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="lg" className="group">
-                See What We Build
-              </Button>
+              <a href="#stacks">
+                <Button variant="outline" size="lg" className="group">
+                  See What We Build
+                </Button>
+              </a>
             </div>
 
             {/* Trust Line */}

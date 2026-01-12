@@ -13,7 +13,7 @@ const stacks = [
     tagline: "Your Transfer Business. Affordable Intelligence.",
     description: "Professional transfer management software that gets you live in a day, not months. Built for VIP transfer operators who want to stop juggling spreadsheets and WhatsApp threads.",
     badge: "/stacks/stack_relay.png",
-    href: "https://relay.opstack.uk",
+    href: "/services#relay",
   },
   {
     id: "track",
@@ -21,7 +21,7 @@ const stacks = [
     tagline: "Your Asset & Fleet Control Layer.",
     description: "Operational visibility for high-value assets that move. Track inventory, handovers, maintenance, uptime, efficiency and utilisation (and more!) in one place.",
     badge: "/stacks/stack_track.png",
-    href: "https://track.opstack.uk",
+    href: "/services#track",
   },
   {
     id: "level",
@@ -29,7 +29,7 @@ const stacks = [
     tagline: "Your Team's Scorecard. Track what matters.",
     description: "Performance visibility that helps teams level up without the micromanagement. Know where you stand, always.",
     badge: "/stacks/stack_level.png",
-    href: "https://level.opstack.uk",
+    href: "/services#level",
   },
   {
     id: "niner",
@@ -37,7 +37,7 @@ const stacks = [
     tagline: "CRM + Live Operations. Lead to outcome, tracked.",
     description: "A lightweight CRM that punches above its weight. Pipeline, clients, jobs, financials. From first contact to completed work, with live dashboards that surface what matters.",
     badge: "/stacks/stack_niner.png",
-    href: "https://niner.opstack.uk",
+    href: "/services#niner",
   },
 ];
 
@@ -74,7 +74,7 @@ const TiltCard = ({ stack }: TiltCardProps) => {
   }, []);
 
   return (
-    <Link href={stack.href} target="_blank" rel="noopener noreferrer" className="block h-full">
+    <Link href={stack.href} className="block h-full">
       <div
         ref={cardRef}
         className="stack-tilt-card group h-full"
@@ -124,7 +124,7 @@ const TiltCard = ({ stack }: TiltCardProps) => {
 
 const StacksSection = () => {
   return (
-    <section className="relative py-20 lg:py-28">
+    <section id="stacks" className="relative py-20 lg:py-28">
       {/* Top gradient divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
