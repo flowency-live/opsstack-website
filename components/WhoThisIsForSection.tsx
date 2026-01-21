@@ -90,19 +90,25 @@ const WhoThisIsForSection = () => {
               ))}
             </div>
 
-            {/* Outgrown No-Code Callout - the one featured card */}
+            {/* Outgrown Vibe-Coded Tools Callout - the one featured card */}
             <div className="card-elevated p-8">
               {/* Left accent bar */}
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
 
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-                Outgrown your <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">no-code tools</mark>?
+                Outgrown your <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">vibe-coded tools</mark>?
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                You used Replit, Lovable, or Cursor to build something real. Smart move - speed matters. But now you&apos;re stuck: your data lives somewhere you can&apos;t see, token costs are climbing, and every change costs more than the last.
+                There&apos;s a difference between building something that demos well and something that survives real users.
               </p>
-              <p className="text-lg text-foreground leading-relaxed">
-                We port your tools to a proper AWS stack <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">you actually own</mark>. Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                We specialise in taking products off hype-driven platforms and into AWS environments built for ownership, auditability, and cost control.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed mb-4">
+                Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
+              </p>
+              <p className="text-lg text-primary font-semibold">
+                Built to last, not to trend.
               </p>
             </div>
           </div>

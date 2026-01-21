@@ -50,9 +50,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Why This Exists - Founder Story */}
-      <section className="relative py-24 lg:py-32 pt-32 md:pt-40">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 pt-32 md:pt-40 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -124,9 +122,7 @@ export default function AboutPage() {
       </section>
 
       {/* Who We Are */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -170,8 +166,7 @@ export default function AboutPage() {
       </section>
 
       {/* How We Work */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
+      <section className="relative py-24 lg:py-32 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">

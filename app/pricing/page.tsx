@@ -61,9 +61,7 @@ export default function PricingPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 pt-32 lg:pt-40">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 pt-32 lg:pt-40 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -87,9 +85,7 @@ export default function PricingPage() {
       </section>
 
       {/* Free Discovery */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.04]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -148,9 +144,7 @@ export default function PricingPage() {
       </section>
 
       {/* MVP Build */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -221,9 +215,7 @@ export default function PricingPage() {
       </section>
 
       {/* Credits */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.04]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -318,9 +310,7 @@ export default function PricingPage() {
       </section>
 
       {/* Optional Services */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">

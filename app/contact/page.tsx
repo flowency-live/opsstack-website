@@ -8,7 +8,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-background pt-20">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden section-dark pt-20">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
         </div>
@@ -27,7 +27,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Options */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-20 overflow-hidden section-light">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center space-y-6">
@@ -74,9 +74,8 @@ export default function ContactPage() {
       </section>
 
       {/* Additional Info */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 overflow-hidden section-dark">
+        <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8 card-hover space-y-4">
               <div className="flex items-center gap-3">
@@ -106,7 +105,7 @@ export default function ContactPage() {
       </section>
 
       {/* What Happens Next */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-20 overflow-hidden section-light">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">

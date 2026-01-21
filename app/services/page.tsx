@@ -92,9 +92,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Build Section */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -151,9 +149,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Automate Section */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.04]" />
+      <section className="relative py-24 lg:py-32 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -209,9 +205,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Amplify Section */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -270,8 +264,7 @@ export default function ServicesPage() {
       </section>
 
       {/* What Makes Our Delivery Different */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
+      <section className="relative py-24 lg:py-32 section-dark">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -330,9 +323,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Our Stacks Section */}
-      <section className="relative py-24 lg:py-32">
-        <div className="absolute inset-0 bg-background" />
-        <div className="absolute inset-0 bg-white/[0.02]" />
+      <section className="relative py-24 lg:py-32 section-light">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">

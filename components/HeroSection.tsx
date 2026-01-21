@@ -73,19 +73,11 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Tablet & Mobile: tiles as faded background behind text */}
+      {/* Tablet & Mobile: tiles as subtle ambient texture */}
       <div className="absolute inset-0 overflow-hidden block lg:hidden">
-        <div className="absolute inset-0 opacity-20 md:opacity-25">
+        <div className="absolute inset-0 opacity-[0.08] md:opacity-[0.12]">
           <HeroTileField tiles={heroTiles} />
         </div>
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 45%, transparent 90%)",
-            zIndex: 40,
-          }}
-        />
       </div>
 
       {/* Main Content Area */}
