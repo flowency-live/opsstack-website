@@ -239,10 +239,11 @@ function HeroTile({
       <motion.div
         className="absolute rounded-[32px] pointer-events-none hidden dark:block"
         style={{
-          inset: -4,
+          inset: -6,
           transform: `rotate(${tile.r}deg)`,
-          background: "linear-gradient(145deg, hsl(225 50% 18% / 0.9), hsl(225 50% 12% / 0.95))",
-          border: "1px solid hsl(250 60% 50% / 0.15)",
+          background: "linear-gradient(145deg, hsl(225 45% 24%), hsl(225 50% 16%))",
+          border: "1px solid hsl(250 50% 45% / 0.3)",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.4), inset 0 1px 0 hsl(225 40% 32% / 0.5)",
         }}
         animate={{
           x: [0, driftX, 0],
@@ -281,15 +282,15 @@ function HeroTile({
         style={{
           inset: -2,
           transform: `rotate(${tile.r}deg)`,
-          boxShadow: "0 0 20px 2px hsl(250 70% 55% / 0.2), inset 0 0 0 1px hsl(250 70% 60% / 0.1)",
+          boxShadow: "0 0 25px 4px hsl(250 70% 55% / 0.35), inset 0 0 0 1px hsl(250 70% 65% / 0.25)",
         }}
         animate={{
           x: [0, driftX, 0],
           y: [0, driftY, 0],
-          opacity: isHovered ? 1 : 0.6,
+          opacity: isHovered ? 1 : 0.75,
           boxShadow: isHovered
-            ? "0 0 35px 4px hsl(250 70% 55% / 0.35), inset 0 0 0 1px hsl(250 70% 60% / 0.25)"
-            : "0 0 20px 2px hsl(250 70% 55% / 0.2), inset 0 0 0 1px hsl(250 70% 60% / 0.1)",
+            ? "0 0 45px 8px hsl(250 70% 55% / 0.5), inset 0 0 0 1px hsl(250 70% 65% / 0.4)"
+            : "0 0 25px 4px hsl(250 70% 55% / 0.35), inset 0 0 0 1px hsl(250 70% 65% / 0.25)",
         }}
         transition={{
           x: { duration: driftDur, repeat: Infinity, ease: "easeInOut", delay: driftDelay },
