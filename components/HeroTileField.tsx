@@ -83,7 +83,7 @@ export function HeroTileField({ tiles, className }: Props) {
         {ghosts.map((g) => (
           <motion.div
             key={g.id}
-            className="absolute border border-foreground/[0.04] bg-foreground/[0.02] dark:border-white/[0.06] dark:bg-white/[0.025]"
+            className="absolute border border-foreground/[0.04] bg-foreground/[0.02] dark:border-primary/[0.12] dark:bg-primary/[0.04]"
             style={{
               left: `${g.x}%`,
               top: `${g.y}%`,
@@ -193,6 +193,8 @@ function HeroTile({
   const driftDelay = (seed % 11) * 0.15;
 
   // Shadow profiles - enhanced on hover
+  // Light mode: subtle shadows since tiles have white backgrounds
+  // Dark mode: deeper shadows with purple tint for brand cohesion
   const baseShadow =
     tier === 1
       ? "0 32px 70px rgba(0,0,0,0.5)"
@@ -233,6 +235,27 @@ function HeroTile({
       whileHover={{ y: -16, scale: 1.03, opacity: 1 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
+      {/* Dark mode: backdrop plate for depth - mimics light mode's white tile background */}
+      <motion.div
+        className="absolute rounded-[32px] pointer-events-none hidden dark:block"
+        style={{
+          inset: -4,
+          transform: `rotate(${tile.r}deg)`,
+          background: "linear-gradient(145deg, hsl(225 50% 18% / 0.9), hsl(225 50% 12% / 0.95))",
+          border: "1px solid hsl(250 60% 50% / 0.15)",
+        }}
+        animate={{
+          x: [0, driftX, 0],
+          y: [0, driftY, 0],
+        }}
+        transition={{
+          duration: driftDur,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: driftDelay,
+        }}
+      />
+
       {/* Shadow layer - deepens on hover */}
       <motion.div
         className="absolute inset-0 rounded-[28px]"
@@ -252,7 +275,31 @@ function HeroTile({
         }}
       />
 
-      {/* Glow layer - appears on hover */}
+      {/* Dark mode: purple rim glow - always visible, intensifies on hover */}
+      <motion.div
+        className="absolute rounded-[30px] pointer-events-none hidden dark:block"
+        style={{
+          inset: -2,
+          transform: `rotate(${tile.r}deg)`,
+          boxShadow: "0 0 20px 2px hsl(250 70% 55% / 0.2), inset 0 0 0 1px hsl(250 70% 60% / 0.1)",
+        }}
+        animate={{
+          x: [0, driftX, 0],
+          y: [0, driftY, 0],
+          opacity: isHovered ? 1 : 0.6,
+          boxShadow: isHovered
+            ? "0 0 35px 4px hsl(250 70% 55% / 0.35), inset 0 0 0 1px hsl(250 70% 60% / 0.25)"
+            : "0 0 20px 2px hsl(250 70% 55% / 0.2), inset 0 0 0 1px hsl(250 70% 60% / 0.1)",
+        }}
+        transition={{
+          x: { duration: driftDur, repeat: Infinity, ease: "easeInOut", delay: driftDelay },
+          y: { duration: driftDur, repeat: Infinity, ease: "easeInOut", delay: driftDelay },
+          opacity: { duration: 0.3, ease: "easeOut" },
+          boxShadow: { duration: 0.3, ease: "easeOut" },
+        }}
+      />
+
+      {/* Glow layer - appears on hover (both modes) */}
       <motion.div
         className="absolute rounded-[28px] pointer-events-none"
         style={{
@@ -301,6 +348,8 @@ function HeroTile({
             fill
             className="object-contain"
             draggable={false}
+            priority
+            sizes="(max-width: 768px) 150px, 200px"
           />
         </motion.div>
 
