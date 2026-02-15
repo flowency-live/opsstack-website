@@ -10,12 +10,20 @@ const steps = [
 
 const CTASection = () => {
   return (
-    <section id="contact" className="relative py-32 lg:py-40 overflow-hidden">
+    <section id="contact" className="relative py-32 lg:py-40 overflow-hidden section-grain">
       {/* Purple gradient background */}
       <div
         className="absolute inset-0"
         style={{
           background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(250 70% 35%) 50%, hsl(250 60% 20%) 100%)'
+        }}
+      />
+
+      {/* Geometric accent - diagonal line (purple) */}
+      <div
+        className="absolute top-0 right-0 w-1/2 h-full pointer-events-none overflow-hidden opacity-30"
+        style={{
+          background: 'linear-gradient(135deg, transparent 30%, hsl(250 70% 70% / 0.4) 50%, transparent 70%)'
         }}
       />
 

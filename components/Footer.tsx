@@ -45,6 +45,7 @@ const Footer = () => {
                     width={400}
                     height={120}
                     className="h-28 w-auto"
+                    loading="lazy"
                   />
                 )}
               </div>
@@ -52,14 +53,26 @@ const Footer = () => {
                 We build the digital operating system your business should have had years ago. Tailored to how you actually work. Delivered in days, not months.
               </p>
               <div className="flex items-center gap-4">
-                <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
-                  <Linkedin className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <a
+                  href="#"
+                  aria-label="Follow us on LinkedIn"
+                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group"
+                >
+                  <Linkedin className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
-                  <Twitter className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <a
+                  href="#"
+                  aria-label="Follow us on X (Twitter)"
+                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group"
+                >
+                  <Twitter className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
                 </a>
-                <a href="mailto:hello@opstack.uk" className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group">
-                  <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                <a
+                  href="mailto:hello@opstack.uk"
+                  aria-label="Email us at hello@opstack.uk"
+                  className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center hover:bg-primary/20 hover:border-primary/30 border border-transparent transition-all duration-300 group"
+                >
+                  <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" aria-hidden="true" />
                 </a>
               </div>
             </div>
@@ -98,7 +111,7 @@ const Footer = () => {
               © 2025 OpStack. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Built with technology. <span className="gradient-text">Powered by humans.</span>
+              Built with technology. <span className="text-primary">Powered by humans.</span>
             </p>
           </div>
         </div>

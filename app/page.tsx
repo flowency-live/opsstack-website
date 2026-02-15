@@ -9,7 +9,7 @@ import CTASection from "@/components/CTASection";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen bg-background">
       <HeroSection />
       <ProblemSection />
       <ProcessSection />

@@ -21,7 +21,7 @@ const features = [
 
 const ProblemSection = () => {
   return (
-    <section className="relative py-20 lg:py-28 section-light">
+    <section className="relative py-20 lg:py-28 section-light-enhanced">
       {/* Top gradient divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
@@ -76,7 +76,7 @@ const ProblemSection = () => {
             {/* Closing Line */}
             <p className="text-lg">
               <span className="text-muted-foreground">This is digital transformation</span>{" "}
-              <mark className="bg-primary/30 dark:bg-primary/40 text-foreground font-medium px-1 rounded-sm">democratised</mark>{" "}
+              <mark className="mark-amber font-medium">democratised</mark>{" "}
               <span className="text-muted-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
             </p>
           </div>

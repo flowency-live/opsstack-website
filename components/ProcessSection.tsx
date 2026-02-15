@@ -27,7 +27,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="relative py-20 lg:py-28 section-dark">
+    <section id="process" className="relative py-20 lg:py-28 section-dark-enhanced section-grain">
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <SectionReveal>
           <div className="max-w-5xl">
@@ -86,7 +86,7 @@ const ProcessSection = () => {
             {/* Closing Line - separated, given prominence as closing thought */}
             <div className="pt-8 border-t border-border/50">
               <p className="text-xl md:text-2xl font-medium mb-3">
-                <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1.5 rounded-sm">AI plus humans</mark>{" "}
+                <mark className="mark-amber">AI plus humans</mark>{" "}
                 <span className="text-foreground">equals practical transformation.</span>
               </p>
               <p className="text-muted-foreground">

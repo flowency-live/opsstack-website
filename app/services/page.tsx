@@ -57,9 +57,9 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-28">
+      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-28 section-dark-enhanced section-grain">
         <div className="absolute inset-0 bg-background" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export default function ServicesPage() {
               What We Build
             </h1>
 
-            <p className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-6">
+            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
               Your Operating Stack.
             </p>
 
@@ -92,7 +92,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Build Section */}
-      <section className="relative py-24 lg:py-32 section-light">
+      <section className="relative py-24 lg:py-32 section-light-enhanced">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -149,7 +149,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Automate Section */}
-      <section className="relative py-24 lg:py-32 section-dark">
+      <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -205,7 +205,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Amplify Section */}
-      <section className="relative py-24 lg:py-32 section-light">
+      <section className="relative py-24 lg:py-32 section-light-enhanced">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -264,7 +264,7 @@ export default function ServicesPage() {
       </section>
 
       {/* What Makes Our Delivery Different */}
-      <section className="relative py-24 lg:py-32 section-dark">
+      <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -323,7 +323,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Our Stacks Section */}
-      <section className="relative py-24 lg:py-32 section-light">
+      <section className="relative py-24 lg:py-32 section-light-enhanced">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">

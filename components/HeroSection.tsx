@@ -55,7 +55,7 @@ const heroTiles = [
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden section-grain">
       {/* Clean gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
@@ -85,10 +85,10 @@ const HeroSection = () => {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl pointer-events-auto">
             {/* Main Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6">
-              <span className="font-semibold">Your Business.</span>{" "}
-              <span className="text-primary font-bold">Digitised Properly.</span>
-              <span className="font-semibold">{" "}Finally.</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mb-6 tracking-tight">
+              <span className="text-foreground">Your Business.</span>{" "}
+              <span className="text-primary">Digitised Properly.</span>
+              <span className="text-foreground">{" "}Finally.</span>
             </h1>
 
             {/* Subheading */}

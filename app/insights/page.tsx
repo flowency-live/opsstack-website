@@ -85,9 +85,9 @@ const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
 
 export default function InsightsPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen bg-background">
       {/* Header */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 section-dark-enhanced section-grain">
         <div className="absolute inset-0 bg-background" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">

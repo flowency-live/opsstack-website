@@ -34,7 +34,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-primary/10 bg-background/90 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-background/50 backdrop-blur-sm'}`}>
+    <nav
+      aria-label="Main navigation"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-primary/10 bg-background/90 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-background/50 backdrop-blur-sm'}`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -71,9 +74,9 @@ const Navbar = () => {
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                  <Sun className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" aria-hidden="true" />
                 ) : (
-                  <Moon className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" />
+                  <Moon className="w-5 h-5 text-muted-foreground hover:text-primary transition-colors" aria-hidden="true" />
                 )}
               </button>
             )}
@@ -93,24 +96,27 @@ const Navbar = () => {
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
-                  <Sun className="w-5 h-5 text-muted-foreground" />
+                  <Sun className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                 ) : (
-                  <Moon className="w-5 h-5 text-muted-foreground" />
+                  <Moon className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
                 )}
               </button>
             )}
             <button
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors duration-300"
               onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-primary/10 animate-fade-in">
+          <div id="mobile-menu" className="md:hidden py-4 border-t border-primary/10 animate-fade-in" role="menu">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link

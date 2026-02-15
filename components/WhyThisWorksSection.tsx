@@ -29,7 +29,7 @@ const reasons = [
 
 const WhyThisWorksSection = () => {
   return (
-    <section id="about" className="relative py-20 lg:py-28 section-light">
+    <section id="about" className="relative py-20 lg:py-28 section-light-enhanced">
       {/* Top gradient divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"

@@ -57,7 +57,7 @@ const WhoThisIsForSection = () => {
 
               {/* The thesis - prominent, not buried */}
               <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-3xl">
-                If your business is held together by <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">good people compensating for bad systems</mark>, we fix that.
+                If your business is held together by <mark className="mark-amber">good people compensating for bad systems</mark>, we fix that.
               </p>
 
               {/* Accent bar */}
@@ -96,7 +96,7 @@ const WhoThisIsForSection = () => {
               <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
 
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
-                Outgrown your <mark className="bg-primary/30 dark:bg-primary/40 text-foreground px-1 rounded-sm">vibe-coded tools</mark>?
+                Outgrown your <mark className="mark-amber">vibe-coded tools</mark>?
               </h3>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 There&apos;s a difference between building something that demos well and something that survives real users.
@@ -127,7 +127,7 @@ const WhoThisIsForSection = () => {
 
             <p className="text-lg md:text-xl">
               <span className="text-foreground">This is digital transformation</span>{" "}
-              <mark className="bg-primary/30 dark:bg-primary/40 text-foreground font-bold text-2xl md:text-3xl px-2 rounded-sm">democratised</mark>{" "}
+              <mark className="mark-amber font-bold text-2xl md:text-3xl">democratised</mark>{" "}
               <span className="text-foreground">- enterprise-grade capability, accessible, affordable, and built for businesses that actually need it.</span>
             </p>
           </div>

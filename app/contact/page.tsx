@@ -6,9 +6,9 @@ import { CalEmbed } from '@/components/CalEmbed'
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background">
+    <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden section-dark pt-20">
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden section-dark-enhanced section-grain pt-20">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
         </div>
@@ -17,9 +17,9 @@ export default function ContactPage() {
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
               Let&apos;s move something
-              <span className="gradient-text"> forward - together</span>
+              <span className="text-primary"> forward - together</span>
             </h1>
-            <p className="text-xl md:text-2xl text-foreground/70">
+            <p className="text-xl md:text-2xl text-muted-foreground">
               Whether you&apos;ve just got a few questions or you want to explore working together, we&apos;d love to hear from you.
             </p>
           </div>
@@ -27,21 +27,21 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Options */}
-      <section className="relative py-20 overflow-hidden section-light">
+      <section className="relative py-20 overflow-hidden section-light-enhanced">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center space-y-6">
-              <h2 className="font-display text-4xl md:text-6xl font-bold">
-                Let&apos;s amplify <span className="gradient-text">your tech</span>
+              <h2 className="font-display text-4xl md:text-5xl font-bold">
+                Let&apos;s amplify <span className="text-primary">your tech</span>
               </h2>
               <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-xl text-foreground/60">
+                <p className="text-xl text-muted-foreground">
                   A no-pressure conversation to uncover what&apos;s really blocking your business.
                 </p>
-                <p className="text-lg text-foreground/70">
+                <p className="text-lg text-muted-foreground">
                   We&apos;ll help you see what&apos;s possible, what it&apos;s worth, and outline a clear path forward - based on proven solutions we&apos;ve seen work for others in similar situations.
                 </p>
-                <p className="text-lg font-semibold gradient-text">
+                <p className="text-lg font-semibold text-primary">
                   We&apos;ll be candid about whether our approach is the right fit. Either way, you&apos;ll leave with actionable insights.
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-bold">Send us a message</h3>
               </div>
-              <p className="text-foreground/70">
+              <p className="text-muted-foreground">
                 We will respond within 24 hours. Usually much faster.
               </p>
               <ContactForm />
@@ -74,7 +74,7 @@ export default function ContactPage() {
       </section>
 
       {/* Additional Info */}
-      <section className="relative py-20 overflow-hidden section-dark">
+      <section className="relative py-20 overflow-hidden section-dark-enhanced section-grain">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="glass-card p-8 card-hover space-y-4">
@@ -84,7 +84,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-bold">Based in the UK</h3>
               </div>
-              <p className="text-lg text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 We work with SMEs across the UK - both remote and on-site where needed.
               </p>
             </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-2xl font-bold">Not sure what you need?</h3>
               </div>
-              <p className="text-lg text-foreground/70 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 No problem. Just tell us what hurts. We will help you understand what is possible and where the biggest gains are.
               </p>
             </div>
@@ -105,14 +105,14 @@ export default function ContactPage() {
       </section>
 
       {/* What Happens Next */}
-      <section className="relative py-20 overflow-hidden section-light">
+      <section className="relative py-20 overflow-hidden section-light-enhanced">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">
               <h2 className="font-display text-3xl md:text-5xl font-bold">
-                What happens <span className="gradient-text">next?</span>
+                What happens <span className="text-primary">next?</span>
               </h2>
-              <p className="text-xl text-foreground/60">
+              <p className="text-xl text-muted-foreground">
                 Here is what you can expect when you reach out
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex-1 space-y-2">
                     <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="text-foreground/70">{item.description}</p>
+                    <p className="text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
               ))}

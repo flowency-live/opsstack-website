@@ -93,6 +93,8 @@ const TiltCard = ({ stack }: TiltCardProps) => {
                   alt={`${stack.name} Stack`}
                   fill
                   className="object-contain"
+                  loading="lazy"
+                  sizes="112px"
                 />
               </div>
             </div>
@@ -124,7 +126,7 @@ const TiltCard = ({ stack }: TiltCardProps) => {
 
 const StacksSection = () => {
   return (
-    <section id="stacks" className="relative py-20 lg:py-28 section-dark">
+    <section id="stacks" className="relative py-20 lg:py-28 section-dark-enhanced section-grain">
       {/* Top gradient divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
