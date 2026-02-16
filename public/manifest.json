@@ -1,0 +1,21 @@
+{
+  "name": "OpStack - Business Operating Systems",
+  "short_name": "OpStack",
+  "description": "Custom business operating systems that replace spreadsheets, scattered tools, and manual processes with one unified platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#7c5cff",
+  "icons": [
+    {
+      "src": "/opstack-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/opstack-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
