@@ -17,10 +17,10 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://opstack.uk'),
   title: {
-    default: "OpStack - Fast, Practical Digital Capability for SMEs",
+    default: "OpStack - Business Operating Systems for SMEs",
     template: "%s | OpStack",
   },
-  description: "We act as your internal CTO and delivery team. Building the digital operating system your business should have had years ago. Clarity + Speed + Capability.",
+  description: "One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes with one unified platform.",
   keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "OpStack"],
   authors: [{ name: "OpStack" }],
   creator: "OpStack",
@@ -39,22 +39,13 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://opstack.uk',
     siteName: 'OpStack',
-    title: 'OpStack - Fast, Practical Digital Capability for SMEs',
-    description: 'We act as your internal CTO and delivery team. Building the digital operating system your business should have had years ago.',
-    images: [
-      {
-        url: '/opstack-logo.png',
-        width: 1200,
-        height: 630,
-        alt: 'OpStack - Digital Capability for SMEs',
-      },
-    ],
+    title: 'OpStack - Business Operating Systems for SMEs',
+    description: 'One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OpStack - Fast, Practical Digital Capability for SMEs',
-    description: 'We act as your internal CTO and delivery team. Building the digital operating system your business should have had years ago.',
-    images: ['/opstack-logo.png'],
+    title: 'OpStack - Business Operating Systems for SMEs',
+    description: 'One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes.',
   },
   robots: {
     index: true,
