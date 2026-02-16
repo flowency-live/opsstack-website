@@ -264,8 +264,53 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* How Much Section */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                &ldquo;How much does it <span className="text-primary">cost</span>?&rdquo;
+              </h2>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mt-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                }}
+              />
+            </div>
+
+            <div className="space-y-6">
+              <p className="text-2xl md:text-3xl font-semibold text-foreground leading-snug">
+                What&apos;s it worth to you?
+                <br />
+                <span className="text-primary">We&apos;ll come in under that.</span>
+              </p>
+
+              <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  Less than the salary of one junior developer. Less than the combined subscriptions you&apos;re already paying for tools you barely use. Less than the cost of running your operation on spreadsheets and good intentions for another year.
+                </p>
+                <p>
+                  We don&apos;t publish prices because every business is different - and because we&apos;d rather have an honest conversation about value than anchor you to a number that might be too high or too low for what you actually need.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl border border-primary/30 bg-primary/5 mt-8">
+                <p className="text-lg">
+                  <span className="font-semibold text-foreground">What we can tell you:</span>{' '}
+                  <span className="text-muted-foreground">if we can&apos;t make the ROI obvious, we&apos;ll tell you. We&apos;re not in the business of selling things that don&apos;t pay for themselves.</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included Section */}
+      <section className="relative py-24 lg:py-32 section-light-enhanced">
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
