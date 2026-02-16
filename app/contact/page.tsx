@@ -56,18 +56,57 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Contact Form */}
-            <div className="glass-card p-8 md:p-12 space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
+            {/* Contact Form - Two Column Layout */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Form Card */}
+              <div className="glass-card p-7 rounded-2xl border-2 border-primary/30">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold">Send us a message</h3>
                 </div>
-                <h3 className="text-2xl font-bold">Send us a message</h3>
+                <ContactForm />
               </div>
-              <p className="text-muted-foreground">
-                We will respond within 24 hours. Usually much faster.
-              </p>
-              <ContactForm />
+
+              {/* Contextual Info */}
+              <div className="flex flex-col justify-center gap-6">
+                <div className="glass-card p-7 rounded-2xl border-2 border-primary/30">
+                  <h3 className="text-xl font-semibold mb-3">Prefer email?</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Email us directly and we&apos;ll get back to you within 24 hours.
+                  </p>
+                  <a
+                    href="mailto:hello@opstack.uk"
+                    className="inline-flex items-center gap-3 text-primary hover:underline"
+                  >
+                    <Mail className="w-5 h-5" />
+                    hello@opstack.uk
+                  </a>
+                </div>
+
+                <div className="p-6 rounded-xl border border-primary/20 bg-primary/5">
+                  <p className="text-sm font-semibold mb-3">What happens next?</p>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">1.</span>
+                      We review your requirements
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">2.</span>
+                      Schedule a quick discovery call
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">3.</span>
+                      Show you a working prototype
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">4.</span>
+                      You decide what&apos;s next
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>

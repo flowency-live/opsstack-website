@@ -69,61 +69,45 @@ export function ContactForm({ className = '' }: ContactFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Name */}
-        <div>
-          <label htmlFor="name" className="block text-sm font-semibold text-foreground/90 mb-2">
-            Name *
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-card/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-            placeholder="Your name"
-          />
-        </div>
+    <form onSubmit={handleSubmit} className={`space-y-5 ${className}`}>
+      {/* Name */}
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium mb-2">
+          Name <span className="text-primary">*</span>
+        </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+          placeholder="Your name"
+        />
+      </div>
 
-        {/* Email */}
-        <div>
-          <label htmlFor="email" className="block text-sm font-semibold text-foreground/90 mb-2">
-            Email *
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-card/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-            placeholder="your.email@company.com"
-          />
-        </div>
+      {/* Email */}
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium mb-2">
+          Email <span className="text-primary">*</span>
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+          placeholder="you@company.com"
+        />
+      </div>
 
-        {/* Phone */}
+      {/* Company & Phone - Side by Side */}
+      <div className="grid grid-cols-2 gap-4">
         <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-foreground/90 mb-2">
-            Phone
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-card/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-            placeholder="Your phone number (optional)"
-          />
-        </div>
-
-        {/* Company */}
-        <div>
-          <label htmlFor="company" className="block text-sm font-semibold text-foreground/90 mb-2">
+          <label htmlFor="company" className="block text-sm font-medium mb-2">
             Company
           </label>
           <input
@@ -132,36 +116,50 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-card/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-            placeholder="Your company name (optional)"
+            className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none transition-colors"
+            placeholder="Your company"
           />
         </div>
 
-        {/* Message */}
-        <div className="md:col-span-2">
-          <label htmlFor="message" className="block text-sm font-semibold text-foreground/90 mb-2">
-            Message *
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium mb-2">
+            Phone
           </label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            rows={6}
-            value={formData.message}
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-card/50 border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-            placeholder="Tell us about your business and what you need help with..."
+            className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none transition-colors"
+            placeholder="Your phone"
           />
         </div>
+      </div>
+
+      {/* Message */}
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium mb-2">
+          Message <span className="text-primary">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows={4}
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
+          placeholder="Tell us about your business..."
+        />
       </div>
 
       {/* Submit Button */}
       <Button
         type="submit"
-        size="lg"
         variant="hero"
         disabled={isSubmitting}
-        className="w-full group"
+        className="w-full group min-h-[48px]"
       >
         {isSubmitting ? (
           <>
@@ -170,21 +168,21 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           </>
         ) : (
           <>
-            Send message
-            <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            <Send className="w-5 h-5 mr-2" />
+            Send Message
           </>
         )}
       </Button>
 
       {/* Status Messages */}
       {submitStatus === 'success' && (
-        <p className="text-center text-sm text-green-400 bg-green-400/10 border border-green-400/30 rounded-xl py-3">
-          Message sent successfully! We will get back to you soon.
+        <p className="text-center text-sm text-green-500 bg-green-500/10 border border-green-500/30 rounded-xl py-3">
+          Message sent! We&apos;ll be in touch shortly.
         </p>
       )}
       {submitStatus === 'error' && (
         <p className="text-center text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-xl py-3">
-          Something went wrong. Please try again or email us directly at hello@opstack.uk
+          Something went wrong. Please try again or email us directly.
         </p>
       )}
     </form>
