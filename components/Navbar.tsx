@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
+import { ContactSlideOut } from "./ContactSlideOut";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -80,11 +82,9 @@ const Navbar = () => {
                 )}
               </button>
             )}
-            <Link href="/contact">
-              <Button variant="hero" size="sm">
-                Book a Session
-              </Button>
-            </Link>
+            <Button variant="hero" size="sm" onClick={() => setContactOpen(true)}>
+              Book a Session
+            </Button>
           </div>
 
           {/* Mobile Theme Toggle & Menu Button */}
@@ -128,15 +128,27 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
-                <Button variant="hero" size="sm" className="w-fit">
-                  Book a Session
-                </Button>
-              </Link>
+              <Button
+                variant="hero"
+                size="sm"
+                className="w-fit"
+                onClick={() => {
+                  setIsOpen(false);
+                  setContactOpen(true);
+                }}
+              >
+                Book a Session
+              </Button>
             </div>
           </div>
         )}
       </div>
+
+      {/* Contact Slide-Out */}
+      <ContactSlideOut
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
+      />
     </nav>
   );
 };

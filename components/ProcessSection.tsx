@@ -33,6 +33,9 @@ const ProcessSection = () => {
           <div className="max-w-5xl">
             {/* Header - Left aligned */}
             <div className="mb-20">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
+                Our process
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 How it <span className="text-primary">works</span>
               </h2>

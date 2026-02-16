@@ -129,15 +129,45 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  /* Text selection highlight - brand lilac */
+  /* Text selection highlight - high contrast brand purple */
   ::selection {
-    background-color: hsl(262 83% 68% / 0.4);
-    color: hsl(0 0% 100%);
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
 
   ::-moz-selection {
-    background-color: hsl(262 83% 68% / 0.4);
-    color: hsl(0 0% 100%);
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  /* Focus-visible styles for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Remove default focus outline - we're using focus-visible */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Buttons and links get better focus treatment */
+  button:focus-visible,
+  a:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
+  /* Form elements */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 0;
+    border-color: hsl(var(--primary));
   }
 }
 
@@ -232,12 +262,13 @@
 
   /* Glass Effects with OpsStack Colors */
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border rounded-2xl;
+    @apply bg-card/60 backdrop-blur-xl rounded-2xl;
+    border: 1px solid hsl(225 20% 70%);
     box-shadow: var(--shadow-card);
   }
 
   .dark .glass-card {
-    @apply border-border/50;
+    border-color: hsl(var(--border) / 0.5);
   }
 
   .glass-strong {
@@ -299,9 +330,9 @@
     background: linear-gradient(90deg, transparent, hsl(var(--purple) / 0.5), transparent);
   }
 
-  /* Card Hover Effects */
+  /* Card Hover Effects - consistent 300ms timing */
   .card-hover {
-    @apply transition-all duration-500 ease-out;
+    @apply transition-all duration-300 ease-out;
   }
 
   .card-hover:hover {
@@ -564,6 +595,57 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* Disable floating shapes and infinite animations */
+  .floating-shape,
+  .hero-glow,
+  [class*="animate-float"],
+  [class*="animate-pulse"],
+  [class*="animate-glow"] {
+    animation: none !important;
+  }
+
+  /* Keep essential reveal transitions but make them instant */
+  .section-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .section-reveal .reveal-child {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Contact Slide-Out Panel */
+.contact-overlay-blur {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-overlay-blur.active {
+  opacity: 1;
+}
+
+.contact-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-panel.slide-in {
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-overlay-blur {
+    transition: none;
+  }
+
+  .contact-panel {
+    transition: none;
   }
 }
 

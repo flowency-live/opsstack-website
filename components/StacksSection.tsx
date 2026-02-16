@@ -6,7 +6,17 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import SectionReveal from "./SectionReveal";
 
-const stacks = [
+interface Stack {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  badge: string;
+  href: string;
+  inUse?: boolean;
+}
+
+const stacks: Stack[] = [
   {
     id: "relay",
     name: "Relay",
@@ -14,14 +24,16 @@ const stacks = [
     description: "Professional transfer management software that gets you live in a day, not months. Built for VIP transfer operators who want to stop juggling spreadsheets and WhatsApp threads.",
     badge: "/stacks/stack_relay.png",
     href: "/services#relay",
+    inUse: true,
   },
   {
     id: "track",
     name: "Track",
     tagline: "Your Asset & Fleet Control Layer.",
-    description: "Operational visibility for high-value assets that move. Track inventory, handovers, maintenance, uptime, efficiency and utilisation (and more!) in one place.",
+    description: "Operational visibility for high-value assets that move. Currently tracking race assets across the globe for a professional motorsport team. Inventory, handovers, maintenance, utilisation - in one place.",
     badge: "/stacks/stack_track.png",
     href: "/services#track",
+    inUse: true,
   },
   {
     id: "level",
@@ -42,7 +54,7 @@ const stacks = [
 ];
 
 interface TiltCardProps {
-  stack: typeof stacks[0];
+  stack: Stack;
 }
 
 const TiltCard = ({ stack }: TiltCardProps) => {
@@ -85,6 +97,16 @@ const TiltCard = ({ stack }: TiltCardProps) => {
       >
         <div className="stack-tilt-inner h-full">
           <div className="stack-card-face h-full flex flex-col">
+            {/* In Use Badge */}
+            {stack.inUse && (
+              <div className="absolute top-3 right-3 z-10">
+                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-primary/20 text-primary border border-primary/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  Live
+                </span>
+              </div>
+            )}
+
             {/* Badge - Centered and prominent */}
             <div className="flex justify-center mb-6">
               <div className="relative w-28 h-28">

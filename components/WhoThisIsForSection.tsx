@@ -51,6 +51,9 @@ const WhoThisIsForSection = () => {
           <div className="max-w-5xl mb-24 lg:mb-32">
             {/* Header with thesis line as opener */}
             <div className="mb-16">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
+                Is this you?
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
                 Who this is <span className="text-primary">for</span>
               </h2>

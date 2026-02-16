@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, MapPin, HelpCircle } from 'lucide-react'
+import { Mail, MapPin, HelpCircle, Check } from 'lucide-react'
 import { ContactForm } from '@/components/ContactForm'
 import { CalEmbed } from '@/components/CalEmbed'
 
@@ -101,6 +101,27 @@ export default function ContactPage() {
               </p>
             </div>
           </div>
+
+          {/* Risk Reversal - Our Promise */}
+          <div className="max-w-3xl mx-auto mt-12">
+            <div className="glass-card p-8 border-primary/20">
+              <h3 className="text-xl font-bold mb-4">Our Promise</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">No sales pitch - just a conversation about your business</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">See a working prototype before committing to anything</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-muted-foreground">Your data is always yours - export anytime, no lock-in</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -129,8 +150,8 @@ export default function ContactPage() {
                   answer: 'Your Stack evolves with your business. Need a new workflow? We add it. Process changed? We update it. You\'re not locked into a fixed feature set or waiting for a vendor\'s roadmap. This is your operating system — it moves when you move.',
                 },
                 {
-                  question: 'Do I own it?',
-                  answer: 'Yes. It\'s your system, running on your infrastructure, with your data. You\'re not renting access to our platform — you own the operating system we build for you. If we parted ways tomorrow, you\'d keep everything.',
+                  question: 'Do I own my data?',
+                  answer: 'Absolutely. Your data is always yours - export anytime, no questions asked. We host your Stack on our infrastructure (so you don\'t have to manage servers), but you\'re never locked in. We\'re building a partnership, not a dependency.',
                 },
               ].map((faq, i) => (
                 <div key={i} className="glass-card p-6 card-hover">

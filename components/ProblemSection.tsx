@@ -35,6 +35,9 @@ const ProblemSection = () => {
           <div className="max-w-5xl">
             {/* Header - Clean two-line style */}
             <div className="mb-16">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
+                The solution
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
                 Your Business<br />
                 <span className="text-primary">Operating Stack</span>

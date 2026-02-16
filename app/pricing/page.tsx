@@ -284,26 +284,30 @@ export default function PricingPage() {
 
             <div className="space-y-6">
               <p className="text-2xl md:text-3xl font-semibold text-foreground leading-snug">
-                What&apos;s it worth to you?
-                <br />
-                <span className="text-primary">We&apos;ll come in under that.</span>
+                You won&apos;t pay Salesforce prices for Salesforce complexity you don&apos;t need.
               </p>
 
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Less than the salary of one junior developer. Less than the combined subscriptions you&apos;re already paying for tools you barely use. Less than the cost of running your operation on spreadsheets and good intentions for another year.
+                  Our Stacks cost a fraction of enterprise software - because they only do what your business actually requires. No feature bloat. No per-seat licensing that punishes you for growing.
                 </p>
                 <p>
-                  We don&apos;t publish prices because every business is different - and because we&apos;d rather have an honest conversation about value than anchor you to a number that might be too high or too low for what you actually need.
+                  Less than the salary of one junior developer. Less than the combined subscriptions you&apos;re already paying for tools you barely use. Less than the cost of running your operation on spreadsheets and good intentions for another year.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl border border-primary/30 bg-primary/5 mt-8">
-                <p className="text-lg">
-                  <span className="font-semibold text-foreground">What we can tell you:</span>{' '}
-                  <span className="text-muted-foreground">if we can&apos;t make the ROI obvious, we&apos;ll tell you. We&apos;re not in the business of selling things that don&apos;t pay for themselves.</span>
+                <p className="text-lg font-medium text-foreground mb-2">
+                  Every business is different, so every Stack is priced differently.
+                </p>
+                <p className="text-muted-foreground">
+                  Discovery is free. You&apos;ll know exactly what the investment looks like before committing to anything.
                 </p>
               </div>
+
+              <p className="text-sm text-muted-foreground">
+                What shapes the investment: complexity of workflows, data migration needs, integrations required, and how quickly you need it live.
+              </p>
             </div>
           </div>
         </div>
