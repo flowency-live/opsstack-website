@@ -83,7 +83,7 @@ const Navbar = () => {
               </button>
             )}
             <Button variant="hero" size="sm" onClick={() => setContactOpen(true)}>
-              Book a Session
+              Contact Us
             </Button>
           </div>
 
@@ -116,7 +116,7 @@ const Navbar = () => {
 
         {/* Mobile Nav */}
         {isOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t border-primary/10 animate-fade-in" role="menu">
+          <div id="mobile-menu" className="md:hidden py-4 border-t border-primary/10 animate-fade-in bg-background" role="menu">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -137,7 +137,7 @@ const Navbar = () => {
                   setContactOpen(true);
                 }}
               >
-                Book a Session
+                Contact Us
               </Button>
             </div>
           </div>
