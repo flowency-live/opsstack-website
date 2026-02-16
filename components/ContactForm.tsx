@@ -35,7 +35,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 15000)
 
-      const response = await fetch('https://formspree.io/f/xblgkpbq', {
+      const response = await fetch('https://formspree.io/f/xlgwnjrj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
