@@ -1,76 +1,56 @@
-import { ArrowRight, CheckCircle2, Clock, Shield, Mail, Phone } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Users, Workflow, Link2, Database, Bot } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
 export const metadata = {
   title: 'Pricing - OpStack',
-  description: 'Fast, transparent, SME-friendly pricing. You only pay for value.',
+  description: 'Pricing that makes sense. No per-seat licensing, no feature tiers, no surprise invoices.',
 }
 
 export default function PricingPage() {
-  const mvpTiers = [
+  const complexityFactors = [
     {
-      name: 'Simple MVP',
-      price: '£2,500',
-      description: 'Single workflow or micro-product',
+      icon: Users,
+      factor: 'User roles & portals',
+      description: 'How many different views into your system?',
     },
     {
-      name: 'Standard MVP',
-      price: '£5,000',
-      description: 'Multi-workflow, dashboards, user accounts',
-      featured: true,
+      icon: Workflow,
+      factor: 'Workflow complexity',
+      description: 'Linear processes or branching logic?',
     },
     {
-      name: 'Advanced MVP',
-      price: '£9,000',
-      description: 'Complex logic, multi-system integration, AI agents',
-    },
-  ]
-
-  const creditPacks = [
-    {
-      credits: '50 Credits',
-      price: '£450',
-      description: 'Light improvements',
+      icon: Link2,
+      factor: 'Integrations',
+      description: 'Standalone or connected to other systems?',
     },
     {
-      credits: '150 Credits',
-      price: '£1,200',
-      description: 'Best for SMEs building momentum',
-      featured: true,
+      icon: Database,
+      factor: 'Data model',
+      description: 'Simple records or complex relationships?',
     },
     {
-      credits: '400 Credits',
-      price: '£2,800',
-      description: 'Continuous product evolution',
+      icon: Bot,
+      factor: 'Automation & AI',
+      description: 'Manual workflows or intelligent automation?',
     },
-  ]
-
-  const hostingTiers = [
-    { name: 'Basic', price: '£49/month', description: 'Single seat, low traffic' },
-    { name: 'Pro', price: '£99/month', description: 'Multi-seat, dashboards, AI features' },
-    { name: 'Scale', price: '£199/month', description: 'APIs, integrations, higher volume' },
-  ]
-
-  const supportTiers = [
-    { name: 'Email Support', price: '£75/month', icon: Mail },
-    { name: 'Priority Support', price: '£250/month', icon: Phone },
-    { name: 'Managed Service', price: '£600/month', icon: Shield },
   ]
 
   return (
     <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 pt-32 lg:pt-40 section-dark-enhanced section-grain">
-
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Fast, transparent,<br />
-              <span className="text-primary">SME-friendly</span>
+              Pricing that<br />
+              <span className="text-primary">makes sense</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mb-6">
-              You only pay for value. Not for endless planning, meetings, or time-wasting.
+            <p className="text-xl text-muted-foreground max-w-2xl mb-4">
+              No per-seat licensing. No feature tiers. No surprise invoices.
+            </p>
+            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+              Two phases: we build your Stack, then we evolve it together.
             </p>
 
             {/* Accent bar */}
@@ -84,17 +64,19 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Free Discovery */}
+      {/* Discovery Section */}
       <section className="relative py-24 lg:py-32 section-light-enhanced">
-
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-2">
+                Phase One
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Free <span className="text-primary">Discovery</span>
+                Discovery <span className="text-primary">Free</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                We spend a day with you - online or in person - to understand your business and find the biggest opportunities.
+                Start with clarity. We learn how your business actually works, identify the biggest opportunities, and define exactly what your Stack needs.
               </p>
 
               {/* Accent bar */}
@@ -108,14 +90,13 @@ export default function PricingPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-10">
               <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-                <div className="text-4xl font-bold text-primary mb-4">FREE</div>
-                <h3 className="text-xl font-semibold mb-4">At the end of discovery, you get:</h3>
-                <div className="space-y-3">
+                <h3 className="text-xl font-semibold mb-5">You walk away with:</h3>
+                <div className="space-y-4">
                   {[
-                    'A working prototype or proof-of-concept',
-                    'An outline of the value unlocked',
-                    'Clear, measurable ROI',
-                    'Options to continue - no pressure',
+                    'A working prototype with your actual data',
+                    'A clear PRD (Product Requirements Document)',
+                    'Complexity grade and fixed build price',
+                    'No commitment - walk away if it\'s not right',
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
@@ -126,16 +107,19 @@ export default function PricingPage() {
               </div>
 
               <div className="p-7 rounded-2xl border border-primary/30 bg-primary/5">
-                <h3 className="text-xl font-semibold mb-4">This is our moat</h3>
+                <h3 className="text-xl font-semibold mb-4">Why we do this for free</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  We prove value before you spend a penny. If we can&apos;t show you something real in a day, we shouldn&apos;t be working together.
+                </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  No one else gives you working software upfront. We prove value before you spend a penny.
+                  The prototype is yours to keep either way.
                 </p>
               </div>
             </div>
 
             <Link href="/contact">
               <Button size="lg" variant="hero" className="group">
-                Book your free discovery
+                Book a free discovery
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -143,17 +127,19 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* MVP Build */}
+      {/* Build Section */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
-
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-2">
+                Phase Two
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                MVP Build <span className="text-primary">Fixed Price</span>
+                Build <span className="text-primary">Fixed Price</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                After discovery, we agree the scope together and deliver a working Minimum Viable Product within a week.
+                Your Stack, built to spec. Price agreed after discovery - no surprises, no scope creep.
               </p>
 
               {/* Accent bar */}
@@ -165,66 +151,72 @@ export default function PricingPage() {
               />
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 mb-10">
-              {mvpTiers.map((tier, i) => (
-                <div
-                  key={i}
-                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)] ${
-                    tier.featured
-                      ? 'border-primary/50'
-                      : 'border-border dark:border-border/40'
-                  }`}
-                >
-                  {tier.featured && (
-                    <div className="text-xs font-semibold text-primary uppercase tracking-wide mb-3">
-                      Most Popular
-                    </div>
-                  )}
-                  <div className="text-3xl font-bold text-primary mb-2">{tier.price}</div>
-                  <h3 className="text-xl font-semibold mb-2">{tier.name}</h3>
-                  <p className="text-muted-foreground text-sm">{tier.description}</p>
-                </div>
-              ))}
-            </div>
+            <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card mb-8">
+              <h3 className="text-xl font-semibold mb-6">Complexity depends on your operation, not arbitrary tiers</h3>
+              <p className="text-muted-foreground mb-8">
+                After discovery, we grade your build based on what you actually need. Here&apos;s what affects the price:
+              </p>
 
-            <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-              <h3 className="text-xl font-semibold mb-5">All MVPs include:</h3>
-              <div className="grid md:grid-cols-2 gap-3">
-                {[
-                  'Custom mini-ERP modules',
-                  'Dashboards and insights',
-                  'Internal automations',
-                  'Custom workflows',
-                  'AI-powered features',
-                  'Hosting setup',
-                  'Deployment and handover',
-                  'One round of refinement',
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {complexityFactors.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl bg-muted/30 border border-border/50">
+                    <item.icon className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold mb-1">{item.factor}</div>
+                      <div className="text-sm text-muted-foreground">{item.description}</div>
+                    </div>
                   </div>
                 ))}
               </div>
-              <p className="text-lg font-medium mt-6">
-                All fixed. <span className="text-primary">No hidden extras.</span>
-              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
+                <h3 className="text-xl font-semibold mb-5">Every build includes:</h3>
+                <div className="space-y-3">
+                  {[
+                    'Your complete operating system',
+                    'All user roles and portals defined in PRD',
+                    'Dashboards and operational visibility',
+                    'Workflow automation',
+                    'Hosting setup and deployment',
+                    'Handover and training',
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-7 rounded-2xl border border-primary/30 bg-primary/5">
+                <h3 className="text-xl font-semibold mb-4">You know the price before you commit</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  The PRD from discovery defines exactly what we&apos;re building. The price is fixed against that scope.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  If requirements change, we discuss it openly - but we don&apos;t surprise you with invoices.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Credits */}
+      {/* Partnership Section */}
       <section className="relative py-24 lg:py-32 section-light-enhanced">
-
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-2">
+                Ongoing
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Credits <span className="text-primary">Pay As You Grow</span>
+                Partnership <span className="text-primary">Evolving</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                After the MVP goes live, evolve it as your business grows. Predictable, flexible, and no retainers.
+                Your Stack evolves with your business. We become your fractional CTO.
               </p>
 
               {/* Accent bar */}
@@ -237,90 +229,49 @@ export default function PricingPage() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-5 mb-10">
-              {creditPacks.map((pack, i) => (
-                <div
-                  key={i}
-                  className={`group p-7 rounded-2xl border bg-card transition-all duration-300 hover:border-primary/60 hover:shadow-[0_0_30px_-5px_hsl(250,75%,58%,0.4)] ${
-                    pack.featured
-                      ? 'border-primary/50'
-                      : 'border-border dark:border-border/40'
-                  }`}
-                >
-                  {pack.featured && (
-                    <div className="text-xs font-semibold text-primary uppercase tracking-wide mb-3">
-                      Best Value
-                    </div>
-                  )}
-                  <div className="text-2xl font-bold mb-1">{pack.credits}</div>
-                  <div className="text-3xl font-bold text-primary mb-2">{pack.price}</div>
-                  <p className="text-muted-foreground text-sm">{pack.description}</p>
-                </div>
-              ))}
+              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
+                <h3 className="text-lg font-semibold mb-3">Continuous improvement</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Not one-off projects. Your system grows as your operation grows.
+                </p>
+              </div>
+
+              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
+                <h3 className="text-lg font-semibold mb-3">Strategic guidance</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Not just code changes. We help you see what&apos;s possible and what matters.
+                </p>
+              </div>
+
+              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
+                <h3 className="text-lg font-semibold mb-3">No lock-in</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Stay because it&apos;s working, not because you&apos;re trapped.
+                </p>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-                <h3 className="text-xl font-semibold mb-5">What Credits Buy</h3>
-                <div className="space-y-2">
-                  {[
-                    'New features or pages',
-                    'Automations',
-                    'Dashboard enhancements',
-                    'Extra integrations',
-                    'AI agent upgrades',
-                    'Performance improvements',
-                    'UI/UX tweaks',
-                    'Staff training',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-                <h3 className="text-xl font-semibold mb-5">Why Credits Work</h3>
-                <div className="space-y-2 mb-6">
-                  {[
-                    'No retainers',
-                    'No long contracts',
-                    'No unused hours',
-                    'No surprise invoices',
-                    'You stay in control',
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="p-4 rounded-xl bg-primary/5 border border-primary/20">
-                  <p className="text-sm">
-                    <strong>1 Credit = 10 minutes</strong> of senior delivery time
-                    <br />
-                    <span className="text-muted-foreground">(Output amplified by AI tooling)</span>
-                  </p>
-                </div>
-              </div>
+            <div className="p-7 rounded-2xl border border-primary/30 bg-primary/5">
+              <h3 className="text-xl font-semibold mb-4">This isn&apos;t support. It&apos;s partnership.</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Commercials are agreed as the relationship evolves. We don&apos;t publish fixed retainer prices because every business is different - and we&apos;d rather have an honest conversation than force you into a tier that doesn&apos;t fit.
+              </p>
+              <p className="text-foreground font-medium">
+                What stays constant: you get a CTO-level partner for less than you&apos;d pay a junior developer.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Optional Services */}
+      {/* What's Included Section */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
-
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Hosting & <span className="text-primary">Support</span>
+                Always <span className="text-primary">included</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Optional extras if you want us to run and support your platform.
-              </p>
 
               {/* Accent bar */}
               <div
@@ -331,49 +282,18 @@ export default function PricingPage() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              {/* Hosting */}
-              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-                <div className="flex items-center gap-3 mb-5">
-                  <Clock className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Hosting & Maintenance</h3>
+            <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                { title: 'Hosting', description: 'Your Stack runs on solid infrastructure' },
+                { title: 'Security', description: 'Your data stays private and protected' },
+                { title: 'Backups', description: 'Automatic, regular, recoverable' },
+                { title: 'Ownership', description: 'Your system, your data, your IP' },
+              ].map((item, i) => (
+                <div key={i} className="p-6 rounded-2xl border border-border dark:border-border/40 bg-card text-center">
+                  <h3 className="font-semibold mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-                <div className="space-y-3">
-                  {hostingTiers.map((tier, i) => (
-                    <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border/50">
-                      <div>
-                        <div className="font-semibold">{tier.name}</div>
-                        <div className="text-sm text-muted-foreground">{tier.description}</div>
-                      </div>
-                      <div className="font-bold text-primary">{tier.price}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Support */}
-              <div className="p-7 rounded-2xl border border-border dark:border-border/40 bg-card">
-                <div className="flex items-center gap-3 mb-5">
-                  <Shield className="w-6 h-6 text-primary" />
-                  <h3 className="text-xl font-semibold">Support</h3>
-                </div>
-                <div className="space-y-3">
-                  {supportTiers.map((tier, i) => (
-                    <div key={i} className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border/50">
-                      <div className="flex items-center gap-3">
-                        <tier.icon className="w-5 h-5 text-primary" />
-                        <div className="font-semibold">{tier.name}</div>
-                      </div>
-                      <div className="font-bold text-primary">{tier.price}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="p-4 rounded-xl bg-primary/5 border border-primary/20 mt-4">
-                  <p className="text-sm text-muted-foreground">
-                    <strong className="text-foreground">Managed Service:</strong> Your problems become our problems
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -389,41 +309,36 @@ export default function PricingPage() {
         />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
+          <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              The <span className="text-primary">summary</span>
+              Ready to <span className="text-primary">start</span>?
             </h2>
 
-            <div className="space-y-4 mb-10">
+            <div className="space-y-4 mb-10 text-left max-w-md mx-auto">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                <span className="text-lg"><strong>Free discovery</strong> with working prototype</span>
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">1</div>
+                <span className="text-lg">Free discovery with working prototype</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                <span className="text-lg"><strong>Fixed-price MVP</strong> delivered in under a week</span>
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">2</div>
+                <span className="text-lg">Fixed-price build to agreed spec</span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                <span className="text-lg"><strong>Credit packs</strong> to evolve at your pace</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                <span className="text-lg"><strong>Optional hosting & support</strong> if needed</span>
+                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">3</div>
+                <span className="text-lg">Ongoing partnership as you grow</span>
               </div>
             </div>
 
-            <p className="text-lg mb-8">
-              <span className="text-muted-foreground">You get value fast.</span>{" "}
-              <span className="text-primary font-medium">You pay only for what moves your business forward.</span>
-            </p>
-
             <Link href="/contact">
               <Button size="lg" variant="hero" className="group">
-                Start with a free discovery
+                Book your free discovery
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
+
+            <p className="text-sm text-muted-foreground mt-6">
+              No commitment required. No sales pitch. Just clarity.
+            </p>
           </div>
         </div>
       </section>

@@ -34,8 +34,8 @@ const stacks = [
   {
     id: "niner",
     name: "Niner",
-    tagline: "CRM + Live Operations. Lead to outcome, tracked.",
-    description: "A lightweight CRM that punches above its weight. Pipeline, clients, jobs, financials. From first contact to completed work, with live dashboards that surface what matters.",
+    tagline: "From First Contact to Completed Work. Tracked.",
+    description: "A lightweight operating system for service businesses. Pipeline, clients, jobs, financials. Live dashboards that surface what matters. No bloat, just the essentials.",
     badge: "/stacks/stack_niner.png",
     href: "/services#niner",
   },
@@ -140,11 +140,14 @@ const StacksSection = () => {
           <div className="max-w-6xl mx-auto">
             {/* Header */}
             <div className="text-center mb-16">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-2">
+                See it in action
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 Our <span className="text-primary">Stacks</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Purpose-built Operating Stacks. Each one solves a real problem for a specific type of business and are already in use by our clients.
+                The OpStack philosophy, applied to real businesses. Each Stack is a complete operating world - proof of what&apos;s possible when software is shaped around how you actually work.
               </p>
             </div>
 

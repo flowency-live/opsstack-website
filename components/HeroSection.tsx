@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { HeroTileField } from "./HeroTileField";
+import Link from "next/link";
 
 // Staggered column layout - tiles only align vertically within columns
 // Phase-shifted vertically so no horizontal row alignment
@@ -91,23 +92,29 @@ const HeroSection = () => {
               <span className="text-foreground">{" "}Finally.</span>
             </h1>
 
+            {/* Core Promise */}
+            <p className="text-2xl sm:text-3xl font-semibold text-primary mb-4">
+              One login. Your entire business.
+            </p>
+
             {/* Subheading */}
             <p className="text-lg sm:text-xl text-muted-foreground mb-4">
-              You&apos;ve built a great business. Now it deserves its own
-              operating system.
+              Everything you need to run your operation. Nothing you don&apos;t.
             </p>
 
             <p className="text-base text-muted-foreground/80 mb-8">
-              We act as your internal CTO and delivery team - designing and
-              building the systems your business has always needed.
+              We build the digital operating layer your business deserves -
+              designed around how you actually work.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
-              <Button variant="default" size="lg" className="group">
-                Book a Working Session
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <Link href="/contact">
+                <Button variant="default" size="lg" className="group">
+                  Book a Working Session
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </Link>
               <a href="#stacks">
                 <Button variant="outline" size="lg" className="group">
                   See What We Build

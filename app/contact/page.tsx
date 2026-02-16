@@ -104,8 +104,47 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* What Happens Next */}
+      {/* FAQ Section */}
       <section className="relative py-20 overflow-hidden section-light-enhanced">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <div className="text-center space-y-6">
+              <h2 className="font-display text-3xl md:text-5xl font-bold">
+                Common <span className="text-primary">Questions</span>
+              </h2>
+            </div>
+
+            <div className="space-y-6">
+              {[
+                {
+                  question: 'Is this like Salesforce / HubSpot but custom?',
+                  answer: 'No. Those are horizontal tools designed to serve everyone — which means they\'re optimised for no-one. We build the opposite: a single operating system designed entirely around how your business actually works. No features you don\'t need. No workflows that don\'t match yours. You\'re not getting a customised version of someone else\'s product. You\'re getting your product.',
+                },
+                {
+                  question: 'How long does it actually take?',
+                  answer: 'Days, not months. We typically show you a working prototype on day one — with your actual data. A functional first version is usually live within a week. From there, we iterate based on real use.',
+                },
+                {
+                  question: 'What if my needs change?',
+                  answer: 'Your Stack evolves with your business. Need a new workflow? We add it. Process changed? We update it. You\'re not locked into a fixed feature set or waiting for a vendor\'s roadmap. This is your operating system — it moves when you move.',
+                },
+                {
+                  question: 'Do I own it?',
+                  answer: 'Yes. It\'s your system, running on your infrastructure, with your data. You\'re not renting access to our platform — you own the operating system we build for you. If we parted ways tomorrow, you\'d keep everything.',
+                },
+              ].map((faq, i) => (
+                <div key={i} className="glass-card p-6 card-hover">
+                  <h3 className="text-xl font-bold mb-3">{faq.question}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Happens Next */}
+      <section className="relative py-20 overflow-hidden section-dark-enhanced section-grain">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-center space-y-6">

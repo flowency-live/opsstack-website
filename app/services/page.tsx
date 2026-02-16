@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from 'lucide-react'
+import { ArrowRight, ExternalLink, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -40,8 +40,8 @@ const stacks = [
   {
     id: 'niner',
     name: 'Niner',
-    tagline: 'CRM + Live Operations. Lead to outcome, tracked.',
-    description: 'A lightweight CRM that punches above its weight. Contact management, deep client profiles, supplier networks, activity journals, work management, and booking engine. From first contact to completed work, with live dashboards that surface what matters. No bloat, just the nine things service businesses actually need.',
+    tagline: 'From First Contact to Completed Work. Tracked.',
+    description: 'A lightweight operating system for service businesses. Manage contacts, track work, log activity, and see what matters on live dashboards. No bloat, just the essentials service businesses actually need.',
     badge: '/stacks/stack_niner.png',
     color: 'hsl(230 60% 50%)',
     inProduction: 'In development with a travel logistics operator',
@@ -68,24 +68,24 @@ export default function ServicesPage() {
               What We Build
             </h1>
 
-            <p className="text-2xl md:text-3xl font-semibold text-foreground mb-6">
-              Your Operating Stack.
+            <p className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+              One login. Your entire business.
             </p>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
-              Purpose-built systems that run your business. Tools, automation, and visibility. Designed around how you actually operate.
+              Not software you have to bend yourself to fit. Not a patchwork of tools held together with hope. Your business, digitised properly - every screen speaks your language, every feature exists because your operation needs it.
             </p>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
-              Delivered in days, not months. No more paying for ten subscriptions you only half-use. We handle the technical heavy lifting so you can focus on what truly matters.
+              You open your Stack and it feels calm. No clutter. No confusion. Just your business, clear and workable.
             </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-primary font-medium mb-8">
+              Everything you need. Nothing you don&apos;t.
+            </p>
+
+            <p className="text-lg text-muted-foreground">
               Build. Automate. Amplify. The three layers of every Operating Stack we deliver.
-            </p>
-
-            <p className="text-lg md:text-xl text-primary font-medium">
-              We focus on Outcomes, not billable hours. Capability, not consultancy.
             </p>
           </div>
         </div>
@@ -120,17 +120,17 @@ export default function ServicesPage() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-xl font-semibold mb-6">What we build:</h3>
+              <h3 className="text-xl font-semibold mb-6">What your Stack enables:</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  'Custom CRM shaped to your sales process',
-                  'Project, job and case management tools',
-                  'Customer and supplier portals',
-                  'Booking and scheduling systems',
-                  'Dashboards and reporting tools',
-                  'Mobile and web apps',
-                  'Workflow automation tools',
-                  'Mini ERP modules for your specific operation',
+                  'Track leads and manage client relationships your way',
+                  'Schedule work and allocate resources',
+                  'See real margins, not guesses',
+                  'Manage jobs from start to completion',
+                  'Automate invoicing and billing triggers',
+                  'Give customers and suppliers their own portals',
+                  'Surface bottlenecks and operational risk',
+                  'Log activity and maintain audit trails',
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 text-foreground">
                     <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
@@ -263,8 +263,90 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* What Makes Our Delivery Different */}
+      {/* Comparison Grid Section */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            <div className="mb-12">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                Off-the-shelf vs <span className="text-primary">OpStack</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl">
+                The current software market has it backwards. They build for everyone, which means they build for no-one.
+              </p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mt-6 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                }}
+              />
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  theirs: '"Powerful and flexible!" (translation: complex and generic)',
+                  ours: 'Built precisely for your operation',
+                },
+                {
+                  theirs: 'Pay for 100 features, use 7',
+                  ours: 'Pay for what you need, use all of it',
+                },
+                {
+                  theirs: 'Learn their system',
+                  ours: 'It already speaks your language',
+                },
+                {
+                  theirs: 'Integrate 5 tools to approximate your workflow',
+                  ours: 'One tool that IS your workflow',
+                },
+                {
+                  theirs: 'You adapt to the software',
+                  ours: 'The software is shaped around you',
+                },
+                {
+                  theirs: 'Generic dashboards that don\'t answer your questions',
+                  ours: 'Dashboards built around what YOU need to see',
+                },
+                {
+                  theirs: '"Best practice" workflows designed for someone else',
+                  ours: 'Your workflows, encoded and automated',
+                },
+                {
+                  theirs: '6-month implementation with consultants',
+                  ours: 'Live in days, not months',
+                },
+                {
+                  theirs: '"We integrate with 500+ tools!"',
+                  ours: 'You don\'t need 500 tools. You need one that works.',
+                },
+              ].map((row, i) => (
+                <div key={i} className="grid md:grid-cols-2 gap-4">
+                  <div className="p-5 rounded-xl border border-destructive/20 bg-destructive/5">
+                    <div className="flex items-start gap-3">
+                      <span className="w-5 h-5 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-xs text-destructive">✕</span>
+                      </span>
+                      <span className="text-muted-foreground">{row.theirs}</span>
+                    </div>
+                  </div>
+                  <div className="p-5 rounded-xl border border-primary/30 bg-primary/5">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">{row.ours}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Our Delivery Different */}
+      <section className="relative py-24 lg:py-32 section-light-enhanced">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -328,11 +410,14 @@ export default function ServicesPage() {
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-20">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-2">
+                See it in action
+              </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 Our <span className="text-primary">Stacks</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Purpose-built Operating Stacks. Each one solves a real problem for a specific type of business.
+                The OpStack philosophy, applied to real businesses. Each Stack is a complete operating world for a specific type of business - already in production, already proving what&apos;s possible.
               </p>
             </div>
 
