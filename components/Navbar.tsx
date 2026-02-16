@@ -114,35 +114,40 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Nav */}
-        {isOpen && (
-          <div id="mobile-menu" className="md:hidden py-4 border-t border-primary/10 animate-fade-in bg-background" role="menu">
-            <div className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Button
-                variant="hero"
-                size="sm"
-                className="w-fit"
-                onClick={() => {
-                  setIsOpen(false);
-                  setContactOpen(true);
-                }}
-              >
-                Contact Us
-              </Button>
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Nav - Fixed full height panel */}
+      {isOpen && (
+        <div
+          id="mobile-menu"
+          className="md:hidden fixed inset-0 top-16 bg-background z-40 animate-fade-in"
+          role="menu"
+        >
+          <div className="px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Button
+              variant="hero"
+              size="sm"
+              className="w-fit"
+              onClick={() => {
+                setIsOpen(false);
+                setContactOpen(true);
+              }}
+            >
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      )}
 
       {/* Contact Slide-Out */}
       <ContactSlideOut
