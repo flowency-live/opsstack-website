@@ -33,7 +33,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data:",
-              "connect-src 'self' https://app.cal.com https://*.vercel-insights.com https://*.vercel-analytics.com",
+              "connect-src 'self' https://app.cal.com https://*.vercel-insights.com https://*.vercel-analytics.com https://formspree.io",
               "frame-src 'self' https://app.cal.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",
