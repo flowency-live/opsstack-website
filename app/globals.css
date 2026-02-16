@@ -41,8 +41,8 @@
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    /* Border Radius */
-    --radius: 1rem;
+    /* Border Radius - tighter, cleaner */
+    --radius: 0.5rem;
 
     /* Shadows - Light mode */
     --shadow-glow: 0 0 60px hsl(var(--purple) / 0.25);
@@ -262,7 +262,7 @@
 
   /* Glass Effects with OpsStack Colors */
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl rounded-2xl;
+    @apply bg-card/60 backdrop-blur-xl rounded-lg;
     border: 1px solid hsl(225 20% 70%);
     box-shadow: var(--shadow-card);
   }
@@ -272,7 +272,7 @@
   }
 
   .glass-strong {
-    @apply bg-card/80 backdrop-blur-xl border border-border rounded-2xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-lg;
   }
 
   .dark .glass-strong {
@@ -352,13 +352,13 @@
 
   /* Badges */
   .number-badge {
-    @apply w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg;
+    @apply w-10 h-10 rounded-md flex items-center justify-center font-bold text-lg;
     background: var(--gradient-primary);
     color: hsl(var(--primary-foreground));
   }
 
   .feature-icon {
-    @apply w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300;
+    @apply w-12 h-12 rounded-md flex items-center justify-center transition-all duration-300;
     background: linear-gradient(135deg, hsl(var(--purple) / 0.15), hsl(var(--purple) / 0.15));
     border: 1px solid hsl(var(--purple) / 0.25);
   }
@@ -539,7 +539,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 
-  /* Global grain overlay - Subtle film grain */
+  /* Global grain overlay - Very subtle film grain */
   html::after {
     content: '';
     position: fixed;
@@ -549,13 +549,13 @@
     height: 100vh;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.03;
+    opacity: 0.015;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
   }
 
   html.dark::after {
-    opacity: 0.06;
+    opacity: 0.025;
   }
 
   /* Section grain - additional texture per section */

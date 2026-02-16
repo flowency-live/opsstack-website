@@ -82,7 +82,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+          className="w-full px-4 py-3 rounded-md bg-background border border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
           placeholder="Your name"
         />
       </div>
@@ -99,7 +99,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+          className="w-full px-4 py-3 rounded-md bg-background border border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
           placeholder="you@company.com"
         />
       </div>
@@ -116,7 +116,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             name="company"
             value={formData.company}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-md bg-background border border-primary/25 focus:border-primary focus:outline-none transition-colors"
             placeholder="Your company"
           />
         </div>
@@ -131,7 +131,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-md bg-background border border-primary/25 focus:border-primary focus:outline-none transition-colors"
             placeholder="Your phone"
           />
         </div>
@@ -149,7 +149,7 @@ export function ContactForm({ className = '' }: ContactFormProps) {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-xl bg-background border-2 border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-md bg-background border border-primary/25 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
           placeholder="Tell us about your business..."
         />
       </div>
@@ -176,12 +176,12 @@ export function ContactForm({ className = '' }: ContactFormProps) {
 
       {/* Status Messages */}
       {submitStatus === 'success' && (
-        <p className="text-center text-sm text-green-500 bg-green-500/10 border border-green-500/30 rounded-xl py-3">
+        <p className="text-center text-sm text-green-500 bg-green-500/10 border border-green-500/30 rounded-md py-3">
           Message sent! We&apos;ll be in touch shortly.
         </p>
       )}
       {submitStatus === 'error' && (
-        <p className="text-center text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-xl py-3">
+        <p className="text-center text-sm text-destructive bg-destructive/10 border border-destructive/30 rounded-md py-3">
           Something went wrong. Please try again or email us directly.
         </p>
       )}

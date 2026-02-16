@@ -65,7 +65,7 @@ const SolutionSection = () => {
             {/* What it's NOT */}
             <div className={`glass-card p-8 border-destructive/20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
               <h3 className="font-display text-xl font-semibold mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-destructive/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-md bg-destructive/10 flex items-center justify-center">
                   <span className="text-destructive font-bold">✕</span>
                 </div>
                 What we don&apos;t build
@@ -86,7 +86,7 @@ const SolutionSection = () => {
             <div className={`glass-card p-8 border-primary/30 relative overflow-hidden transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/15 rounded-full blur-2xl" />
               <h3 className="font-display text-xl font-semibold mb-6 flex items-center gap-3 relative">
-                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-md bg-primary/20 flex items-center justify-center">
                   <Check className="w-5 h-5 text-primary" />
                 </div>
                 What we deliver

@@ -79,7 +79,7 @@ export function CookieConsent() {
       {/* Cookie Banner */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-auto">
         <div className="max-w-7xl mx-auto p-4 md:p-6">
-          <div className="relative bg-card/95 backdrop-blur-xl border border-primary/30 rounded-2xl shadow-2xl shadow-primary/20 overflow-hidden">
+          <div className="relative bg-card/95 backdrop-blur-xl border border-primary/30 rounded-lg shadow-2xl shadow-primary/20 overflow-hidden">
             {/* Gradient accent */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple via-primary to-purple" />
 
@@ -87,7 +87,7 @@ export function CookieConsent() {
               /* Simple Banner */
               <div className="p-6 md:p-8 space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-purple flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-md bg-gradient-to-br from-primary to-purple flex items-center justify-center">
                     <Cookie className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1 space-y-4">
@@ -136,14 +136,14 @@ export function CookieConsent() {
               <div className="p-6 md:p-8 space-y-6 max-h-[80vh] overflow-y-auto">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-purple flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-purple flex items-center justify-center">
                       <Settings className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="text-xl md:text-2xl font-bold">Cookie Preferences</h3>
                   </div>
                   <button
                     onClick={() => setShowSettings(false)}
-                    className="p-2 rounded-lg hover:bg-foreground/10 transition-colors"
+                    className="p-2 rounded-md hover:bg-foreground/10 transition-colors"
                     aria-label="Close settings"
                   >
                     <X className="w-5 h-5" />
@@ -157,7 +157,7 @@ export function CookieConsent() {
 
                 <div className="space-y-4">
                   {/* Necessary Cookies */}
-                  <div className="p-4 rounded-xl bg-card/50 border border-border">
+                  <div className="p-4 rounded-lg bg-card/50 border border-border">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 space-y-2">
                         <h4 className="font-semibold text-lg">Necessary Cookies</h4>
@@ -174,7 +174,7 @@ export function CookieConsent() {
                   </div>
 
                   {/* Analytics Cookies */}
-                  <div className="p-4 rounded-xl bg-card/50 border border-border">
+                  <div className="p-4 rounded-lg bg-card/50 border border-border">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 space-y-2">
                         <h4 className="font-semibold text-lg">Analytics Cookies</h4>
@@ -198,7 +198,7 @@ export function CookieConsent() {
                   </div>
 
                   {/* Marketing Cookies */}
-                  <div className="p-4 rounded-xl bg-card/50 border border-border">
+                  <div className="p-4 rounded-lg bg-card/50 border border-border">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1 space-y-2">
                         <h4 className="font-semibold text-lg">Marketing Cookies</h4>
