@@ -32,13 +32,31 @@ export function ContactForm({ className = '' }: ContactFormProps) {
     setSubmitStatus('idle')
 
     try {
-      // For now, we'll use a mailto link as fallback
-      // In production, this would be replaced with an API endpoint
-      const subject = `Contact Form: ${formData.name} from ${formData.company || 'N/A'}`
-      const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone || 'N/A'}%0D%0ACompany: ${formData.company || 'N/A'}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
-      const mailtoLink = `mailto:hello@opstack.uk?subject=${encodeURIComponent(subject)}&body=${body}`
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 15000)
 
-      window.location.href = mailtoLink
+      const response = await fetch('https://formspree.io/f/xblgkpbq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          company: formData.company || 'Not provided',
+          message: formData.message,
+          _subject: `OpStack Contact: ${formData.name}${formData.company ? ` from ${formData.company}` : ''}`,
+        }),
+        signal: controller.signal,
+      })
+
+      clearTimeout(timeoutId)
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
 
       setSubmitStatus('success')
       setFormData({ name: '', email: '', phone: '', company: '', message: '' })

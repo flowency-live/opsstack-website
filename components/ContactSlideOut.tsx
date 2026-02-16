@@ -123,11 +123,29 @@ export function ContactSlideOut({ isOpen, onClose }: ContactSlideOutProps) {
     setSubmitStatus('idle')
 
     try {
-      const subject = `OpStack Contact: ${formData.name}`
-      const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
-      const mailtoLink = `mailto:hello@opstack.uk?subject=${encodeURIComponent(subject)}&body=${body}`
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 15000)
 
-      window.location.href = mailtoLink
+      const response = await fetch('https://formspree.io/f/xblgkpbq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `OpStack Contact: ${formData.name}`,
+        }),
+        signal: controller.signal,
+      })
+
+      clearTimeout(timeoutId)
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form')
+      }
 
       setSubmitStatus('success')
       setFormData({ name: '', email: '', message: '' })
@@ -307,7 +325,7 @@ export function ContactSlideOut({ isOpen, onClose }: ContactSlideOutProps) {
 
             {submitStatus === 'success' && (
               <p className="text-center text-xs text-green-500 bg-green-500/10 border border-green-500/30 rounded-lg py-2">
-                Email client opened. We&apos;ll reply within 24 hours.
+                Message sent! We&apos;ll reply within 24 hours.
               </p>
             )}
             {submitStatus === 'error' && (
