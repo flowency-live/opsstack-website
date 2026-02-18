@@ -6,6 +6,7 @@ import WhyThisWorksSection from "@/components/WhyThisWorksSection";
 import StacksSection from "@/components/StacksSection";
 import InsightsSection from "@/components/InsightsSection";
 import WhoThisIsForSection from "@/components/WhoThisIsForSection";
+import TrustSection from "@/components/TrustSection";
 import CTASection from "@/components/CTASection";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <WhyThisWorksSection />
       <StacksSection />
       <WhoThisIsForSection />
+      <TrustSection />
       <InsightsSection />
       <CTASection />
     </main>

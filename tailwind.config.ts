@@ -112,6 +112,10 @@ const config: Config = {
           "0%": { opacity: "0", filter: "blur(10px)" },
           "100%": { opacity: "1", filter: "blur(0)" },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "fade-in": "fade-in 0.8s ease-out forwards",
@@ -124,6 +128,7 @@ const config: Config = {
         glow: "glow 3s ease-in-out infinite alternate",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "blur-in": "blur-in 0.8s ease-out forwards",
+        "spin-slow": "spin-slow 30s linear infinite",
       },
     },
   },
