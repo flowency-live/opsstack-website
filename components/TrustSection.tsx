@@ -3,12 +3,42 @@
 import { ShieldCheck, Lock, MapPin } from "lucide-react";
 import SectionReveal from "./SectionReveal";
 
+// GDPR Badge Component - EU stars in circle with lock icon
+const GDPRBadge = () => (
+  <div className="relative w-28 h-28 mx-auto">
+    {/* Stars in circle - 12 stars like EU flag */}
+    {[...Array(12)].map((_, i) => {
+      const angle = (i * 30 - 90) * (Math.PI / 180);
+      const x = 50 + 42 * Math.cos(angle);
+      const y = 50 + 42 * Math.sin(angle);
+      return (
+        <svg
+          key={i}
+          className="absolute w-4 h-4 text-primary"
+          style={{
+            left: `${x}%`,
+            top: `${y}%`,
+            transform: 'translate(-50%, -50%)',
+          }}
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path d="M12 2l2.4 7.4h7.6l-6 4.6 2.3 7-6.3-4.6-6.3 4.6 2.3-7-6-4.6h7.6z" />
+        </svg>
+      );
+    })}
+    {/* Center lock icon */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <Lock className="w-10 h-10 text-primary" />
+    </div>
+    {/* GDPR text */}
+    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-primary font-bold text-sm tracking-wider">
+      GDPR
+    </div>
+  </div>
+);
+
 const badges = [
-  {
-    icon: Lock,
-    title: "GDPR Compliant",
-    description: "Data protection by design"
-  },
   {
     icon: ShieldCheck,
     title: "Security Audited",
@@ -78,26 +108,32 @@ const TrustSection = () => {
               data-sensitive sectors, and regulated industries.
             </p>
 
-            {/* Trust Badges */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-              {badges.map((badge, index) => (
-                <div
-                  key={index}
-                  className="reveal-child group glass-card p-6 text-center hover:border-primary/40 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
-                    <badge.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-1">{badge.title}</h3>
-                  <p className="text-sm text-muted-foreground">{badge.description}</p>
+            {/* Trust Badges with GDPR Badge */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-start">
+              {/* Security Audited */}
+              <div className="reveal-child group glass-card p-6 text-center hover:border-primary/40 transition-all duration-300">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
+                  <ShieldCheck className="w-6 h-6 text-primary" />
                 </div>
-              ))}
-            </div>
+                <h3 className="font-semibold text-foreground mb-1">Security Audited</h3>
+                <p className="text-sm text-muted-foreground">Rigorous code reviews</p>
+              </div>
 
-            {/* Supporting text */}
-            <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto">
-              Every OpStack product undergoes rigorous security review and code audit before deployment.
-            </p>
+              {/* GDPR Badge - Center and larger */}
+              <div className="reveal-child glass-card p-8 text-center hover:border-primary/40 transition-all duration-300">
+                <GDPRBadge />
+                <p className="text-sm text-muted-foreground mt-8">Data protection by design</p>
+              </div>
+
+              {/* UK Built & Hosted */}
+              <div className="reveal-child group glass-card p-6 text-center hover:border-primary/40 transition-all duration-300">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center group-hover:bg-primary/25 transition-colors">
+                  <MapPin className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-1">UK Built & Hosted</h3>
+                <p className="text-sm text-muted-foreground">Data sovereignty assured</p>
+              </div>
+            </div>
           </div>
         </SectionReveal>
       </div>
