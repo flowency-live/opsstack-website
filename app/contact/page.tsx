@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/fiber-ribbons.png)',
+            backgroundImage: 'url(/backgrounds/ethereal-streams.png)',
           }}
         />
 
@@ -267,7 +267,7 @@ export default function ContactPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/particle-wave-2.png)',
+            backgroundImage: 'url(/backgrounds/bokeh-field-1.png)',
           }}
         />
 

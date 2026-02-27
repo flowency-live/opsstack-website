@@ -300,7 +300,7 @@ export default function AboutPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/fiber-ribbons.png)',
+            backgroundImage: 'url(/backgrounds/cosmic-filaments.png)',
           }}
         />
 

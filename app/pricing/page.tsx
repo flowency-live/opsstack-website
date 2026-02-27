@@ -368,7 +368,7 @@ export default function PricingPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
+            backgroundImage: 'url(/backgrounds/bokeh-field-2.png)',
           }}
         />
 

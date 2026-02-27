@@ -626,7 +626,7 @@ export default function ServicesPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
+            backgroundImage: 'url(/backgrounds/ultra-premium-2.png)',
           }}
         />
 
