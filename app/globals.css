@@ -206,6 +206,56 @@
       radial-gradient(ellipse 90% 70% at 90% 10%, hsl(var(--purple) / 0.15) 0%, transparent 60%);
   }
 
+  /* Gradient accent section - high contrast visual break */
+  .section-gradient-accent {
+    background: linear-gradient(135deg,
+      hsl(280 60% 25%) 0%,
+      hsl(260 65% 35%) 50%,
+      hsl(250 70% 45%) 100%
+    );
+    color: white;
+  }
+
+  .section-gradient-accent .text-foreground,
+  .section-gradient-accent .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .section-gradient-accent .text-muted-foreground {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Expandable card - reveal detail on hover */
+  .card-expandable {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .card-expandable .card-detail {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+    margin-top: 0;
+  }
+
+  .card-expandable:hover .card-detail,
+  .card-expandable:focus-within .card-detail {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+  }
+
+  .card-expandable .card-indicator {
+    transition: transform 0.3s ease;
+  }
+
+  .card-expandable:hover .card-indicator,
+  .card-expandable:focus-within .card-indicator {
+    transform: rotate(180deg);
+  }
+
   /* Section Reveal Animation */
   .section-reveal {
     opacity: 0;

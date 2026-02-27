@@ -1,21 +1,26 @@
+import { ChevronDown } from "lucide-react";
 import SectionReveal from "./SectionReveal";
 
 const reasons = [
   {
     title: "Days, Not Months",
-    description: "We build in days, not months. No gold-plating. No six-month projects. No waiting.",
+    summary: "We build in days, not months. No gold-plating. No six-month projects.",
+    details: "Traditional software projects drag on for months or years. We move fast because we focus on what matters - getting working tools in your hands. Every feature is built to solve a real problem, not to pad a statement of work.",
   },
   {
     title: "Value First, Always",
-    description: "See outcomes before you commit. If we can't prove value fast, you walk away.",
+    summary: "See outcomes before you commit. If we can't prove value fast, you walk away.",
+    details: "We build a working prototype in your discovery session. You'll see your data, your workflows, your business - before you spend a penny. No pitch decks. No promises. Just proof.",
   },
   {
     title: "One System, Not Ten Subscriptions",
-    description: "Replace the patchwork of tools you're paying for but barely using.",
+    summary: "Replace the patchwork of tools you're paying for but barely using.",
+    details: "Most businesses juggle 5-10 SaaS tools that don't talk to each other. Your Stack consolidates everything into one place - one login, one source of truth, one monthly cost you can predict.",
   },
   {
     title: "Capability That Lasts",
-    description: "You get permanent improvement. Real tools. Real value. Not snake-oil.",
+    summary: "You get permanent improvement. Real tools. Real value. Not snake-oil.",
+    details: "This isn't a consultant's report that sits in a drawer. It's working software that runs your business every day. Your data stays yours. Your processes get better. The value compounds.",
   },
 ];
 
@@ -54,22 +59,36 @@ const WhyThisWorksSection = () => {
               />
             </div>
 
-            {/* Cards Grid - 2x3 */}
+            {/* Cards Grid - 2x2 with expandable detail */}
             <div className="grid md:grid-cols-2 gap-6">
               {reasons.map((reason, index) => (
                 <div
                   key={index}
-                  className="reveal-child group card-elevated card-noise p-8"
+                  className="reveal-child card-expandable group card-elevated p-8 cursor-pointer"
+                  tabIndex={0}
                 >
                   {/* Left accent bar */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary/40 group-hover:bg-primary transition-colors" />
 
-                  <h3 className="text-xl font-bold text-foreground dark:text-white mb-3 group-hover:text-primary transition-colors duration-200">
-                    {reason.title}
-                  </h3>
+                  {/* Title row with expand indicator */}
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h3 className="text-xl font-bold text-foreground dark:text-white group-hover:text-primary transition-colors duration-200">
+                      {reason.title}
+                    </h3>
+                    <ChevronDown className="w-5 h-5 text-primary/50 group-hover:text-primary card-indicator flex-shrink-0 mt-1" />
+                  </div>
+
+                  {/* Summary - always visible */}
                   <p className="text-muted-foreground leading-relaxed">
-                    {reason.description}
+                    {reason.summary}
                   </p>
+
+                  {/* Detail - revealed on hover */}
+                  <div className="card-detail">
+                    <p className="text-sm text-muted-foreground leading-relaxed pt-3 border-t border-border/50">
+                      {reason.details}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
