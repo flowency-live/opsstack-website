@@ -63,7 +63,7 @@ const ValuesCarousel = ({
           key={currentIndex}
           initial={{
             opacity: 0,
-            x: directionRef.current === 'right' ? 100 : -100
+            x: directionRef.current === 'right' ? 40 : -40
           }}
           animate={{
             opacity: 1,
@@ -71,11 +71,11 @@ const ValuesCarousel = ({
           }}
           exit={{
             opacity: 0,
-            x: directionRef.current === 'right' ? -100 : 100
+            x: directionRef.current === 'right' ? -40 : 40
           }}
           transition={{
-            duration: 0.5,
-            ease: [0.32, 0.72, 0, 1]
+            duration: 0.6,
+            ease: 'easeInOut'
           }}
           className="absolute inset-0"
         >
