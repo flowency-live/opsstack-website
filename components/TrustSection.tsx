@@ -53,7 +53,23 @@ const badges = [
 
 const TrustSection = () => {
   return (
-    <section className="relative py-20 lg:py-28 section-dark-enhanced overflow-hidden">
+    <section className="relative py-20 lg:py-28 section-dark-enhanced overflow-hidden section-grain">
+      {/* Subtle background image */}
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: 'url(/backgrounds/glass-stacks.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      {/* Gradient overlay for depth */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58% / 0.1) 0%, transparent 50%)',
+        }}
+      />
       {/* Top gradient divider */}
       <div
         className="absolute top-0 left-0 right-0 h-px"

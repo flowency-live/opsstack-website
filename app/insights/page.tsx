@@ -16,7 +16,22 @@ const insights = [
     category: "Insight",
     image: "/insights/banner-1.png",
   },
-  // Add more articles here as they're created
+  {
+    slug: "placeholder-2",
+    headerTitle: "Coming Soon",
+    title: "More Insights Coming",
+    excerpt: "We're working on more practical thinking on operations, technology, and building businesses that work.",
+    category: "Article",
+    image: "/insights/banner-2.png",
+  },
+  {
+    slug: "placeholder-3",
+    headerTitle: "Coming Soon",
+    title: "More Insights Coming",
+    excerpt: "We're working on more practical thinking on operations, technology, and building businesses that work.",
+    category: "Article",
+    image: "/insights/banner-3.webp",
+  },
 ]
 
 // Large decorative quote marks

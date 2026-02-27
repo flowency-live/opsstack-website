@@ -199,6 +199,101 @@ export default function AboutPage() {
 
       <VisionSection />
 
+      {/* Who This Is For */}
+      <section className="relative py-24 lg:py-32 overflow-hidden section-light-enhanced">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl">
+            {/* Header with thesis line as opener */}
+            <div className="mb-16">
+              <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
+                Is this you?
+              </p>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                Who this is <span className="text-primary">for</span>
+              </h2>
+
+              {/* The thesis - prominent, not buried */}
+              <p className="text-xl md:text-2xl text-foreground leading-relaxed max-w-3xl">
+                If your business is held together by <mark className="mark-amber font-medium">good people compensating for bad systems</mark>, we fix that.
+              </p>
+
+              {/* Accent bar */}
+              <div
+                className="w-full h-1 mt-8 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
+                }}
+              />
+            </div>
+
+            {/* Situations - 3 column, clean typography */}
+            <div className="grid md:grid-cols-3 gap-12 lg:gap-16 mb-16">
+              <div>
+                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                  The daily reality
+                </h3>
+                <ul className="space-y-3">
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Drowning in admin you shouldn&apos;t be doing
+                  </li>
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Running on Excel, memory, and good intentions
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                  The stuck feeling
+                </h3>
+                <ul className="space-y-3">
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Too big for spreadsheets, too small for enterprise
+                  </li>
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Growing fast with no internal tech capability
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">
+                  What you actually want
+                </h3>
+                <ul className="space-y-3">
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Visibility into what&apos;s really happening
+                  </li>
+                  <li className="text-lg text-foreground leading-relaxed">
+                    Time back for the work that matters
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Outgrown Vibe-Coded Tools Callout */}
+            <div className="card-elevated p-8">
+              {/* Left accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
+
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">
+                Outgrown your <mark className="mark-amber font-medium">vibe-coded tools</mark>?
+              </h3>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                There&apos;s a difference between building something that demos well and something that survives real users.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                We specialise in taking products off hype-driven platforms and into AWS environments built for ownership, auditability, and cost control.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed mb-4">
+                Same functionality. Your data. Your infrastructure. Predictable costs. Full visibility.
+              </p>
+              <p className="text-lg text-primary font-semibold">
+                Built to last, not to trend.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background Image */}

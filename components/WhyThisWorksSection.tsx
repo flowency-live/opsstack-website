@@ -6,20 +6,12 @@ const reasons = [
     description: "We build in days, not months. No gold-plating. No six-month projects. No waiting.",
   },
   {
-    title: "We've Been Where You Are",
-    description: "You work with people who've lived these problems - experienced operators who've felt the same pain, paired with sharp minds who move fast.",
-  },
-  {
     title: "Value First, Always",
     description: "See outcomes before you commit. If we can't prove value fast, you walk away.",
   },
   {
     title: "One System, Not Ten Subscriptions",
     description: "Replace the patchwork of tools you're paying for but barely using.",
-  },
-  {
-    title: "Clarity Before Complexity",
-    description: "We cut through noise and find what's really blocking you. Fast.",
   },
   {
     title: "Capability That Lasts",

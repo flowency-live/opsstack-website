@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import StackAccent from "./StackAccent";
 
 const HeroSection = () => {
@@ -49,54 +50,87 @@ const HeroSection = () => {
       <div className="relative z-50 min-h-screen flex items-center pt-24 pb-16 md:pb-16 pointer-events-none">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl pointer-events-auto">
-            {/* Main Heading - Bold typography with StackAccent */}
-            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+            {/* Lead-in text - animated */}
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2"
+            >
               YOUR BUSINESS
-            </p>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6 tracking-tight">
+            </motion.p>
+
+            {/* Main Heading - animated */}
+            <motion.h1
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6 tracking-tight"
+            >
               <span className="text-foreground">DIGITISED</span>
               <br />
               <span className="text-primary">
                 PROPERLY
                 <StackAccent size="lg" className="ml-3 inline-block" />
               </span>
-            </h1>
+            </motion.h1>
 
-            {/* Core Promise */}
-            <p className="text-2xl sm:text-3xl font-semibold text-primary mb-4">
+            {/* Core Promise - animated */}
+            <motion.p
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+              className="text-2xl sm:text-3xl font-semibold text-primary mb-4"
+            >
               One login. Your entire business.
-            </p>
+            </motion.p>
 
-            {/* Subheading */}
-            <p className="text-lg sm:text-xl text-muted-foreground mb-4">
-              Everything you need to run your operation. Nothing you don&apos;t.
-            </p>
+            {/* Subheading - animated */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+            >
+              <p className="text-lg sm:text-xl text-muted-foreground mb-4">
+                Everything you need to run your operation. Nothing you don&apos;t.
+              </p>
 
-            <p className="text-base text-muted-foreground/80 mb-8">
-              We build the digital operating layer your business deserves -
-              designed around how you actually work.
-            </p>
+              <p className="text-base text-muted-foreground/80 mb-8">
+                We build the digital operating layer your business deserves -
+                designed around how you actually work.
+              </p>
+            </motion.div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+            {/* CTA Buttons - animated */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row items-start gap-4 mb-6"
+            >
               <Link href="/contact">
                 <Button variant="default" size="lg" className="group">
                   Book a Working Session
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <a href="#stacks">
+              <Link href="/services">
                 <Button variant="outline" size="lg" className="group">
                   See What We Build
                 </Button>
-              </a>
-            </div>
+              </Link>
+            </motion.div>
 
-            {/* Trust Line */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            {/* Trust Line - animated */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              className="flex items-center gap-2 text-sm text-muted-foreground"
+            >
               <CheckCircle2 className="w-4 h-4 text-primary" />
               <span>No commitment required - Discovery call</span>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
