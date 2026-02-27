@@ -45,7 +45,7 @@ export default function PricingPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/speed-lines.png)',
+            backgroundImage: 'url(/backgrounds/speed-lines.webp)',
           }}
         />
 
@@ -368,7 +368,7 @@ export default function PricingPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/bokeh-field-2.png)',
+            backgroundImage: 'url(/backgrounds/bokeh-field-2.webp)',
           }}
         />
 

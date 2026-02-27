@@ -107,7 +107,7 @@ export default function InsightsPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/fiber-sweep.png)',
+            backgroundImage: 'url(/backgrounds/fiber-sweep.webp)',
           }}
         />
 

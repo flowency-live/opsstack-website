@@ -8,28 +8,28 @@ const slides = [
     statement: 'OBSESSED',
     description:
       'With building systems that actually work. Every detail matters. Every workflow refined. Every frustration eliminated.',
-    background: '/backgrounds/fiber-ribbons.png',
+    background: '/backgrounds/fiber-ribbons.webp',
   },
   {
     leadIn: 'NO',
     statement: 'BLOATWARE',
     description:
       'Every feature earns its place. We strip away the noise, keep what works, and build exactly what your business needs.',
-    background: '/backgrounds/premium-navy-1.png',
+    background: '/backgrounds/premium-navy-1.webp',
   },
   {
     leadIn: 'YOUR BUSINESS',
     statement: 'SIMPLIFIED',
     description:
       'One login. Everything you need. No more juggling between disconnected tools or hunting for information.',
-    background: '/backgrounds/ultra-premium-1.png',
+    background: '/backgrounds/ultra-premium-1.webp',
   },
   {
     leadIn: 'CLARITY',
     statement: 'DELIVERED',
     description:
       'See your entire operation at a glance. Know what matters. Act with confidence.',
-    background: '/backgrounds/premium-navy-2.png',
+    background: '/backgrounds/premium-navy-2.webp',
   },
 ];
 

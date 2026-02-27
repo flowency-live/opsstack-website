@@ -58,7 +58,7 @@ const TrustSection = () => {
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
+          backgroundImage: 'url(/backgrounds/particle-wave-1.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

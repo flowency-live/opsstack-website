@@ -14,7 +14,7 @@ export default function ContactPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/ethereal-streams.png)',
+            backgroundImage: 'url(/backgrounds/ethereal-streams.webp)',
           }}
         />
 
@@ -267,7 +267,7 @@ export default function ContactPage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/bokeh-field-1.png)',
+            backgroundImage: 'url(/backgrounds/bokeh-field-1.webp)',
           }}
         />
 

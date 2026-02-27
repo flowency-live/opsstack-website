@@ -5,7 +5,7 @@ const DemocratisedSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/backgrounds/glass-stacks.png)',
+          backgroundImage: 'url(/backgrounds/glass-stacks.webp)',
         }}
       />
       {/* Dark overlay for readability */}

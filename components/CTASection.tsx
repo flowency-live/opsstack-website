@@ -16,7 +16,7 @@ const CTASection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/backgrounds/particle-wave-2.png)',
+          backgroundImage: 'url(/backgrounds/particle-wave-2.webp)',
         }}
       />
 
