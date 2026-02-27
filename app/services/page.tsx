@@ -2,6 +2,8 @@ import { ArrowRight, ExternalLink, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
+import BoldHeadline from '@/components/BoldHeadline'
+import NumberedStepCard from '@/components/NumberedStepCard'
 
 const stacks = [
   {
@@ -64,8 +66,11 @@ export default function ServicesPage() {
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
-              What We Build
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+              WHAT WE
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
+              BUILD
             </h1>
 
             <p className="text-2xl md:text-3xl font-semibold text-primary mb-4">
@@ -76,17 +81,28 @@ export default function ServicesPage() {
               Not software you have to bend yourself to fit. Not a patchwork of tools held together with hope. Your business, digitised properly - every screen speaks your language, every feature exists because your operation needs it.
             </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
               You open your Stack and it feels calm. No clutter. No confusion. Just your business, clear and workable.
             </p>
 
-            <p className="text-lg md:text-xl text-primary font-medium mb-8">
-              Everything you need. Nothing you don&apos;t.
-            </p>
-
-            <p className="text-lg text-muted-foreground">
-              Build. Automate. Amplify. The three layers of every Operating Stack we deliver.
-            </p>
+            {/* Step Cards */}
+            <div className="grid sm:grid-cols-3 gap-4 max-w-3xl">
+              <NumberedStepCard
+                number={1}
+                content="BUILD your tools"
+                highlight="BUILD"
+              />
+              <NumberedStepCard
+                number={2}
+                content="AUTOMATE the work"
+                highlight="AUTOMATE"
+              />
+              <NumberedStepCard
+                number={3}
+                content="AMPLIFY your insight"
+                highlight="AMPLIFY"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -510,24 +526,26 @@ export default function ServicesPage() {
 
       {/* Final CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Purple gradient background */}
+        {/* Background Image */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(250 70% 35%) 50%, hsl(250 60% 20%) 100%)'
+            backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
           }}
         />
 
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
-                Ready to build?
-              </h2>
-              <p className="text-xl text-white/80 max-w-2xl">
-                A working session is the fastest way to see what&apos;s possible.
-              </p>
-            </div>
+            <BoldHeadline
+              leadIn="READY TO"
+              statement="BUILD?"
+              description="A working session is the fastest way to see what's possible."
+              light
+              className="mb-12"
+            />
 
             <ul className="space-y-4 mb-12">
               {[
@@ -537,9 +555,9 @@ export default function ServicesPage() {
               ].map((step, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-4 text-lg text-white"
+                  className="flex items-center gap-4 text-lg text-white/90"
                 >
-                  <span className="w-2 h-2 rounded-full bg-white flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   {step}
                 </li>
               ))}

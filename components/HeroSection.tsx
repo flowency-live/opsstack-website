@@ -2,94 +2,64 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { HeroTileField } from "./HeroTileField";
 import Link from "next/link";
-
-// Staggered column layout - tiles only align vertically within columns
-// Phase-shifted vertically so no horizontal row alignment
-const heroTiles = [
-  // Column 1 - main visible column
-  {
-    id: "relay",
-    label: "Relay",
-    src: "/stacks/stack_relay.png",
-    x: 68,
-    y: 22,
-    size: 170,
-    r: -10,
-    z: 1 as const,
-  },
-  {
-    id: "niner",
-    label: "Niner",
-    src: "/stacks/stack_niner.png",
-    x: 65,
-    y: 55,
-    size: 155,
-    r: -6,
-    z: 2 as const,
-  },
-  // Column 2 - offset vertically (phase shifted), partially cropped
-  {
-    id: "level",
-    label: "Level",
-    src: "/stacks/stack_level.png",
-    x: 88,
-    y: 28,
-    size: 165,
-    r: 8,
-    z: 1 as const,
-    crop: true,
-  },
-  {
-    id: "track",
-    label: "Track",
-    src: "/stacks/stack_track.png",
-    x: 85,
-    y: 72,
-    size: 150,
-    r: 12,
-    z: 2 as const,
-    crop: true,
-  },
-];
+import StackAccent from "./StackAccent";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden section-grain">
-      {/* Clean gradient background */}
+      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/20" />
 
-      {/* Desktop: Tile Field on right - Rareloop style */}
+      {/* Desktop: Hero graphic on right */}
       <div className="absolute inset-0 overflow-hidden hidden lg:block">
-        <HeroTileField tiles={heroTiles} />
-        {/* Fade overlay - tiles fade toward text area */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/backgrounds/hero-stacks.png)',
+            backgroundPosition: 'right center',
+          }}
+        />
+        {/* Fade overlay - graphic fades toward text area */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 40%, transparent 70%)",
+              "linear-gradient(to right, hsl(var(--background)) 0%, hsl(var(--background)) 35%, hsl(var(--background) / 0.7) 50%, transparent 70%)",
             zIndex: 40,
           }}
         />
       </div>
 
-      {/* Tablet & Mobile: tiles as subtle ambient texture */}
+      {/* Tablet & Mobile: subtle background treatment */}
       <div className="absolute inset-0 overflow-hidden block lg:hidden">
-        <div className="absolute inset-0 opacity-[0.08] md:opacity-[0.12]">
-          <HeroTileField tiles={heroTiles} />
-        </div>
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'url(/backgrounds/hero-stacks.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-background/80" />
       </div>
 
       {/* Main Content Area */}
       <div className="relative z-50 min-h-screen flex items-center pt-24 pb-16 md:pb-16 pointer-events-none">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl pointer-events-auto">
-            {/* Main Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] mb-6 tracking-tight">
-              <span className="text-foreground">Your Business.</span>{" "}
-              <span className="text-primary">Digitised Properly.</span>
-              <span className="text-foreground">{" "}Finally.</span>
+            {/* Main Heading - Bold typography with StackAccent */}
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+              YOUR BUSINESS
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6 tracking-tight">
+              <span className="text-foreground">DIGITISED</span>
+              <br />
+              <span className="text-primary">
+                PROPERLY
+                <StackAccent size="lg" className="ml-3 inline-block" />
+              </span>
             </h1>
 
             {/* Core Promise */}

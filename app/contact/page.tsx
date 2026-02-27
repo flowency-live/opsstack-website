@@ -3,25 +3,32 @@
 import { Mail, MapPin, HelpCircle, Check } from 'lucide-react'
 import { ContactForm } from '@/components/ContactForm'
 import { CalEmbed } from '@/components/CalEmbed'
+import BoldHeadline from '@/components/BoldHeadline'
 
 export default function ContactPage() {
   return (
     <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden section-dark-enhanced section-grain pt-20">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-        </div>
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/backgrounds/fiber-ribbons.png)',
+          }}
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-16">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Let&apos;s move something
-              <span className="text-primary"> forward - together</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
-              Whether you&apos;ve just got a few questions or you want to explore working together, we&apos;d love to hear from you.
-            </p>
+          <div className="max-w-4xl">
+            <BoldHeadline
+              leadIn="LET'S MOVE"
+              statement="FORWARD"
+              description="Whether you've just got a few questions or you want to explore working together, we'd love to hear from you."
+              light
+            />
           </div>
         </div>
       </section>
@@ -256,22 +263,27 @@ export default function ContactPage() {
 
       {/* Final CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Purple gradient background */}
+        {/* Background Image */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(250 70% 35%) 50%, hsl(250 60% 20%) 100%)'
+            backgroundImage: 'url(/backgrounds/particle-wave-2.png)',
           }}
         />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-white">
-              Digital transformation without the theatre
-            </h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              No expensive consultancies. No six-month discovery phases. No slide decks.
-            </p>
-            <div className="space-y-4 text-2xl md:text-3xl font-bold">
+            <BoldHeadline
+              leadIn="NO THEATRE"
+              statement="JUST RESULTS"
+              description="No expensive consultancies. No six-month discovery phases. No slide decks."
+              light
+              className="text-center"
+            />
+            <div className="space-y-4 text-2xl md:text-3xl font-bold pt-4">
               <div className="text-white">Get clarity.</div>
               <div className="text-white">Get capability.</div>
               <div className="text-white">Get results.</div>

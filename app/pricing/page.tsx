@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2, Users, Workflow, Link2, Database, Bot } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import BoldHeadline from '@/components/BoldHeadline'
 
 export const metadata = {
   title: 'Pricing - OpStack',
@@ -42,9 +43,11 @@ export default function PricingPage() {
       <section className="relative py-24 lg:py-32 pt-32 lg:pt-40 section-dark-enhanced section-grain">
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Pricing that<br />
-              <span className="text-primary">makes sense</span>
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+              PRICING THAT
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
+              <span className="text-primary">MAKES SENSE</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mb-4">
               No per-seat licensing. No feature tiers. No surprise invoices.
@@ -349,43 +352,50 @@ export default function PricingPage() {
       </section>
 
       {/* Summary CTA */}
-      <section className="relative py-24 lg:py-32">
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, hsl(262 83% 58% / 0.15) 0%, transparent 70%)'
+            backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
           }}
         />
 
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
-              Ready to <span className="text-primary">start</span>?
-            </h2>
+            <BoldHeadline
+              leadIn="READY TO"
+              statement="START?"
+              light
+              className="mb-8 text-center"
+            />
 
             <div className="space-y-4 mb-10 text-left max-w-md mx-auto">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">1</div>
-                <span className="text-lg">Free discovery with working prototype</span>
+                <div className="w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-sm">1</div>
+                <span className="text-lg text-white/90">Free discovery with working prototype</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">2</div>
-                <span className="text-lg">Fixed-price build to agreed spec</span>
+                <div className="w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-sm">2</div>
+                <span className="text-lg text-white/90">Fixed-price build to agreed spec</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold text-sm">3</div>
-                <span className="text-lg">Ongoing partnership as you grow</span>
+                <div className="w-8 h-8 rounded-full bg-primary/40 flex items-center justify-center text-white font-bold text-sm">3</div>
+                <span className="text-lg text-white/90">Ongoing partnership as you grow</span>
               </div>
             </div>
 
             <Link href="/contact">
-              <Button size="lg" variant="hero" className="group">
+              <Button size="lg" variant="secondary" className="group bg-white text-primary hover:bg-white/90">
                 Book your free discovery
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
 
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-sm text-white/60 mt-6">
               No commitment required. No sales pitch. Just clarity.
             </p>
           </div>

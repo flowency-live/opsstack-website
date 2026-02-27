@@ -1,4 +1,6 @@
 import HeroSection from "@/components/HeroSection";
+import StackTilesRow from "@/components/StackTilesRow";
+import ValuesSection from "@/components/ValuesSection";
 import ProblemSection from "@/components/ProblemSection";
 import BigSaasChallenge from "@/components/BigSaasChallenge";
 import ProcessSection from "@/components/ProcessSection";
@@ -13,6 +15,8 @@ const Index = () => {
   return (
     <main id="main-content" className="min-h-screen bg-background">
       <HeroSection />
+      <StackTilesRow />
+      <ValuesSection />
       <ProblemSection />
       <BigSaasChallenge />
       <ProcessSection />

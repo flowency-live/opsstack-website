@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import SectionReveal from "./SectionReveal";
+import BoldHeadline from "./BoldHeadline";
 
 const steps = [
   "Bring your biggest operational headache",
@@ -10,44 +11,46 @@ const steps = [
 
 const CTASection = () => {
   return (
-    <section id="contact" className="relative py-32 lg:py-40 overflow-hidden section-grain">
-      {/* Purple gradient background */}
+    <section id="contact" className="relative py-32 lg:py-40 overflow-hidden">
+      {/* Background Image */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(250 70% 35%) 50%, hsl(250 60% 20%) 100%)'
+          backgroundImage: 'url(/backgrounds/particle-wave-2.png)',
         }}
       />
 
-      {/* Geometric accent - diagonal line (purple) */}
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+
+      {/* Subtle purple tint overlay */}
       <div
-        className="absolute top-0 right-0 w-1/2 h-full pointer-events-none overflow-hidden opacity-30"
+        className="absolute inset-0 opacity-30"
         style={{
-          background: 'linear-gradient(135deg, transparent 30%, hsl(250 70% 70% / 0.4) 50%, transparent 70%)'
+          background: 'radial-gradient(ellipse at 50% 100%, hsl(250 75% 58% / 0.5) 0%, transparent 60%)'
         }}
       />
 
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <SectionReveal>
-          <div className="max-w-5xl">
-            {/* Header - Left aligned */}
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
-                Ready to see your business clearly?
-              </h2>
-              <p className="text-xl text-white/80 max-w-2xl">
-                See what it feels like when the noise disappears and your operation becomes visible.
-              </p>
-            </div>
+          <div className="max-w-4xl">
+            {/* Bold Headline */}
+            <BoldHeadline
+              leadIn="READY TO"
+              statement="SEE CLEARLY?"
+              description="See what it feels like when the noise disappears and your operation becomes visible."
+              light
+              className="mb-12"
+            />
 
             {/* Steps List */}
             <ul className="space-y-4 mb-12">
               {steps.map((step, index) => (
                 <li
                   key={index}
-                  className="reveal-child flex items-center gap-4 text-lg text-white"
+                  className="reveal-child flex items-center gap-4 text-lg text-white/90"
                 >
-                  <span className="w-2 h-2 rounded-full bg-white flex-shrink-0" />
+                  <span className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
                   {step}
                 </li>
               ))}

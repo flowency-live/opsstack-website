@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 import VisionSection from '@/components/VisionSection'
+import BoldHeadline from '@/components/BoldHeadline'
 
 export const metadata = {
   title: 'About - OpStack',
@@ -54,10 +55,13 @@ export default function AboutPage() {
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            {/* Header */}
+            {/* Header - Bold typography */}
             <div className="mb-12">
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Why this <span className="text-primary">exists</span> - founder story
+              <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+                WHY THIS EXISTS
+              </p>
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight">
+                FOUNDER STORY
               </h1>
 
               {/* Accent bar */}
@@ -197,28 +201,26 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Purple gradient background */}
+        {/* Background Image */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            background: 'radial-gradient(ellipse at 50% 0%, hsl(250 75% 58%) 0%, hsl(262 70% 35%) 50%, hsl(262 60% 20%) 100%)'
+            backgroundImage: 'url(/backgrounds/fiber-ribbons.png)',
           }}
         />
 
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
+
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">
-                If your business is held together by good people compensating for bad systems, we fix that.
-              </h2>
-
-              <p className="text-xl text-white/80 mb-2">
-                It&apos;s time SMEs had their own operating system.
-              </p>
-              <p className="text-xl text-white font-medium">
-                That&apos;s what we build.
-              </p>
-            </div>
+            <BoldHeadline
+              leadIn="WE FIX"
+              statement="BAD SYSTEMS"
+              description="If your business is held together by good people compensating for bad systems, we fix that. It's time SMEs had their own operating system. That's what we build."
+              light
+              className="mb-12"
+            />
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
               <Link href="/contact">
