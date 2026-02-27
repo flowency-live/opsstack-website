@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import BoldHeadline from './BoldHeadline';
@@ -25,18 +25,22 @@ const ValuesCarousel = ({
 }: ValuesCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const directionRef = useRef<'left' | 'right'>('right');
 
   const goToNext = useCallback(() => {
+    directionRef.current = 'right';
     setCurrentIndex((prev) => (prev + 1) % slides.length);
   }, [slides.length]);
 
   const goToPrev = useCallback(() => {
+    directionRef.current = 'left';
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, [slides.length]);
 
   const goToSlide = useCallback((index: number) => {
+    directionRef.current = index > currentIndex ? 'right' : 'left';
     setCurrentIndex(index);
-  }, []);
+  }, [currentIndex]);
 
   // Auto-play
   useEffect(() => {
@@ -54,13 +58,25 @@ const ValuesCarousel = ({
       style={{ minHeight: '70vh' }}
     >
       {/* Slides */}
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{
+            opacity: 0,
+            x: directionRef.current === 'right' ? 100 : -100
+          }}
+          animate={{
+            opacity: 1,
+            x: 0
+          }}
+          exit={{
+            opacity: 0,
+            x: directionRef.current === 'right' ? -100 : 100
+          }}
+          transition={{
+            duration: 0.5,
+            ease: [0.32, 0.72, 0, 1]
+          }}
           className="absolute inset-0"
         >
           {/* Background Image */}
