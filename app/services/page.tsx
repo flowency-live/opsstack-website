@@ -338,9 +338,9 @@ export default function ServicesPage() {
                   key={index}
                   className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-8 hover:border-destructive/30 transition-all duration-300"
                 >
-                  {/* Dramatic strikethrough trap name */}
+                  {/* Strikethrough product name - readable but dismissed */}
                   <div className="relative mb-4">
-                    <span className="text-3xl md:text-4xl font-bold text-destructive/20 line-through decoration-destructive/40 decoration-4">
+                    <span className="text-3xl md:text-4xl font-bold text-destructive/60 line-through decoration-destructive/70 decoration-2">
                       {challenge.trap}
                     </span>
                   </div>
@@ -393,11 +393,11 @@ export default function ServicesPage() {
 
             {/* Dramatic two-column comparison */}
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-0">
-              {/* LEFT: The Problem - Dark, crossed out */}
+              {/* LEFT: What they sell */}
               <div className="lg:pr-12 lg:border-r border-border/20">
                 <div className="mb-8">
                   <span className="inline-block px-4 py-1.5 rounded-full bg-destructive/20 text-destructive text-sm font-medium mb-4">
-                    The trap
+                    Off-the-shelf
                   </span>
                   <h3 className="text-2xl font-bold text-white lg:text-foreground mb-2">
                     What they sell you
@@ -428,11 +428,11 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              {/* RIGHT: The Solution - Bright, clean */}
+              {/* RIGHT: What we build */}
               <div className="lg:pl-12">
                 <div className="mb-8">
                   <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
-                    The reality
+                    OpStack
                   </span>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     What we actually build
