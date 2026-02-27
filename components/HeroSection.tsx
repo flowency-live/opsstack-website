@@ -17,7 +17,7 @@ const HeroSection = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url(/backgrounds/hero-stacks.png)',
+            backgroundImage: 'url(/backgrounds/hero-convergence.png)',
             backgroundPosition: 'right center',
           }}
         />
@@ -37,7 +37,7 @@ const HeroSection = () => {
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: 'url(/backgrounds/hero-stacks.png)',
+            backgroundImage: 'url(/backgrounds/hero-convergence.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
