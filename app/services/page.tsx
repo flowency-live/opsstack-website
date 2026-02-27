@@ -314,46 +314,39 @@ export default function ServicesPage() {
               />
             </div>
 
-            {/* Software Trap Cards */}
-            <div className="space-y-4 mb-12">
+            {/* Software Trap Cards - Bold, dramatic layout */}
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
               {[
                 {
-                  trap: '"We need Salesforce"',
-                  reality: "Salesforce is built for enterprises with dedicated admins, six-figure budgets, and complex multi-division structures. You need a system that works for your business - not one that requires a consultant to configure.",
+                  trap: 'Salesforce',
+                  reality: "Built for enterprises with dedicated admins and six-figure budgets. You need a system that works - not one that requires a consultant.",
                 },
                 {
-                  trap: '"We need HubSpot"',
-                  reality: "HubSpot is a marketing machine that happens to have a CRM bolted on. If you're not running content campaigns to thousands of leads, you're paying for an engine you'll never start.",
+                  trap: 'HubSpot',
+                  reality: "A marketing machine with a CRM bolted on. If you're not running campaigns to thousands of leads, you're paying for an engine you'll never start.",
                 },
                 {
-                  trap: '"We need Monday / Asana"',
-                  reality: "Project management tools are great at tracking tasks. But your business isn't a series of tasks - it's relationships, jobs, margins, and operational flow. A colourful Kanban board won't show you what's actually making money.",
+                  trap: 'Monday / Asana',
+                  reality: "Great at tracking tasks. But your business isn't tasks - it's relationships, margins, and flow. Kanban won't show you what's making money.",
                 },
                 {
-                  trap: '"We need Jira & Confluence"',
-                  reality: "Atlassian tools are built for software teams shipping code. If your operation isn't sprints and user stories, you're forcing your business into a developer's workflow - and paying enterprise prices for it.",
-                },
-                {
-                  trap: '"We need SharePoint"',
-                  reality: "SharePoint is where documents go to hide. It's a file system dressed up as collaboration. Your business needs workflows, not folder structures - and definitely not another Microsoft login.",
+                  trap: 'Jira & Confluence',
+                  reality: "Built for software teams shipping code. If you're not doing sprints, you're forcing your business into a developer's workflow.",
                 },
               ].map((challenge, index) => (
                 <div
                   key={index}
-                  className="group glass-card p-6 card-hover"
+                  className="group relative overflow-hidden rounded-2xl border border-border/50 bg-gradient-to-br from-card to-card/50 p-8 hover:border-destructive/30 transition-all duration-300"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    <div className="flex-shrink-0 md:w-56">
-                      <span className="text-lg font-semibold text-destructive/80 line-through decoration-2">
-                        {challenge.trap}
-                      </span>
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-muted-foreground leading-relaxed">
-                        {challenge.reality}
-                      </p>
-                    </div>
+                  {/* Dramatic strikethrough trap name */}
+                  <div className="relative mb-4">
+                    <span className="text-3xl md:text-4xl font-bold text-destructive/20 line-through decoration-destructive/40 decoration-4">
+                      {challenge.trap}
+                    </span>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {challenge.reality}
+                  </p>
                 </div>
               ))}
             </div>
@@ -375,83 +368,108 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Comparison Grid Section */}
-      <section className="relative py-24 lg:py-32 section-light-enhanced">
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl">
-            <div className="mb-12">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                Off-the-shelf vs <span className="text-primary">OpStack</span>
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                The current software market has it backwards. They build for everyone, which means they build for no-one.
-              </p>
+      {/* Comparison Section - Dramatic Split Design */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        {/* Split background - left darker, right with primary tint */}
+        <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
+          <div className="bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950" />
+          <div className="bg-gradient-to-bl from-primary/10 via-background to-background hidden lg:block" />
+        </div>
+        <div className="absolute inset-0 section-grain lg:hidden bg-background" />
 
-              {/* Accent bar */}
-              <div
-                className="w-full h-1 mt-6 rounded-full"
-                style={{
-                  background: 'linear-gradient(90deg, hsl(250 75% 58%) 0%, hsl(250 75% 68%) 30%, transparent 100%)'
-                }}
-              />
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+                <span className="text-white lg:text-foreground">Off-the-shelf</span>
+                <span className="text-muted-foreground mx-3">vs</span>
+                <span className="text-primary">OpStack</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+                They build for everyone, which means they build for no-one.
+              </p>
             </div>
 
-            <div className="space-y-4">
-              {[
-                {
-                  theirs: '"Powerful and flexible!" (translation: complex and generic)',
-                  ours: 'Built precisely for your operation',
-                },
-                {
-                  theirs: 'Pay for 100 features, use 7',
-                  ours: 'Pay for what you need, use all of it',
-                },
-                {
-                  theirs: 'Learn their system',
-                  ours: 'It already speaks your language',
-                },
-                {
-                  theirs: 'Integrate 5 tools to approximate your workflow',
-                  ours: 'One tool that IS your workflow',
-                },
-                {
-                  theirs: 'You adapt to the software',
-                  ours: 'The software is shaped around you',
-                },
-                {
-                  theirs: 'Generic dashboards that don\'t answer your questions',
-                  ours: 'Dashboards built around what YOU need to see',
-                },
-                {
-                  theirs: '"Best practice" workflows designed for someone else',
-                  ours: 'Your workflows, encoded and automated',
-                },
-                {
-                  theirs: '6-month implementation with consultants',
-                  ours: 'Live in days, not months',
-                },
-                {
-                  theirs: '"We integrate with 500+ tools!"',
-                  ours: 'You don\'t need 500 tools. You need one that works.',
-                },
-              ].map((row, i) => (
-                <div key={i} className="grid md:grid-cols-2 gap-4">
-                  <div className="p-5 rounded-xl border border-destructive/20 bg-destructive/5">
-                    <div className="flex items-start gap-3">
-                      <span className="w-5 h-5 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-xs text-destructive">✕</span>
-                      </span>
-                      <span className="text-muted-foreground">{row.theirs}</span>
-                    </div>
-                  </div>
-                  <div className="p-5 rounded-xl border border-primary/30 bg-primary/5">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">{row.ours}</span>
-                    </div>
-                  </div>
+            {/* Dramatic two-column comparison */}
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-0">
+              {/* LEFT: The Problem - Dark, crossed out */}
+              <div className="lg:pr-12 lg:border-r border-border/20">
+                <div className="mb-8">
+                  <span className="inline-block px-4 py-1.5 rounded-full bg-destructive/20 text-destructive text-sm font-medium mb-4">
+                    The trap
+                  </span>
+                  <h3 className="text-2xl font-bold text-white lg:text-foreground mb-2">
+                    What they sell you
+                  </h3>
                 </div>
-              ))}
+
+                <div className="space-y-6">
+                  {[
+                    { headline: '"Powerful and flexible!"', subtext: 'Translation: complex and generic' },
+                    { headline: 'Pay for 100 features', subtext: 'Use maybe 7 of them' },
+                    { headline: '6-month implementation', subtext: 'With consultants you\'ll pay extra for' },
+                    { headline: '"We integrate with 500+ tools!"', subtext: 'Because one that works would be too simple' },
+                  ].map((item, i) => (
+                    <div key={i} className="group">
+                      <div className="flex items-start gap-4">
+                        <span className="w-8 h-8 rounded-full bg-destructive/10 border border-destructive/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-destructive font-bold">✕</span>
+                        </span>
+                        <div>
+                          <p className="text-lg font-semibold text-white/90 lg:text-foreground line-through decoration-destructive/50 decoration-2">
+                            {item.headline}
+                          </p>
+                          <p className="text-sm text-muted-foreground mt-1">{item.subtext}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT: The Solution - Bright, clean */}
+              <div className="lg:pl-12">
+                <div className="mb-8">
+                  <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+                    The reality
+                  </span>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    What we actually build
+                  </h3>
+                </div>
+
+                <div className="space-y-6">
+                  {[
+                    { headline: 'Built precisely for your operation', subtext: 'Every feature earns its place' },
+                    { headline: 'Pay for what you need', subtext: 'And actually use all of it' },
+                    { headline: 'Live in days, not months', subtext: 'Working prototype on day one' },
+                    { headline: 'One tool that works', subtext: 'Your workflow, not an approximation' },
+                  ].map((item, i) => (
+                    <div key={i} className="group">
+                      <div className="flex items-start gap-4">
+                        <span className="w-8 h-8 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle2 className="w-4 h-4 text-primary" />
+                        </span>
+                        <div>
+                          <p className="text-lg font-semibold text-foreground">
+                            {item.headline}
+                          </p>
+                          <p className="text-sm text-muted-foreground mt-1">{item.subtext}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom statement */}
+            <div className="mt-16 text-center">
+              <p className="text-xl font-semibold">
+                <span className="text-muted-foreground">The software adapts to you.</span>{' '}
+                <span className="text-primary">Not the other way around.</span>
+              </p>
             </div>
           </div>
         </div>
