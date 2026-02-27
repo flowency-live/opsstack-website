@@ -61,15 +61,24 @@ export default function ServicesPage() {
   return (
     <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 lg:py-40 overflow-hidden pt-28 section-dark-enhanced section-grain">
-        <div className="absolute inset-0 bg-background" />
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/backgrounds/convergence.png)',
+          }}
+        />
 
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
+
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-5xl">
-            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-white/70 mb-2">
               WHAT WE
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6 text-white">
               BUILD
             </h1>
 
@@ -77,11 +86,11 @@ export default function ServicesPage() {
               One login. Your entire business.
             </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-4">
+            <p className="text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed mb-4">
               Not software you have to bend yourself to fit. Not a patchwork of tools held together with hope. Your business, digitised properly - every screen speaks your language, every feature exists because your operation needs it.
             </p>
 
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed mb-8">
               You open your Stack and it feels calm. No clutter. No confusion. Just your business, clear and workable.
             </p>
 

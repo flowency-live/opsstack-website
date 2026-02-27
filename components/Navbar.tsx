@@ -31,6 +31,7 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "What We Build", href: "/services" },
     { label: "Pricing", href: "/pricing" },
+    { label: "OpStack Opinions", href: "/insights" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 
 export const metadata = {
-  title: 'Insights - OpStack',
+  title: 'OpStack Opinions - Insights',
   description: 'Practical thinking on operations, technology, and building businesses that work.',
 }
 
@@ -101,16 +101,28 @@ const InsightCard = ({ insight }: { insight: typeof insights[0] }) => {
 export default function InsightsPage() {
   return (
     <main id="main-content" className="min-h-screen bg-background">
-      {/* Header */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 section-dark-enhanced section-grain">
-        <div className="absolute inset-0 bg-background" />
+      {/* Hero Section */}
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/backgrounds/particle-wave-1.png)',
+          }}
+        />
 
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
+
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-5xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Articles & <span className="text-primary">Insights</span>
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-white/70 mb-2">
+              OPSTACK
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6 text-white">
+              <span className="text-primary">OPINIONS</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl">
+            <p className="text-xl text-white/70 max-w-2xl">
               Practical thinking on operations, technology, and building businesses that work.
             </p>
           </div>

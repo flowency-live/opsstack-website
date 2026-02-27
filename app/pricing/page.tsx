@@ -40,19 +40,30 @@ export default function PricingPage() {
   return (
     <main id="main-content" className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-24 lg:py-32 pt-32 lg:pt-40 section-dark-enhanced section-grain">
-        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden pt-20">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(/backgrounds/speed-lines.png)',
+          }}
+        />
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/50" />
+
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-5xl">
-            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-muted-foreground mb-2">
+            <p className="font-display text-xl sm:text-2xl font-light italic tracking-wide text-white/70 mb-2">
               PRICING THAT
             </p>
             <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
               <span className="text-primary">MAKES SENSE</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mb-4">
+            <p className="text-xl text-white/70 max-w-2xl mb-4">
               No per-seat licensing. No feature tiers. No surprise invoices.
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mb-6">
+            <p className="text-lg text-white/70 max-w-2xl mb-6">
               Two phases: we build your Stack, then we evolve it together.
             </p>
 
