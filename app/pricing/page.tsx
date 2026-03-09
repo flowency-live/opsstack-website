@@ -306,7 +306,7 @@ export default function PricingPage() {
                   Our Stacks cost a fraction of enterprise software - because they only do what your business actually requires. No feature bloat. No per-seat licensing that punishes you for growing.
                 </p>
                 <p>
-                  Less than the salary of one junior developer. Less than the combined subscriptions you&apos;re already paying for tools you barely use. Less than the cost of running your operation on spreadsheets and good intentions for another year.
+                  Typical first builds run to thousands, not tens of thousands. Less than the salary of one junior developer. Less than the combined subscriptions you&apos;re already paying for tools you barely use. Less than the cost of running your operation on spreadsheets and good intentions for another year.
                 </p>
               </div>
 

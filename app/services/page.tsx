@@ -553,6 +553,10 @@ export default function ServicesPage() {
               <span className="text-foreground">equals practical transformation.</span>{" "}
               <span className="text-muted-foreground">We use AI to move fast and keep costs down. But every system is shaped by experienced humans who understand your business - not just the technology.</span>
             </p>
+
+            <p className="text-lg text-muted-foreground mt-6">
+              Each Stack is shaped to your business, but built on proven patterns that make delivery faster, safer, and more affordable.
+            </p>
           </div>
         </div>
       </section>

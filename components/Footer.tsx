@@ -111,7 +111,7 @@ const Footer = () => {
               © 2025 OpStack. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
-              Built with technology. <span className="text-primary">Powered by humans.</span>
+              Your business, <span className="text-primary">digitised properly.</span>
             </p>
           </div>
         </div>

@@ -24,8 +24,8 @@ export default function ContactPage() {
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-4xl">
             <BoldHeadline
-              leadIn="LET'S MOVE"
-              statement="FORWARD"
+              leadIn="LET'S FIX"
+              statement="YOUR SYSTEMS"
               description="Whether you've just got a few questions or you want to explore working together, we'd love to hear from you."
               light
             />
@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className="max-w-7xl mx-auto space-y-12">
             <div className="text-center space-y-6">
               <h2 className="font-display text-4xl md:text-5xl font-bold">
-                Let&apos;s amplify <span className="text-primary">your tech</span>
+                Let&apos;s talk about <span className="text-primary">your operation</span>
               </h2>
               <div className="max-w-3xl mx-auto space-y-4">
                 <p className="text-xl text-muted-foreground">
