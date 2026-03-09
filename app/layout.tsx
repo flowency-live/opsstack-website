@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "OpStack - Business Operating Systems for SMEs",
     template: "%s | OpStack",
   },
-  description: "One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes with one unified platform.",
+  description: "One login. Your entire business. We build the operating system that replaces your spreadsheets, scattered tools, and manual processes.",
   keywords: ["SME", "digital transformation", "automation", "AI", "business operating system", "CTO", "OpStack"],
   authors: [{ name: "OpStack" }],
   creator: "OpStack",
@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     url: 'https://opstack.uk',
     siteName: 'OpStack',
     title: 'OpStack - Business Operating Systems for SMEs',
-    description: 'One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes.',
+    description: 'One login. Your entire business. We build the operating system that replaces your spreadsheets, scattered tools, and manual processes.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'OpStack - Business Operating Systems for SMEs',
-    description: 'One login. Your entire business. Custom operating systems that replace spreadsheets, scattered tools, and manual processes.',
+    description: 'One login. Your entire business. We build the operating system that replaces your spreadsheets, scattered tools, and manual processes.',
   },
   robots: {
     index: true,

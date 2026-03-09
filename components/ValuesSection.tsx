@@ -7,7 +7,7 @@ const slides = [
     leadIn: 'WE ARE',
     statement: 'OBSESSED',
     description:
-      'With building systems that actually work. Every detail matters. Every workflow refined. Every frustration eliminated.',
+      'With building systems that actually work. Every detail matters. Every screen considered. Every frustration eliminated.',
     background: '/backgrounds/fiber-ribbons.webp',
   },
   {

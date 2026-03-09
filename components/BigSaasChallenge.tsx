@@ -4,27 +4,27 @@ import { ArrowRight } from "lucide-react";
 
 const challenges = [
   {
-    trap: '"We need Salesforce"',
+    claim: '"We need Salesforce"',
     reality: "Salesforce is built for enterprises with dedicated admins, six-figure budgets, and complex multi-division structures. You need a system that works for your business - not one that requires a consultant to configure.",
     slug: "salesforce",
   },
   {
-    trap: '"We need HubSpot"',
+    claim: '"We need HubSpot"',
     reality: "HubSpot is a marketing machine that happens to have a CRM bolted on. If you're not running content campaigns to thousands of leads, you're paying for an engine you'll never start.",
     slug: "hubspot",
   },
   {
-    trap: '"We need Monday / Asana"',
+    claim: '"We need Monday / Asana"',
     reality: "Project management tools are great at tracking tasks. But your business isn't a series of tasks - it's relationships, jobs, margins, and operational flow. A colourful Kanban board won't show you what's actually making money.",
     slug: "monday",
   },
   {
-    trap: '"We need Jira & Confluence"',
+    claim: '"We need Jira & Confluence"',
     reality: "Atlassian tools are built for software teams shipping code. If your operation isn't sprints and user stories, you're forcing your business into a developer's workflow - and paying enterprise prices for it.",
     slug: "jira",
   },
   {
-    trap: '"We need SharePoint"',
+    claim: '"We need SharePoint"',
     reality: "SharePoint is where documents go to hide. It's a file system dressed up as collaboration. Your business needs workflows, not folder structures - and definitely not another Microsoft login.",
     slug: "sharepoint",
   },
@@ -39,7 +39,7 @@ const BigSaasChallenge = () => {
             {/* Header */}
             <div className="mb-12">
               <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
-                The enterprise software trap
+                Why enterprise software fails SMEs
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
                 You don&apos;t need{" "}
@@ -59,10 +59,10 @@ const BigSaasChallenge = () => {
                   className="reveal-child group glass-card p-6 card-hover"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    {/* The trap */}
+                    {/* The claim */}
                     <div className="flex-shrink-0 md:w-56">
                       <span className="text-lg font-semibold text-destructive/80 line-through decoration-2">
-                        {challenge.trap}
+                        {challenge.claim}
                       </span>
                     </div>
 

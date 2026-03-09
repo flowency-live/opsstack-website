@@ -92,7 +92,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
             >
               <p className="text-lg sm:text-xl text-muted-foreground mb-4">
-                Everything you need to run your operation. Nothing you don&apos;t.
+                Everything you need to run your business. Nothing you don&apos;t.
               </p>
 
               <p className="text-base text-muted-foreground/80 mb-8">

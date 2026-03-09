@@ -116,12 +116,8 @@ const ProcessSection = () => {
 
             {/* Closing Line - separated, given prominence as closing thought */}
             <div className="pt-8 border-t border-border/50">
-              <p className="text-xl md:text-2xl font-medium mb-3">
-                <mark className="mark-amber">AI plus humans</mark>{" "}
-                <span className="text-foreground">equals practical transformation.</span>
-              </p>
-              <p className="text-muted-foreground">
-                Digital capability used to be slow and expensive - it&apos;s not anymore.
+              <p className="text-xl md:text-2xl font-medium text-foreground">
+                Digital capability used to be slow and expensive. It&apos;s not anymore.
               </p>
             </div>
           </div>

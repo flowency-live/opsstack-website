@@ -54,7 +54,7 @@ const stacks = [
 
 export const metadata = {
   title: 'What We Build - OpStack',
-  description: 'Build, Automate, Amplify. The tools, systems and intelligence your business is missing - delivered in days, not months.',
+  description: 'Build. Run. See. The operating system your business is missing - delivered in days, not months.',
 }
 
 export default function ServicesPage() {
@@ -98,18 +98,18 @@ export default function ServicesPage() {
             <div className="grid sm:grid-cols-3 gap-4 max-w-3xl">
               <NumberedStepCard
                 number={1}
-                content="BUILD your tools"
+                content="BUILD your operating system"
                 highlight="BUILD"
               />
               <NumberedStepCard
                 number={2}
-                content="AUTOMATE the work"
-                highlight="AUTOMATE"
+                content="RUN it properly"
+                highlight="RUN"
               />
               <NumberedStepCard
                 number={3}
-                content="AMPLIFY your insight"
-                highlight="AMPLIFY"
+                content="SEE it clearly"
+                highlight="SEE"
               />
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function ServicesPage() {
               />
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4">
-                We design and deliver the software your business actually needs. Not what a vendor wants to sell you. Not a template you have to work around.
+                We build the operating system your business is missing. Not what a vendor wants to sell you. Not a template you have to work around.
               </p>
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
@@ -173,16 +173,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Automate Section */}
+      {/* Run Section */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-                Automate
+                Run
               </h2>
-              <p className="text-lg text-primary font-medium mb-4">Remove manual work forever</p>
+              <p className="text-lg text-primary font-medium mb-4">Your operation, flowing properly</p>
 
               {/* Accent bar */}
               <div
@@ -197,19 +197,19 @@ export default function ServicesPage() {
               </p>
 
               <p className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
-                We fix it by connecting your tools, streamlining your process, and adding smart automation where it actually matters.
+                We fix it by building the operating layer that eliminates the gaps - so information flows where it needs to, and your team stops being the glue.
               </p>
             </div>
 
             <div className="mb-12">
-              <h3 className="text-xl font-semibold mb-6">What we automate:</h3>
+              <h3 className="text-xl font-semibold mb-6">What flows through your Stack:</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   'Invoicing and billing',
                   'Reporting and dashboards',
                   'Scheduling and reminders',
-                  'Workflow triggers and handoffs',
-                  'Data processing and validation',
+                  'Operational handoffs',
+                  'Data integrity',
                   'Customer communications',
                   'Compliance and audit trails',
                 ].map((item, i) => (
@@ -222,23 +222,23 @@ export default function ServicesPage() {
             </div>
 
             <p className="text-lg">
-              <span className="text-muted-foreground">Automation isn&apos;t about replacing people.</span>{" "}
-              <span className="text-primary font-medium">It&apos;s about freeing them to do useful work.</span>
+              <span className="text-muted-foreground">When your operation flows through one place, the manual work disappears.</span>{" "}
+              <span className="text-primary font-medium">Your team focuses on judgment, not data entry.</span>
             </p>
           </div>
         </div>
       </section>
 
-      {/* Amplify Section */}
+      {/* See Section */}
       <section className="relative py-24 lg:py-32 section-light-enhanced">
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-                Amplify
+                See
               </h2>
-              <p className="text-lg text-primary font-medium mb-4">Visibility, intelligence and insight</p>
+              <p className="text-lg text-primary font-medium mb-4">Real visibility, real control</p>
 
               {/* Accent bar */}
               <div
@@ -262,7 +262,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="mb-12">
-              <h3 className="text-xl font-semibold mb-6">What we amplify:</h3>
+              <h3 className="text-xl font-semibold mb-6">What you finally see:</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   'Profit and margin visibility',
@@ -288,13 +288,13 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* The Enterprise Software Trap */}
+      {/* Why Enterprise Software Fails SMEs */}
       <section className="relative py-24 lg:py-32 section-dark-enhanced section-grain">
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
             <div className="mb-12">
               <p className="text-sm uppercase tracking-wide text-primary font-medium mb-3">
-                The enterprise software trap
+                Why enterprise software fails SMEs
               </p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
                 You don&apos;t need{" "}
@@ -314,23 +314,23 @@ export default function ServicesPage() {
               />
             </div>
 
-            {/* Software Trap Cards - Bold, dramatic layout */}
+            {/* Enterprise Software Cards - Bold, dramatic layout */}
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {[
                 {
-                  trap: 'Salesforce',
+                  name: 'Salesforce',
                   reality: "Built for enterprises with dedicated admins and six-figure budgets. You need a system that works - not one that requires a consultant.",
                 },
                 {
-                  trap: 'HubSpot',
+                  name: 'HubSpot',
                   reality: "A marketing machine with a CRM bolted on. If you're not running campaigns to thousands of leads, you're paying for an engine you'll never start.",
                 },
                 {
-                  trap: 'Monday / Asana',
+                  name: 'Monday / Asana',
                   reality: "Great at tracking tasks. But your business isn't tasks - it's relationships, margins, and flow. Kanban won't show you what's making money.",
                 },
                 {
-                  trap: 'Jira & Confluence',
+                  name: 'Jira & Confluence',
                   reality: "Built for software teams shipping code. If you're not doing sprints, you're forcing your business into a developer's workflow.",
                 },
               ].map((challenge, index) => (
@@ -341,7 +341,7 @@ export default function ServicesPage() {
                   {/* Strikethrough product name - readable but dismissed */}
                   <div className="relative mb-4">
                     <span className="text-3xl md:text-4xl font-bold text-destructive/60 line-through decoration-destructive/70 decoration-2">
-                      {challenge.trap}
+                      {challenge.name}
                     </span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed text-sm">
@@ -357,8 +357,7 @@ export default function ServicesPage() {
                 What you actually need:
               </p>
               <p className="text-lg text-muted-foreground mb-4">
-                A system built for your business. Your workflows, your language, your data -
-                in one place. No enterprise bloat. No consultant required. No features you&apos;ll never use.
+                Your business, digitised properly. Your language. Your logic. Your data - all in one place. No enterprise bloat. No consultant fees. No features you&apos;ll never touch.
               </p>
               <p className="text-primary font-medium">
                 That&apos;s what we build.

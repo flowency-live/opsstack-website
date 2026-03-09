@@ -74,7 +74,7 @@ export default function VsHubspotPage() {
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto space-y-8">
             <h2 className="font-display text-3xl md:text-4xl font-bold">
-              The HubSpot <span className="text-primary">trap</span>
+              The HubSpot <span className="text-primary">problem</span>
             </h2>
 
             <div className="prose prose-lg max-w-none text-muted-foreground">

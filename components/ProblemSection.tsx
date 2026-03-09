@@ -39,7 +39,7 @@ const ProblemSection = () => {
               </h2>
 
               <p className="text-lg text-white/70 mt-6 max-w-xl">
-                Purpose-built systems that run your business. Workflows, data, automation, and visibility. Designed around how you actually operate.
+                Purpose-built systems that run your business. One place for everything. Real visibility. Real control.
               </p>
 
               {/* Accent bar */}
