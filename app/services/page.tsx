@@ -118,14 +118,14 @@ export default function ServicesPage() {
 
       {/* Build Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Subtle background */}
+        {/* Background treatment */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.04]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage: 'url(/backgrounds/fiber-sweep.webp)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background/80" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -239,14 +239,14 @@ export default function ServicesPage() {
 
       {/* See Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Subtle background */}
+        {/* Background treatment */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.05]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
           style={{
             backgroundImage: 'url(/backgrounds/particle-wave-2.webp)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/70 to-background/80" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -492,14 +492,14 @@ export default function ServicesPage() {
 
       {/* What Makes Our Delivery Different */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        {/* Background image with gradient */}
+        {/* Background treatment */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.08]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
           style={{
             backgroundImage: 'url(/backgrounds/ethereal-streams.webp)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-primary/10" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl">
@@ -561,13 +561,13 @@ export default function ServicesPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Premium background treatment */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.06]"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25"
           style={{
             backgroundImage: 'url(/backgrounds/glass-stacks.webp)',
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
-        <div className="absolute inset-0 section-grain opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/65 to-background/75" />
+        <div className="absolute inset-0 section-grain opacity-20" />
 
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
