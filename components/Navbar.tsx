@@ -136,8 +136,8 @@ const Navbar = () => {
         }`}
         role="menu"
       >
-        {/* Solid background with subtle gradient */}
-        <div className="absolute inset-0 bg-background" />
+        {/* Solid opaque background - hardcoded colors for guaranteed opacity */}
+        <div className="absolute inset-0 bg-white dark:bg-[#0a1628]" />
 
         {/* Decorative gradient accent */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent blur-3xl" />
