@@ -1,13 +1,34 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon, ArrowRight } from "lucide-react";
+import { Sun, Moon, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
 import { ContactSlideOut } from "./ContactSlideOut";
+
+// Animated hamburger icon that morphs to X
+const MenuIcon = ({ isOpen, className }: { isOpen: boolean; className?: string }) => (
+  <div className={`relative w-6 h-6 flex flex-col justify-center items-center ${className}`}>
+    <span
+      className={`block absolute h-0.5 w-5 bg-current transform transition-all duration-300 ease-in-out ${
+        isOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'
+      }`}
+    />
+    <span
+      className={`block absolute h-0.5 w-5 bg-current transform transition-all duration-300 ease-in-out ${
+        isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+      }`}
+    />
+    <span
+      className={`block absolute h-0.5 w-5 bg-current transform transition-all duration-300 ease-in-out ${
+        isOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'
+      }`}
+    />
+  </div>
+);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,12 +140,12 @@ const Navbar = () => {
               )}
               <button
                 className="p-2 hover:bg-primary/10 rounded-lg transition-colors duration-300"
-                onClick={() => setIsOpen(true)}
-                aria-label="Open menu"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
               >
-                <Menu className="w-6 h-6" aria-hidden="true" />
+                <MenuIcon isOpen={isOpen} />
               </button>
             </div>
           </div>
@@ -175,7 +196,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" aria-hidden="true" />
+                <MenuIcon isOpen={true} />
               </button>
             </div>
           </div>
