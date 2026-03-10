@@ -128,15 +128,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Nav - Full screen overlay */}
+      {/* Mobile Nav - Full screen overlay - z-[60] to sit above hero (z-50) */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ease-out ${
+        className={`md:hidden fixed inset-0 z-[60] transition-all duration-300 ease-out ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         role="menu"
       >
-        {/* Solid opaque background - hardcoded colors for guaranteed opacity */}
+        {/* Solid opaque background */}
         <div className="absolute inset-0 bg-white dark:bg-[#0a1628]" />
 
         {/* Decorative gradient accent */}
