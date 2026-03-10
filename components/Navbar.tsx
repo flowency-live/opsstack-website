@@ -74,7 +74,7 @@ const Navbar = () => {
     <>
       <nav
         aria-label="Main navigation"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'border-b border-primary/10 bg-background/90 backdrop-blur-xl shadow-lg shadow-primary/5' : 'bg-background/50 backdrop-blur-sm'}`}
+        className={`fixed top-0 left-0 right-0 transition-all duration-300 ${isOpen ? 'z-[10000] bg-background' : 'z-50'} ${scrolled && !isOpen ? 'border-b border-primary/10 bg-background/90 backdrop-blur-xl shadow-lg shadow-primary/5' : !isOpen ? 'bg-background/50 backdrop-blur-sm' : ''}`}
       >
         <div className="w-full px-6 lg:px-12">
           <div className="flex h-16 items-center justify-between">
@@ -162,45 +162,10 @@ const Navbar = () => {
       {mounted && isOpen && createPortal(
         <div
           id="mobile-menu"
-          className="md:hidden fixed inset-0 z-[9999] bg-background"
+          className="md:hidden fixed inset-0 top-16 z-[9999] bg-background"
           role="dialog"
           aria-modal="true"
         >
-          {/* Header */}
-          <div className="flex h-16 items-center justify-between px-6">
-            <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-              <Image
-                src="/opstack-logo.png"
-                alt="OpStack"
-                width={140}
-                height={32}
-                className="h-8 w-auto"
-              />
-            </Link>
-            <div className="flex items-center gap-2">
-              {mounted && (
-                <button
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className="p-2 rounded-lg hover:bg-primary/10 transition-colors duration-300"
-                  aria-label="Toggle theme"
-                >
-                  {theme === 'dark' ? (
-                    <Sun className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-muted-foreground" aria-hidden="true" />
-                  )}
-                </button>
-              )}
-              <button
-                className="p-2 hover:bg-primary/10 rounded-lg transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close menu"
-              >
-                <MenuIcon isOpen={true} />
-              </button>
-            </div>
-          </div>
-
           {/* Navigation Links */}
           <div className="flex flex-col px-6">
             {navLinks.map((link) => (
