@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "@/components/ui/button";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -27,6 +27,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "What We Build", href: "/services" },
@@ -44,7 +56,7 @@ const Navbar = () => {
       <div className="w-full px-6 lg:px-12">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group relative z-50">
             <Image
               src="/opstack-logo.png"
               alt="OpStack"
@@ -89,7 +101,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Theme Toggle & Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="md:hidden flex items-center gap-2 relative z-50">
             {mounted && (
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -114,41 +126,72 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-
       </div>
 
-      {/* Mobile Nav - Fixed full height panel */}
-      {isOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden fixed inset-0 top-16 bg-background z-40 animate-fade-in"
-          role="menu"
-        >
-          <div className="px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
+      {/* Mobile Nav - Full screen overlay */}
+      <div
+        id="mobile-menu"
+        className={`md:hidden fixed inset-0 z-40 transition-all duration-300 ease-out ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        role="menu"
+      >
+        {/* Solid background with subtle gradient */}
+        <div className="absolute inset-0 bg-background" />
+
+        {/* Decorative gradient accent */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-primary/20 via-primary/5 to-transparent blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-primary/10 to-transparent blur-2xl" />
+
+        {/* Content */}
+        <div className="relative h-full flex flex-col pt-20 px-6">
+          {/* Navigation Links */}
+          <div className="flex-1 flex flex-col gap-1">
+            {navLinks.map((link, index) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-300"
+                className={`group flex items-center justify-between py-4 border-b border-border/30 transition-all duration-300 ${
+                  isOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                }`}
+                style={{
+                  transitionDelay: isOpen ? `${index * 50}ms` : '0ms'
+                }}
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                <span className="text-lg font-medium text-foreground group-hover:text-primary transition-colors duration-200">
+                  {link.label}
+                </span>
+                <ArrowRight className="w-5 h-5 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200" />
               </Link>
             ))}
+          </div>
+
+          {/* Bottom CTA Section */}
+          <div
+            className={`py-8 border-t border-border/30 transition-all duration-300 ${
+              isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            }`}
+            style={{ transitionDelay: isOpen ? '300ms' : '0ms' }}
+          >
+            <p className="text-sm text-muted-foreground mb-4">
+              Ready to digitise your business properly?
+            </p>
             <Button
               variant="hero"
-              size="sm"
-              className="w-fit"
+              size="lg"
+              className="w-full justify-center"
               onClick={() => {
                 setIsOpen(false);
                 setContactOpen(true);
               }}
             >
-              Contact Us
+              Book a Discovery Call
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
         </div>
-      )}
+      </div>
 
       {/* Contact Slide-Out */}
       <ContactSlideOut
