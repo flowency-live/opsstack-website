@@ -108,6 +108,16 @@ export default function AboutPage() {
                 <p className="text-foreground font-medium pt-4">
                   OpStack Founder - Jason Jones
                 </p>
+                <p className="text-muted-foreground text-base mt-2">
+                  <a
+                    href="https://jasonjones.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    jasonjones.uk →
+                  </a>
+                </p>
               </div>
 
               {/* Photo - larger, on right */}
